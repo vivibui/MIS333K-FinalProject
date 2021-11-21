@@ -24,7 +24,7 @@ __________________________________________________________________
 - GroupMe
 - Email for important tasks/ documents delivery 
 - Phone Number: 
-Andres: 
-Briana: 
-Chau: 
-Vivian: 346-332-6969 
+  Andres: 
+  Briana: 
+  Chau: 
+  Vivian: 346-332-6969 
