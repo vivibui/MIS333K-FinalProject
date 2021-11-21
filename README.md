@@ -14,8 +14,9 @@
 - Debug
 - Start styling 
 
-### 1ST MAJOR MEETING: 
+__________________________________________________________________
 
+### 1ST MAJOR MEETING: 
 #### A. Set Up
 1. Create DB + Add team members 
 2. Set up Project (add files/folders, wwroot, nugets, etc.)
@@ -32,7 +33,6 @@ Level: Medium-Hard; Long
 *Mid-point briefs: 15 mins meetings to check progress and discuss difficulties before major meeting*
 
 ### 2ND MAJOR MEETING: 
-
 #### A. Team review
 1. Review individual work 
 2. Review models and seeding files 
@@ -48,7 +48,6 @@ By relations: Edit Controllers + Views
 *Mid-point briefs: 15-30 mins meetings to check progress and discuss difficulties before major meeting*
 
 ### 3RD MAJOR MEETING: 
-
 #### A. Team review 
 #### B. Debug 
 #### C. Views Edit and Styling 
