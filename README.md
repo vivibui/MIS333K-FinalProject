@@ -17,10 +17,13 @@
 __________________________________________________________________
 
 ### RESOURCES: 
-#### 1. OneNotes: 
+#### 1. OneDrive: https://drive.google.com/drive/folders/1cUfbXsHoLnVvDZd6gsmH9rFWtV1RfacZ?usp=sharing 
+- NOTE: I SET THIS LINK TO ONEDRIVE PUBLIC. SO ANYONE WITH THE LINK CAN ACCESS THIS. 
+- Model Class Diagram (Version 3) 
+#### 2. OneNotes: 
 - Logistics: Meeting schedules and contents 
 - Codes: Code notes and Debug 
-#### 2. Communication: 
+#### 3. Communication: 
 - GroupMe
 - Email for important tasks/ documents delivery 
 - Phone Number: 
