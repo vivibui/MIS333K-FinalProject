@@ -2,18 +2,18 @@
 Final Project for MIS333K Fall 2021
 
 ### 1ST MAJOR MEETING: 
-	##### A. Set Up
-	1. Create DB + Add team members 
-	2. Set up Project (add files/folders, wwroot, nugets, etc.)
-	3. Set up Github link
+A. Set Up
+1. Create DB + Add team members 
+2. Set up Project (add files/folders, wwroot, nugets, etc.)
+3. Set up Github link
 
-	##### B. Task Divisions (Part 1) 
-	1. Models + Utilities + DAL + Startup.cs (2) (Apart from Identity) Vivian + Chau 
-	Level: Hard; Short 
-	2. Seeding: create seed controllers, seed files, and seed views Briana 
-	Level: Medium; Long + Detail-oriented 
-	3. Identity (AppUser + ViewModels + Utitilies for Add User, and everything else related to Identity exclude Seeding) Andres 
-	Level: Medium-Hard; Long
+B. Task Divisions (Part 1) 
+1. Models + Utilities + DAL + Startup.cs (2) (Apart from Identity) Vivian + Chau 
+Level: Hard; Short 
+2. Seeding: create seed controllers, seed files, and seed views Briana 
+Level: Medium; Long + Detail-oriented 
+3. Identity (AppUser + ViewModels + Utitilies for Add User, and everything else related to Identity exclude Seeding) Andres 
+Level: Medium-Hard; Long
 	
 	
 Mid-point briefs: 15 mins meetings to check progress and discuss difficulties before major meeting
