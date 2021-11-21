@@ -1,7 +1,5 @@
 # MIS333K Final Project 
 
-https://sayingimages.com/wp-content/uploads/motivational-stay-strong-memes-1.jpg
-
 ### IMPORTANT: DELIVERABLES SCHEDULED DATES
 #### 1. Tuesday 11/23 @5PM: 
 - Finish Identity, Models, and Seeding files
