@@ -27,7 +27,7 @@ __________________________________________________________________
 - GroupMe
 - Email for important tasks/ documents delivery 
 - Phone Number: 
-  Andres: 210-237-9422
-  Briana: 
-  Chau: 
-  Vivian: 346-332-6969 
+  - Andres: 210-237-9422
+  - Briana:   
+  - Chau:   
+  - Vivian: 346-332-6969   
