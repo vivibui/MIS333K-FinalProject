@@ -16,36 +16,36 @@ namespace Team_27_FinalProject.Models
         public Int32 PropertyNumber { get; set; }
 
         //Street
-        [Required(ErrorMessage ="Street cannot be blank")]
+        [Required(ErrorMessage ="Street cannot be blank.")]
         [Display(Name = "Street:")]
         public String Street { get; set; }
 
         //City
-        [Required(ErrorMessage ="City cannot be blank")]
+        [Required(ErrorMessage ="City cannot be blank.")]
         [Display(Name = "City:")]
         public String City { get; set; }
 
         //State
-        [Required(ErrorMessage ="State cannot be blank")]
+        [Required(ErrorMessage ="State cannot be blank.")]
         [StringLength(2, ErrorMessage = "Only allow 2 letters. Please enter state abbreviations.", MinimumLength = 2)]
         [Display(Name = "State:")]
         public String State { get; set; }
 
         //Zip
-        [Required(ErrorMessage ="Zipcode cannot be blank")]
+        [Required(ErrorMessage ="Zipcode cannot be blank.")]
         [StringLength(5, ErrorMessage = "Zipcode must be 5 digits.", MinimumLength = 5)]
         [RegularExpression("[0-9]", ErrorMessage ="Zipcode must be number.")]
         [Display(Name = "Zipcode:")]
         public Int32 Zip { get; set; }
 
         //Bedrooms
-        [Required(ErrorMessage = "Must specify number of bedrooms")]
+        [Required(ErrorMessage = "Must specify number of bedrooms.")]
         [Range(minimum:0, maximum:50, ErrorMessage ="Value must be between 0 and 50.")]
         [Display(Name = "Bedroom(s):")]
         public Int32 Bedrooms { get; set; }
 
         //Bathrooms
-        [Required(ErrorMessage = "Must specify number of bathrooms")]
+        [Required(ErrorMessage = "Must specify number of bathrooms.")]
         [Range(minimum: 0, maximum: 50, ErrorMessage = "Value must be between 0 and 50.")]
         [Display(Name = "Bathroom(s):")]
         public Int32 Bathrooms { get; set; }
