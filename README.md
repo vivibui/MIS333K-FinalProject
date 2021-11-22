@@ -1,5 +1,8 @@
 # MIS333K Final Project 
 
+### !! MODEL CLASS DIAGRAM HAS BEEN UPDATED !! (Last updated: Nov 22) 
+https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_loc=-2141%2C-580%2C3853%2C2506%2C0_0&invitationId=inv_d5a5ee70-58a7-4588-9446-b5ba780354cf
+
 ### IMPORTANT: DELIVERABLES SCHEDULED DATES
 #### 1. Tuesday 11/23 @5PM: 
 - Finish Identity, Models, and Seeding files
