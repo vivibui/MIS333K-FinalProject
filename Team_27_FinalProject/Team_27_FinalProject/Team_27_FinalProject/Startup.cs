@@ -17,7 +17,7 @@ namespace Team_27_FinalProject
             //NOTE: This adds the MVC engine and Razor code
             services.AddControllersWithViews();
 
-            String connectionString = "Server=tcp:fa21team27finalproject.database.windows.net,1433;Initial Catalog=fa21team27finalproject;Persist Security Info=False;User ID=MISAdmin;Password=Password123;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            String connectionString = "Server=tcp:fa21team27finalproject.database.windows.net,1433;Initial Catalog=fa21team27finalproject;Persist Security Info=False;User ID=MISAdmin;Password=Password123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
 

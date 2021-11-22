@@ -29,26 +29,32 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Cancelled?:")]
         public Boolean IsCancelled { get; set; }
 
-        //Navigational Properties
-        public List<OrderDetail> OrderDetails { get; set; }
+
+        //--------------------NAVIGATIONAL PROPERTIES
+        public List<Reservation> Reservations { get; set; }
         public AppUser AppUser { get; set; }
 
-        //Prevent null preference
+
+
+        //--------------------PREVENT NULL PREFERENCE
         public Order()
         {
-            if (OrderDetails == null)
+            if (Reservations == null)
             {
-                OrderDetails = new List<OrderDetail>();
+                Reservations = new List<Reservation>();
             }
         }
 
-        //----------Read-only Properties (Does not store in DB)
+
+
+        //--------------------READ-ONLY (DOES NOT STORE IN DB)
+        
         //Order Subtotal
         [Display(Name = "Order Subtotal")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal OrderSubtotal
         {
-            get { return OrderDetails.Sum(od => od.ExtendedPrice); }
+            get { return Reservations.Sum(od => od.Subtotal); }
         }
 
         //Tax Fee
