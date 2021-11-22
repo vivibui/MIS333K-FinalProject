@@ -10,6 +10,7 @@ namespace Team_27_FinalProject.Models
         {
             public Int32 ReviewID { get; set; }
 
+            //TODO: 
             //rating
             //decimal between 1.0 and 5.0
             //calculate average rating in ReviewsController? HomeController?
@@ -41,5 +42,5 @@ namespace Team_27_FinalProject.Models
 
         }
     }
-}
-}
+
+

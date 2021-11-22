@@ -52,14 +52,11 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal WeekendFee { get; set; }
 
-        //Is Discounted (T/F) (*)
-        [Display(Name = "Discount Eligible? (T/F):")]
-        public Boolean IsDiscounted { get; set; }
-
-        //Discount (*) 
-        [Display(Name = "Discount Applied: ")]
+        //Reservation Stay Price 
+        [Display(Name = "Stay Price: ")]
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public Decimal Discount { get; set; }
+        public Decimal StayPrice { get; set; }
+
 
 
         //--------------------NAVIGATIONAL PROPERTIES
@@ -68,7 +65,44 @@ namespace Team_27_FinalProject.Models
 
 
 
-        //--------------------READ-ONLY (DOES NOT STORE IN DB) 
+        //--------------------START: CALCULATE STAY PRICE--------------------
+
+        //Initialize empty list and variables
+        List<DateTime> allDates = new List<DateTime>();
+        private Int32 TotalWeekdays = 0;
+        private Int32 TotalWeekends = 0;
+
+        //List of Dates between Checkout and Checkin
+        public IEnumerable<DateTime> DateRange(DateTime CheckinDate, DateTime CheckoutDate)
+        {
+
+            for (DateTime i = CheckinDate; i <= CheckoutDate; i = i.AddDays(1))
+            {
+                allDates.Add(i);
+            }
+            return allDates;
+        }
+
+        //Calculate total weekdays and weekends 
+        public Decimal CalStayPrice()
+        {
+            foreach (var item in allDates)
+            {
+                if (item.DayOfWeek == DayOfWeek.Friday || item.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    TotalWeekdays = TotalWeekdays + 1;
+                }
+                else
+                {
+                    TotalWeekends = TotalWeekends + 1; 
+                }
+            }
+
+            //Calculate Stay Price 
+            return (StayPrice = TotalWeekdays * WeekdayFee + TotalWeekends * WeekendFee);
+        }
+
+        //--------------------END: CALCULATE STAY PRICE--------------------
 
         //Number of Nights
         [Display(Name = "Number of Nights:")]
@@ -77,18 +111,66 @@ namespace Team_27_FinalProject.Models
             get { return ((CheckoutDate.Date - CheckinDate.Date).Days); }
         }
 
-        //Reservation Stay Price 
-        [Display(Name = "Stay Price: ")]
-        [DisplayFormat(DataFormatString = "{0:C}")]
-        public Decimal StayPrice
-        {
-            
-        }
-
         //Reservation Subtotal
         [Display(Name = "Reservation Subtotal")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Subtotal { get; set; }
+
+
+        //----------------------START: CALCULATE DISCOUNT-----------------------
+
+        private bool? _IsDiscounted;
+        //Is Discounted (T/F) (*)
+        [Display(Name = "Discount Eligible? (T/F):")]
+        public Boolean? IsDiscounted
+        {
+            get
+            {
+                if (NumberOfNights > Property.DiscountMinNights)
+                {
+                    return _IsDiscounted;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set
+            {
+                if (NumberOfNights > Property.DiscountMinNights)
+                {
+                    _IsDiscounted = true;
+                }
+                else
+                {
+                    _IsDiscounted = false;
+                }
+            }
+
+        }
+
+        //Discount (*)
+        private decimal _discount;
+        [Display(Name = "Discount Applied: ")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal Discount
+        {
+            get { return Discount; }
+            set
+            {
+                if (_IsDiscounted == true)
+                {
+                    _discount = Subtotal * Property.DiscountRate;
+                }
+                else
+                {
+                    _discount = 0;
+                }
+            }
+        }
+
+        //----------------------END: CALCULATE DISCOUNT-----------------------
+
 
         //Tax Fee
         [Display(Name = "Sales Tax (8.25%)")]
@@ -98,7 +180,7 @@ namespace Team_27_FinalProject.Models
             get { return Subtotal * TAX_RATE; }
         }
 
-        //Order Total
+        //Reservation Total
         [Display(Name = "Order Total")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal ReservationTotal
@@ -107,9 +189,7 @@ namespace Team_27_FinalProject.Models
         }
 
 
-
-
-        //--------------------READ-ONLY - FOR REPORTS (DOES NOT STORE IN DB)
+        //--------------------FOR REPORTS-----------------------
 
         //Commission Rate 
         private const Decimal COMMISSION_RATE = 0.1m;
@@ -119,7 +199,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Commission
         {
-            get { return (ExtendedPrice*COMMISSION_RATE); }
+            get { return (Subtotal*COMMISSION_RATE); }
         }
 
         //Revenue (*)
@@ -127,7 +207,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal HostRevenue
         {
-            get { return (ExtendedPrice - Commission); }
+            get { return (Subtotal - Commission); }
         }
 
     }
