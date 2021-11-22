@@ -5917,24 +5917,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/vivianbui/.nuget/packages/": {}
+    "C:\\Users\\mumgo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/vivianbui/Desktop/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
+      "projectUniqueName": "C:\\Users\\mumgo\\Documents\\GitHub\\MIS333K-FinalProject\\Team_27_FinalProject\\Team_27_FinalProject\\Team_27_FinalProject.csproj",
       "projectName": "Team_27_FinalProject",
-      "projectPath": "/Users/vivianbui/Desktop/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
-      "packagesPath": "/Users/vivianbui/.nuget/packages/",
-      "outputPath": "/Users/vivianbui/Desktop/Team_27_FinalProject/Team_27_FinalProject/obj/",
+      "projectPath": "C:\\Users\\mumgo\\Documents\\GitHub\\MIS333K-FinalProject\\Team_27_FinalProject\\Team_27_FinalProject\\Team_27_FinalProject.csproj",
+      "packagesPath": "C:\\Users\\mumgo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mumgo\\Documents\\GitHub\\MIS333K-FinalProject\\Team_27_FinalProject\\Team_27_FinalProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/vivianbui/.config/NuGet/NuGet.Config"
+        "C:\\Users\\mumgo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -5990,7 +5992,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
