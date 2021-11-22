@@ -121,5 +121,16 @@ namespace Team_27_FinalProject.Models
                 Reservations = new List<Reservation>();
             }
         }
+
+        //--------------------READ-ONLY (DOES NOT STORE IN DB)
+
+        //Ratings (*)
+        [Required]
+        [Display(Name = "Ratings:")]
+        [DisplayFormat(DataFormatString = "{0:F1}")]
+        public Decimal Ratings
+        {
+            get { return Reviews.Average(pt => pt.Subtotal); }
+        }
     }
 }

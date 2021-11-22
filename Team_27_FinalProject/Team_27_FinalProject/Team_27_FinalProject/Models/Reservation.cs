@@ -86,7 +86,7 @@ namespace Team_27_FinalProject.Models
         }
 
         //Reservation Subtotal
-        [Display(Name = "Order Subtotal")]
+        [Display(Name = "Reservation Subtotal")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Subtotal { get; set; }
 
@@ -95,15 +95,15 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal SalesTax
         {
-            get { return OrderSubtotal * TAX_RATE; }
+            get { return Subtotal * TAX_RATE; }
         }
 
         //Order Total
         [Display(Name = "Order Total")]
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public Decimal OrderTotal
+        public Decimal ReservationTotal
         {
-            get { return OrderSubtotal + SalesTax; }
+            get { return Subtotal + SalesTax; }
         }
 
 
