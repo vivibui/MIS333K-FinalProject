@@ -1,9 +1,13 @@
-﻿<Properties>
+﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
   <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Team_27_FinalProject" expanded="True" selected="True" />
+          <Node name="Team_27_FinalProject" expanded="True" selected="True">
+            <Node name="Team_27_FinalProject" expanded="True">
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
