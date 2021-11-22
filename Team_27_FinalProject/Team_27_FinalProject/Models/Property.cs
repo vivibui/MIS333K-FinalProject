@@ -104,7 +104,7 @@ namespace Team_27_FinalProject.Models
 
 
         //--------------------NAVIGATIONAL PROPERTIES
-        public List<Reviews> Reviews { get; set; }
+        public List<Review> Reviews { get; set; }
         public List<Reservation> Reservations { get; set; }
         public Category Category { get; set; }
 
@@ -130,7 +130,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:F1}")]
         public Decimal Ratings
         {
-            get { return Reviews.Average(pt => pt.Subtotal); }
+            get { return Reviews.Average(pt => pt.Rating); }
         }
     }
 }
