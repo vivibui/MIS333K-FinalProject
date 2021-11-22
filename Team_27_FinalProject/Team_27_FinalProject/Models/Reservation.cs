@@ -9,7 +9,7 @@ namespace Team_27_FinalProject.Models
     public class Reservation
     {
         //Tax Rate 
-        private const Decimal TAX_RATE = 0.0825m;
+        private const Decimal TAX_RATE = 0.1m;
 
         //Primary key
         public Int32 ReservationID { get; set; }
@@ -104,18 +104,6 @@ namespace Team_27_FinalProject.Models
 
         //--------------------END: CALCULATE STAY PRICE--------------------
 
-        //Number of Nights
-        [Display(Name = "Number of Nights:")]
-        public Int32 NumberOfNights
-        {
-            get { return ((CheckoutDate.Date - CheckinDate.Date).Days); }
-        }
-
-        //Reservation Subtotal
-        [Display(Name = "Reservation Subtotal")]
-        [DisplayFormat(DataFormatString = "{0:C}")]
-        public Decimal Subtotal { get; set; }
-
 
         //----------------------START: CALCULATE DISCOUNT-----------------------
 
@@ -155,7 +143,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Discount
         {
-            get { return Discount; }
+            get { return _discount; }
             set
             {
                 if (_IsDiscounted == true)
@@ -171,6 +159,20 @@ namespace Team_27_FinalProject.Models
 
         //----------------------END: CALCULATE DISCOUNT-----------------------
 
+        //Number of Nights
+        [Display(Name = "Number of Nights:")]
+        public Int32 NumberOfNights
+        {
+            get { return ((CheckoutDate.Date - CheckinDate.Date).Days); }
+        }
+
+        //Reservation Subtotal
+        [Display(Name = "Reservation Subtotal")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal Subtotal
+        {
+            get { return StayPrice - CleaningPrice - _discount; }
+        }
 
         //Tax Fee
         [Display(Name = "Sales Tax (8.25%)")]

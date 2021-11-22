@@ -10,7 +10,7 @@ namespace Team_27_FinalProject.Models
     public class Order
     {
         //Tax Rate 
-        private const Decimal TAX_RATE = 0.0825m;
+        private const Decimal TAX_RATE = 0.1m;
 
         //Primary key
         public Int32 OrderID { get; set; }
