@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {}
+    "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {}
   },
   "projects": {
-    "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {
+    "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
+        "projectUniqueName": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
         "projectName": "Team_27_FinalProject",
-        "projectPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
+        "projectPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
         "packagesPath": "/Users/vivianbui/.nuget/packages/",
-        "outputPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/",
+        "outputPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/vivianbui/.config/NuGet/NuGet.Config"

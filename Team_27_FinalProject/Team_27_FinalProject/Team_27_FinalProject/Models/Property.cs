@@ -114,7 +114,7 @@ namespace Team_27_FinalProject.Models
         {
             if (Reviews == null)
             {
-                Reviewss = new List<Review>();
+                Reviews = new List<Review>();
             }
             if (Reservations == null)
             {

@@ -15,9 +15,12 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Category")]
         public String Name { get; set; }
 
-        //a category will include many properties
+
+        //--------------------NAVIGATIONAL PROPERTIES
         public List<Property> Properties { get; set; }
 
+
+        //--------------------PREVENT NULL PREFERENCE
         public Category()
         {
             if (Properties == null)

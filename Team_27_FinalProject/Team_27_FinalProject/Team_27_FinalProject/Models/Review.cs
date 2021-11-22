@@ -26,7 +26,6 @@ namespace Team_27_FinalProject.Models
             [Display(Name = "Review Content")]
             public String Content { get; set; }
 
-
             //Disputed
             [Display(Name = "Disputed?")]
             public Boolean Disputed { get; set; }
@@ -35,8 +34,9 @@ namespace Team_27_FinalProject.Models
             [Display(Name = "Dispute Reason")]
             public String DisputeReason { get; set; }
 
-            public AppUser AppUser { get; set; }
 
+            //--------------------NAVIGATIONAL PROPERTIES
+            public AppUser AppUser { get; set; }
             public Property Property { get; set; }
 
         }
