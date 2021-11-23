@@ -31,6 +31,6 @@ https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_
 - Email for important tasks/ documents delivery 
 - Phone Number: 
   - Andres: 210-237-9422
-  - Briana:   
+  - Briana: 210-823-7119
   - Chau:  469-734-9951
   - Vivian: 346-332-6969   
