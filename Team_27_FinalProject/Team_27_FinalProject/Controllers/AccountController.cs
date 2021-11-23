@@ -4,13 +4,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
-//TODO: Change this using statement to match your project
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 using Team_27_FinalProject.Utilities;
 
-//TODO: Change this namespace to match your project
 namespace Team_27_FinalProject.Controllers
 {
     [Authorize]
@@ -61,7 +58,6 @@ namespace Team_27_FinalProject.Controllers
                 //TODO: Add the rest of the custom user fields here
                 //FirstName is included as an example
                 FirstName = rvm.FirstName,
-                LastName = rvm.LastName
             };
 
             //create AddUserModel

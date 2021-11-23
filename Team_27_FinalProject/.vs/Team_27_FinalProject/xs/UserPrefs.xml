@@ -1,24 +1,20 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Models/ViewModels/SearchViewModel.cs">
-    <Files>
-      <File FileName="Team_27_FinalProject/Models/Reservation.cs" Line="1" Column="1" />
-      <File FileName="Team_27_FinalProject/Models/Order.cs" />
-      <File FileName="Team_27_FinalProject/Models/ViewModels/SearchViewModel.cs" Line="54" Column="38" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True">
-                  <Node name="SearchViewModel.cs" selected="True" />
-                </Node>
+                <Node name="ViewModels" expanded="True" />
+                <Node name="Reservation.cs" selected="True" />
               </Node>
               <Node name="Utilities" expanded="True" />
-              <Node name="Views" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>

@@ -4,12 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
-
-//TODO: Change these using statements to match your project
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 
-//TODO: Change this namespace to match your project
 namespace Team_27_FinalProject.Controllers
 {
     //TODO: Uncomment this line once you have roles working correctly

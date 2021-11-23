@@ -2,11 +2,10 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
-//TODO: Change this namespace to match your project
 namespace Team_27_FinalProject.Models
 { 
     //NOTE: This is the view model used to allow the user to login
-    //The user only needs the email and password to login
+    //The user only needs teh email and password to login
     public class LoginViewModel
     {
         [Required]
@@ -46,12 +45,6 @@ namespace Team_27_FinalProject.Models
         [Required(ErrorMessage = "First name is required.")]
         [Display(Name = "First Name")]
         public String FirstName { get; set; }
-
-        //Last name property
-        [Required(ErrorMessage = "Last Name is required.")]
-        [Display(Name = "Last Name")]
-        public String LastName { get; set; }
-
 
         //NOTE: Here is the logic for putting in a password
         [Required]

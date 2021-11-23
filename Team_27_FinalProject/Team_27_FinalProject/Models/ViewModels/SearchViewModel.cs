@@ -13,11 +13,21 @@ namespace Team_27_FinalProject.Models
     {
         //Text: City
         [Display(Name = "Search by City:")]
-        public String SearchCity { get; set; }
+        public String SelectedCity { get; set; }
 
         //Text: State
         [Display(Name = "Seach by State:")]
         public String SelectedState { get; set; }
+
+        //Date picker: Check-in Date
+        [Display(Name = "Select Check-in:")]
+        [DataType(DataType.Date)]
+        public DateTime? SelectedCheckin { get; set; }
+
+        //Date picker: Check-out Date (*) 
+        [Display(Name = "Select Check-out:")]
+        [DataType(DataType.Date)]
+        public DateTime? SelectedCheckout { get; set; }
 
         //Textbox: Ratings
         [Display(Name = "Search by Rating:")]

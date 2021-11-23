@@ -2,12 +2,10 @@
 using System;
 using System.Text;
 
-//TODO: Update these using statements to include your project name
 using Team_27_FinalProject.Models;
 using Team_27_FinalProject.DAL;
 using System.Threading.Tasks;
 
-//TODO: Upddate this namespace to match your project name
 namespace Team_27_FinalProject.Utilities
 {
     public static class AddUser
@@ -65,7 +63,6 @@ namespace Team_27_FinalProject.Utilities
                 //TODO: Update any fields that you added to appuser
                 //FirstName is included as an example
                 dbUser.FirstName = aum.User.FirstName;
-                dbUser.LastName = aum.User.LastName;
 
                 //update the database
                 _context.Update(dbUser);
