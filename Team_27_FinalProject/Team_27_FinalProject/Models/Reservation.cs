@@ -183,7 +183,7 @@ namespace Team_27_FinalProject.Models
         }
 
         //Reservation Total
-        [Display(Name = "Order Total")]
+        [Display(Name = "Reservation Total")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal ReservationTotal
         {

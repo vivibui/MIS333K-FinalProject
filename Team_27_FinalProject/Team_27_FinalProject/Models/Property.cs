@@ -130,7 +130,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:F1}")]
         public Decimal Ratings
         {
-            get { return Reviews.Average(pt => pt.Rating); }
+            get { return Reviews.Average(rv => rv.Rating); }
         }
     }
 }

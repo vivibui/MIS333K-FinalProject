@@ -21,7 +21,10 @@ namespace Team_27_FinalProject.DAL
             base.OnModelCreating(builder);
         }
 
-        //TODO: Add Dbsets here.  Products is included as an example.  
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Property> Properties { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
