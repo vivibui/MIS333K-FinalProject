@@ -18,7 +18,7 @@ namespace Team_27_FinalProject.Models
             [Required]
             [Display(Name = "Rating")]
             [Range(1.0, 5.0)]
-            [DisplayFormat(DataFormatString = "{0:C1")]
+            [DisplayFormat(DataFormatString = "0:F0")]
             public Decimal Rating { get; set; }
 
             //Content
@@ -26,17 +26,19 @@ namespace Team_27_FinalProject.Models
             [Display(Name = "Review Content")]
             public String Content { get; set; }
 
+
             //Disputed
             [Display(Name = "Disputed?")]
             public Boolean Disputed { get; set; }
+
 
             //Dispute Reason
             [Display(Name = "Dispute Reason")]
             public String DisputeReason { get; set; }
 
 
-            //--------------------NAVIGATIONAL PROPERTIES
             public AppUser AppUser { get; set; }
+
             public Property Property { get; set; }
 
         }
