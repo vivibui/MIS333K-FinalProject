@@ -34,7 +34,7 @@ namespace Team_27_FinalProject.Models
         //Zip
         [Required(ErrorMessage ="Zipcode cannot be blank.")]
         [StringLength(5, ErrorMessage = "Zipcode must be 5 digits.", MinimumLength = 5)]
-        [RegularExpression("[0-9]", ErrorMessage ="Zipcode must be number.")]
+        [RegularExpression("[0-9]", ErrorMessage ="Zipcode must be a 5-digit number.")]
         [Display(Name = "Zipcode:")]
         public Int32 Zip { get; set; }
 
