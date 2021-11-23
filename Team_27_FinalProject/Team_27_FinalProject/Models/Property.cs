@@ -52,7 +52,7 @@ namespace Team_27_FinalProject.Models
 
         //Pets Allowed
         [Required(ErrorMessage = "Must specify if pets are allowed.")]
-        [Display(Name = "Pets Allowed? (T/F):")]
+        [Display(Name = "Pets Allowed? (Y/N):")]
         public Boolean PetsAllowed { get; set; }
 
         //Guests Allowed
@@ -63,11 +63,11 @@ namespace Team_27_FinalProject.Models
 
         //Free Parking
         [Required(ErrorMessage = "Must specify if parking is free.")]
-        [Display(Name = "Free Parking? (T/F):")]
+        [Display(Name = "Free Parking? (Y/N):")]
         public Boolean ParkingFree { get; set; }
 
-        //Is Disabled (T/F) 
-        [Display(Name = "Property Disabled? (T/F):")]
+        //Is Disabled (Y/N) 
+        [Display(Name = "Property Disabled? (Y/N):")]
         public Boolean IsDiscounted { get; set; }
 
         //Weekday Price
