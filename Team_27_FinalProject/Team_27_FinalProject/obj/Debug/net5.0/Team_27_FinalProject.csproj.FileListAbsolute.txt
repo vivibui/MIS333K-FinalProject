@@ -6,3 +6,11 @@
 /Users/vivianbui/Desktop/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.MvcApplicationPartsAssemblyInfo.cache
 /Users/vivianbui/Desktop/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.RazorAssemblyInfo.cache
 /Users/vivianbui/Desktop/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.RazorAssemblyInfo.cs
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.csproj.AssemblyReference.cache
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.AssemblyInfoInputs.cache
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.AssemblyInfo.cs
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.csproj.CoreCompileInputs.cache
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.MvcApplicationPartsAssemblyInfo.cache
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.RazorAssemblyInfo.cache
+/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.RazorAssemblyInfo.cs

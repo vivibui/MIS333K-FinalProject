@@ -13,6 +13,11 @@
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+    <None Remove="Models\ViewModels\" />
+    <None Remove="Utilities\" />
+    <None Remove="Views\Account\" />
+    <None Remove="Views\RoleAdmin\" />
+    <None Remove="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -20,6 +25,11 @@
     <Folder Include="wwwroot\" />
     <Folder Include="Views\Home\" />
     <Folder Include="wwwroot\lib\" />
+    <Folder Include="Models\ViewModels\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Views\Account\" />
+    <Folder Include="Views\RoleAdmin\" />
+    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
