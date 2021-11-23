@@ -40,6 +40,14 @@ namespace Team_27_FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel rvm)
         {
+            //if the date of 18th birthday is more than now, then: 
+            if (rvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
+            {
+                ModelState.AddModelError("Age Error", "You must be 18 to register");
+                return View(rvm);
+            }
+
+
             //if registration data is valid, create a new user on the database
             if (ModelState.IsValid == false)
             {
@@ -54,11 +62,15 @@ namespace Team_27_FinalProject.Controllers
                 UserName = rvm.Email,
                 Email = rvm.Email,
                 PhoneNumber = rvm.PhoneNumber,
-
-                //TODO: Add the rest of the custom user fields here
-                //FirstName is included as an example
                 FirstName = rvm.FirstName,
-            };
+                LastName = rvm.LastName,
+                MI = rvm.MI,
+                Birthday = rvm.Birthday,
+                Street = rvm.Street,
+                City = rvm.City,
+                State = rvm.State,
+                Zip = rvm.Zip,
+        };
 
             //create AddUserModel
             AddUserModel aum = new AddUserModel()

@@ -31,7 +31,7 @@ namespace Team_27_FinalProject.Models
         //Number of Guests (*)
         [Required(ErrorMessage = "You must specify the total number of guests.")]
         [Display(Name = "Number of Guests:")]
-        [Range(1, 1000000, ErrorMessage = "Number must be a positive integer.")]
+        [Range(1, 1000, ErrorMessage = "Number must be a positive integer.")]
         public Int32 NumberOfGuests { get; set; }
 
         // Cleaning Price (at time paid)

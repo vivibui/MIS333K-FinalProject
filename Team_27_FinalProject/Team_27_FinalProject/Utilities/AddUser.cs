@@ -60,9 +60,14 @@ namespace Team_27_FinalProject.Utilities
                 //email and user name do not change
                 dbUser.PhoneNumber = aum.User.PhoneNumber;
 
-                //TODO: Update any fields that you added to appuser
-                //FirstName is included as an example
                 dbUser.FirstName = aum.User.FirstName;
+                dbUser.LastName = aum.User.LastName;
+                dbUser.MI = aum.User.MI;
+                dbUser.Birthday = aum.User.Birthday;
+                dbUser.Street = aum.User.Street;
+                dbUser.City = aum.User.City;
+                dbUser.State = aum.User.State;
+                dbUser.Zip = aum.User.Zip;
 
                 //update the database
                 _context.Update(dbUser);

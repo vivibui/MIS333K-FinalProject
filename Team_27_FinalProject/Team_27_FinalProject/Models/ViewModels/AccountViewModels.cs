@@ -27,32 +27,71 @@ namespace Team_27_FinalProject.Models
     //properties listed in this model
     public class RegisterViewModel
     {   
-        //NOTE: Here is the property for email
+        //Email
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        //NOTE: Here is the property for phone number
+        //Phone Number 
         [Required(ErrorMessage = "Phone number is required")]
         [Phone]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
+        //Birthday
+        [Required(ErrorMessage = "Please enter your birthday.")]
+        [Display(Name = "Birthday")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MMMM d, yyyy}")]
+        public DateTime Birthday { get; set; }
 
-        //TODO: Add any fields that you need for creating a new user
-        //First name is provided as an example
+        //First Name
         [Required(ErrorMessage = "First name is required.")]
         [Display(Name = "First Name")]
         public String FirstName { get; set; }
 
-        //NOTE: Here is the logic for putting in a password
+        //Middle Name
+        [Required(ErrorMessage = "Middle name is required.")]
+        [Display(Name = "Middle Name")]
+        public String MI { get; set; }
+
+        //Last Name
+        [Required(ErrorMessage = "Last name is required.")]
+        [Display(Name = "Last Name")]
+        public String LastName { get; set; }
+
+        //Street
+        [Required(ErrorMessage = "Street cannot be blank.")]
+        [Display(Name = "Street:")]
+        public String Street { get; set; }
+
+        //City
+        [Required(ErrorMessage = "City cannot be blank.")]
+        [Display(Name = "City:")]
+        public String City { get; set; }
+
+        //State
+        [Required(ErrorMessage = "State cannot be blank.")]
+        [StringLength(2, ErrorMessage = "Only allow 2 letters. Please enter state abbreviations.", MinimumLength = 2)]
+        [Display(Name = "State:")]
+        public String State { get; set; }
+
+        //Zipcode 
+        [Required(ErrorMessage = "Zipcode cannot be blank.")]
+        [StringLength(5, ErrorMessage = "Zipcode must be 5 digits.", MinimumLength = 5)]
+        [RegularExpression("[0-9]", ErrorMessage = "Zipcode must be a 5-digit number.")]
+        [Display(Name = "Zip")]
+        public Int32 Zip { get; set; }
+
+        //Register Password
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
+        //Confirm Password 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
