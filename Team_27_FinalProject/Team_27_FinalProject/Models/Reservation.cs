@@ -73,10 +73,10 @@ namespace Team_27_FinalProject.Models
         private Int32 TotalWeekends = 0;
 
         //List of Dates between Checkout and Checkin
-        public IEnumerable<DateTime> DateRange(DateTime CheckinDate, DateTime CheckoutDate)
+        public IEnumerable<DateTime> DateRange()
         {
 
-            for (DateTime i = CheckinDate; i <= CheckoutDate; i = i.AddDays(1))
+            for (DateTime i = CheckinDate; i < CheckoutDate; i = i.AddDays(1))
             {
                 allDates.Add(i);
             }
@@ -113,17 +113,7 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Discount Eligible? (T/F):")]
         public Boolean? IsDiscounted
         {
-            get
-            {
-                if (NumberOfNights > Property.DiscountMinNights)
-                {
-                    return _IsDiscounted;
-                }
-                else
-                {
-                    return null;
-                }
-            }
+            get { return _IsDiscounted; }
             set
             {
                 if (NumberOfNights > Property.DiscountMinNights)
