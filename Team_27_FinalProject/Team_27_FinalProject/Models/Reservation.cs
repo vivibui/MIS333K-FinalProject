@@ -108,6 +108,7 @@ namespace Team_27_FinalProject.Models
         //----------------------START: CALCULATE DISCOUNT-----------------------
 
         private bool? _IsDiscounted;
+
         //Is Discounted (T/F) (*)
         [Display(Name = "Discount Eligible? (T/F):")]
         public Boolean? IsDiscounted
@@ -139,6 +140,7 @@ namespace Team_27_FinalProject.Models
 
         //Discount (*)
         private decimal _discount;
+
         [Display(Name = "Discount Applied: ")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Discount
