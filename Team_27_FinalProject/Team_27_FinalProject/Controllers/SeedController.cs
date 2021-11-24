@@ -54,6 +54,47 @@ namespace Team_27_FinalProject.Controllers
             //this is the happy path - seeding worked!
             return View("Confirm");
         }
+
+        public IActionResult SeedAllCategories()
+        {
+            try
+            {
+                //call the SeedAllGenres method from your Seeding folder
+                //you will need to pass in the instance of AppDbContext
+                //that you set in the constructor
+                SeedCategories.SeedAllCategories(_context);
+            }
+            catch (Exception ex)
+            {
+                //add the error messages to a list of strings
+                List<String> errorList = new List<String>();
+
+                errorList.Add("There was a problem adding this category");
+
+                //Add the outer message
+                errorList.Add(ex.Message);
+
+                //Add the message from the inner exception, if there is one
+                if (ex.InnerException != null)
+                {
+                    errorList.Add(ex.InnerException.Message);
+
+                    //Add additional inner exception messages, if there are any
+                    if (ex.InnerException.InnerException != null)
+                    {
+                        errorList.Add(ex.InnerException.InnerException.Message);
+                    }
+                }
+
+
+                //return the user to the error view
+                return View("Error", errorList);
+            }
+
+            //everything is okay - send user to confirmation page
+            return View("Confirm");
+        }
+
         public async Task<IActionResult> SeedPeople()
         {
             try
@@ -83,5 +124,7 @@ namespace Team_27_FinalProject.Controllers
             //this is the happy path - seeding worked!
             return View("Confirm");
         }
+
+
     }
 }
