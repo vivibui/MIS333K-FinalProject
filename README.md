@@ -26,7 +26,9 @@ https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_
 #### 2. OneNotes: 
 - Logistics: Meeting schedules and contents 
 - Codes: Code notes and Debug 
-#### 3. Communication: 
+#### 3. OneDrive: 
+https://drive.google.com/drive/folders/1cUfbXsHoLnVvDZd6gsmH9rFWtV1RfacZ?usp=sharing
+#### 4. Communication: 
 - GroupMe
 - Email for important tasks/ documents delivery 
 - Phone Number: 
