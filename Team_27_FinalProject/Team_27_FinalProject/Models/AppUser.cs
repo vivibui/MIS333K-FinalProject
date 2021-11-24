@@ -21,21 +21,17 @@ namespace Team_27_FinalProject.Models
         //Birthday 
         public DateTime Birthday { get; set; }
 
-        //Street
-        public String Street { get; set; }
-
-        //City
-        public String City { get; set; }
-
-        //State
-        public String State { get; set; }
+        //Address
+        public String Address { get; set; }
 
         //Zipcode 
-        public Int32 Zip { get; set; }
+        public Int32 ZipCode { get; set; }
 
 
         //--------------------NAVIGATIONAL PROPERTIES
         public List<Order> Orders { get; set; }
+        public List<Property> Properties { get; set; }
+        public List<Review> Reviews { get; set; }
 
     }
 }

@@ -61,28 +61,17 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
-        //Street
-        [Required(ErrorMessage = "Street cannot be blank.")]
-        [Display(Name = "Street:")]
-        public String Street { get; set; }
-
-        //City
-        [Required(ErrorMessage = "City cannot be blank.")]
-        [Display(Name = "City:")]
-        public String City { get; set; }
-
-        //State
-        [Required(ErrorMessage = "State cannot be blank.")]
-        [StringLength(2, ErrorMessage = "Only allow 2 letters. Please enter state abbreviations.", MinimumLength = 2)]
-        [Display(Name = "State:")]
-        public String State { get; set; }
+        //Address
+        [Required(ErrorMessage = "Address cannot be blank.")]
+        [Display(Name = "Address:")]
+        public String Address { get; set; }
 
         //Zipcode 
         [Required(ErrorMessage = "Zipcode cannot be blank.")]
         [StringLength(5, ErrorMessage = "Zipcode must be 5 digits.", MinimumLength = 5)]
         [RegularExpression("[0-9]", ErrorMessage = "Zipcode must be a 5-digit number.")]
-        [Display(Name = "Zip")]
-        public Int32 Zip { get; set; }
+        [Display(Name = "Zip Code:")]
+        public Int32 ZipCode { get; set; }
 
         //Register Password
         [Required]

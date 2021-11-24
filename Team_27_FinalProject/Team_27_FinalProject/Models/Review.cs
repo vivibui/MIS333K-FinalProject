@@ -38,8 +38,8 @@ namespace Team_27_FinalProject.Models
             public String DisputeReason { get; set; }
 
 
+            //--------------------NAVIGATIONAL PROPERTIES
             public AppUser AppUser { get; set; }
-
             public Property Property { get; set; }
 
         }
