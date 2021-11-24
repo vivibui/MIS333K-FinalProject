@@ -13,7 +13,7 @@ namespace Team_27_FinalProject.Models
 
         [Required]
         [Display(Name = "Category")]
-        public String Name { get; set; }
+        public String CategoryName { get; set; }
 
 
         //--------------------NAVIGATIONAL PROPERTIES

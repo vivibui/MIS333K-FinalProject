@@ -19,9 +19,9 @@ namespace Team_27_FinalProject.Seeding
             List<Review> Reviews = new List<Review>();
             Review r1 = new Review()
             {
-                Address = "588 Alan Rest, Port Stephanieville, MS 63590"
-                Customer = "father.Ingram@aool.com"
-                Rating = 4
+                Address = "588 Alan Rest, Port Stephanieville, MS 63590",
+                Customer = "father.Ingram@aool.com",
+                Rating = 4,
                 Content = " "
             };
             Reviews.Add(r1);
