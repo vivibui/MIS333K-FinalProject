@@ -7,10 +7,9 @@ https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_
 #### 1. Tuesday 11/23 @5PM: 
 - Finish Identity, Models, and Seeding files
 - Debug 
-- Start migrations and seeding
-- Start editing Controllers and Views 
-#### 2. TBA: 
-- Review Controllers and Views 
+- Start migrations and seeding 
+#### 2. Saturday 11/27 @8PM: 
+- Search Function, Controllers, and Views
 - Debug 
 #### 3. TBA: 
 - [Continue] Review Controllers and Views 
