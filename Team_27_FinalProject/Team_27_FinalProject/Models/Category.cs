@@ -11,7 +11,7 @@ namespace Team_27_FinalProject.Models
     {
         public Int32 CategoryID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Category Name cannot be blank"]
         [Display(Name = "Category")]
         public String CategoryName { get; set; }
 

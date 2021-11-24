@@ -64,10 +64,8 @@ namespace Team_27_FinalProject.Utilities
                 dbUser.LastName = aum.User.LastName;
                 dbUser.MI = aum.User.MI;
                 dbUser.Birthday = aum.User.Birthday;
-                dbUser.Street = aum.User.Street;
-                dbUser.City = aum.User.City;
-                dbUser.State = aum.User.State;
-                dbUser.Zip = aum.User.Zip;
+                dbUser.Address = aum.User.Address;
+                dbUser.ZipCode = aum.User.ZipCode;
 
                 //update the database
                 _context.Update(dbUser);

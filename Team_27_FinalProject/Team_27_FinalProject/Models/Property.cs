@@ -107,6 +107,7 @@ namespace Team_27_FinalProject.Models
         public List<Review> Reviews { get; set; }
         public List<Reservation> Reservations { get; set; }
         public Category Category { get; set; }
+        public AppUser AppUser { get; set; }
 
 
         //--------------------PREVENT NULL PREFERENCE

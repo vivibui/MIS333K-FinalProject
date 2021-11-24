@@ -1,0 +1,83 @@
+@model IEnumerable<Team_27_FinalProject.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckinDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckoutDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfGuests)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CleaningPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekdayFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekendFee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StayPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDiscounted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckinDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckoutDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfGuests)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CleaningPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekdayFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeekendFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StayPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDiscounted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReservationID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReservationID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReservationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
