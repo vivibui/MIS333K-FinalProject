@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {}
+    "/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {}
   },
   "projects": {
-    "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {
+    "/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
+        "projectUniqueName": "/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
         "projectName": "Team_27_FinalProject",
-        "projectPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
-        "packagesPath": "/Users/vivianbui/.nuget/packages/",
-        "outputPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/",
+        "projectPath": "/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/Team_27_FinalProject.csproj",
+        "packagesPath": "/Users/Andres/.nuget/packages/",
+        "outputPath": "/Users/Andres/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/vivianbui/.config/NuGet/NuGet.Config"
+          "/Users/Andres/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -75,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.403/RuntimeIdentifierGraph.json"
         }
       }
     }
