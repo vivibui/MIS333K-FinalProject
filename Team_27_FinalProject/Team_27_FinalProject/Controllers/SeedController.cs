@@ -62,7 +62,7 @@ namespace Team_27_FinalProject.Controllers
                 //call the SeedAllGenres method from your Seeding folder
                 //you will need to pass in the instance of AppDbContext
                 //that you set in the constructor
-                SeedCategories.SeedAllCategories(_context);
+                Seeding.SeedCategories.SeedAllCategories(_context);
             }
             catch (Exception ex)
             {
@@ -85,8 +85,6 @@ namespace Team_27_FinalProject.Controllers
                         errorList.Add(ex.InnerException.InnerException.Message);
                     }
                 }
-
-
                 //return the user to the error view
                 return View("Error", errorList);
             }
@@ -94,6 +92,83 @@ namespace Team_27_FinalProject.Controllers
             //everything is okay - send user to confirmation page
             return View("Confirm");
         }
+
+        public IActionResult SeedAllReviews()
+        {
+            try
+            {
+                //call the SeedAllGenres method from your Seeding folder
+                //you will need to pass in the instance of AppDbContext
+                //that you set in the constructor
+                Seeding.SeedReviews.SeedAllReviews(_context);
+            }
+            catch (Exception ex)
+            {
+                //add the error messages to a list of strings
+                List<String> errorList = new List<String>();
+
+                errorList.Add("There was a problem adding this review");
+
+                //Add the outer message
+                errorList.Add(ex.Message);
+
+                //Add the message from the inner exception, if there is one
+                if (ex.InnerException != null)
+                {
+                    errorList.Add(ex.InnerException.Message);
+
+                    //Add additional inner exception messages, if there are any
+                    if (ex.InnerException.InnerException != null)
+                    {
+                        errorList.Add(ex.InnerException.InnerException.Message);
+                    }
+                }
+                //return the user to the error view
+                return View("Error", errorList);
+            }
+
+            //everything is okay - send user to confirmation page
+            return View("Confirm");
+        }
+
+        public IActionResult SeedAllProperties()
+        {
+            try
+            {
+                //call the SeedAllGenres method from your Seeding folder
+                //you will need to pass in the instance of AppDbContext
+                //that you set in the constructor
+                Seeding.SeedProperties.SeedAllProperties(_context);
+            }
+            catch (Exception ex)
+            {
+                //add the error messages to a list of strings
+                List<String> errorList = new List<String>();
+
+                errorList.Add("There was a problem adding this property");
+
+                //Add the outer message
+                errorList.Add(ex.Message);
+
+                //Add the message from the inner exception, if there is one
+                if (ex.InnerException != null)
+                {
+                    errorList.Add(ex.InnerException.Message);
+
+                    //Add additional inner exception messages, if there are any
+                    if (ex.InnerException.InnerException != null)
+                    {
+                        errorList.Add(ex.InnerException.InnerException.Message);
+                    }
+                }
+                //return the user to the error view
+                return View("Error", errorList);
+            }
+
+            //everything is okay - send user to confirmation page
+            return View("Confirm");
+        }
+
 
         public async Task<IActionResult> SeedPeople()
         {

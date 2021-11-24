@@ -1,86 +1,250 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Identity;
-using Team_27_FinalProject.Models;
-using Team_27_FinalProject.Utilities;
+﻿using Team_27_FinalProject.Models;
 using Team_27_FinalProject.DAL;
-using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
+using System.Linq;
+
 
 namespace Team_27_FinalProject.Seeding
 {
-    public static class SeedReviews
-    {
-        public static void SeedReviews(AppDbContext db)
-        {
-            //Create a counter and a flag so we will know which record is causing problems
-            intReviewID = reviewToAdd.ReviewID;
-            Reviews dbReview = db.Reviews.FirstOrDefault(b => b.ReviewID == reviewToAdd.ReviewID);
+	public static class SeedReviews
+	{
+		public static void SeedAllReviews(AppDbContext db)
+		{
+			if (db.Reviews.Count() == 21)
+			{
+				throw new NotSupportedException("The database already contains all 21 reviews!");
+			}
 
-            List<Review> Reviews = new List<Review>();
-            Review r1 = new Review()
-            {
-                Address = "588 Alan Rest, Port Stephanieville, MS 63590",
-                Customer = "father.Ingram@aool.com",
-                Rating = 4,
-                Content = " "
-            };
-            Reviews.Add(r1);
+			Int32 intReviewsAdded = 0;
+			String strReviewStreet = "Begin"; //helps to keep track of error on books
+			List<Review> Reviews = new List<Review>();
 
-            try  //attempt to add or update the book
-            {
-                //loop through each of the books in the list
-                foreach (Review ReviewToAdd in Reviews)
-                {
-                    //set the flag to help with debugging
-                    strReviewAddress = reviewToAdd.Address;
+			try
+			{
+				Review r1 = new Review()
+				{
+					Rating = 4,
+					Content = " "
+				};
+				r1.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest, Port Stephanieville, MS 63590");
+				r1.AppUser = db.Users.FirstOrDefault(g => g.Email == "father.Ingram@aool.com");
+				Reviews.Add(r1);
 
-                    //look to see if the book is in the database - this assumes that no
-                    //two books have the same title
-                    Review dbReview = db.Reviews.FirstOrDefault(p => p.Address == reviewToAdd.Address);
+				Review r2 = new Review()
+				{
+					Rating = 3,
+					Content = "It was meh, ya know? It was really close to the coast, but the beaches were kinda trashed. The apartment was nice, but there wasn't an elevator."
+				};
+				r2.Property = db.Properties.FirstOrDefault(g => g.Street == "1168 Gary Fords Apt. 308, Port Trevor, RI 96954");
+				r2.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
+				Reviews.Add(r2);
 
-                    //if the dbBook is null, this title is not in the database
-                    if (dbReview == null)
-                    {
-                        //add the book to the database and save changes
-                        db.Reviews.Add(ReviewToAdd);
-                        db.SaveChanges();
-                        //update the counter to help with debugging
-                        intReviewsAdded += 1;
-                    }
-                    else //dbBook is not null - this title *is* in the database
-                    {
-                        //update all of the book's properties
-                        dbReview.Address = ReviewToAdd.Address;
-                        dbReview.Customer = ReviewToAdd.Customer;
-                        dbReview.Rating = ReviewToAdd.Rating;
-                        dbReview.Content = ReviewToAdd.Content;
+				Review r3 = new Review()
+				{
+					Rating = 4,
+					Content = ""
+				};
+				r3.Property = db.Properties.FirstOrDefault(g => g.Street == "03541 Ryan Islands Apt. 562, East Michaelfort, HI 90576");
+				r3.AppUser = db.Users.FirstOrDefault(g => g.Email == "father.Ingram@aool.com");
+				Reviews.Add(r3);
+
+				Review r4 = new Review()
+				{
+					Rating = 2,
+					Content = " "
+				};
+				r4.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest, Port Stephanieville, MS 63590");
+				r4.AppUser = db.Users.FirstOrDefault(g => g.Email == "tuck33@puppy.com");
+				Reviews.Add(r4);
+
+				Review r5 = new Review()
+				{
+					Rating = 3,
+					Content = "Nebraska was... interesting"
+				};
+				r5.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r5.AppUser = db.Users.FirstOrDefault(g => g.Email == "father.Ingram@aool.com");
+				Reviews.Add(r5);
+
+				Review r6 = new Review()
+				{
+					Rating = 1,
+					Content = "There was corn EVERYWHERE! I looked left and BAM, CORN. Looked right, BAM, CORN"
+				};
+				r6.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r6.AppUser = db.Users.FirstOrDefault(g => g.Email == "tfreeley@puppy.com");
+				Reviews.Add(r6);
+
+				Review r7 = new Review()
+				{
+					Rating = 1,
+					Content = "Worst. Stay. Ever. Never using BevoBnB again"
+				};
+				r7.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r7.AppUser = db.Users.FirstOrDefault(g => g.Email == "ra@aoo.com");
+				Reviews.Add(r7);
+
+				Review r8 = new Review()
+				{
+					Rating = 5,
+					Content = " "
+				};
+				r8.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r8.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
+				Reviews.Add(r8);
+
+				Review r9 = new Review()
+				{
+					Rating = 2,
+					Content = " "
+				};
+				r9.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853, Lake Patrickstad, WY 67652");
+				r9.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
+				Reviews.Add(r9);
+
+				Review r10 = new Review()
+				{
+					Rating = 1,
+					Content = "It was SO hard to book this place. Who coded this site anyway? ;)"
+				};
+				r10.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r10.AppUser = db.Users.FirstOrDefault(g => g.Email == "tfreeley@puppy.com");
+				Reviews.Add(r10);
+
+				Review r11 = new Review()
+				{
+					Rating = 4,
+					Content = " "
+				};
+				r11.Property = db.Properties.FirstOrDefault(g => g.Street == "71664 Kim Throughway, Chelsealand, AK 65056");
+				r11.AppUser = db.Users.FirstOrDefault(g => g.Email == "tuck33@puppy.com");
+				Reviews.Add(r11);
+
+				Review r12 = new Review()
+				{
+					Rating = 5,
+					Content = "This place rocked!"
+				};
+				r12.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r12.AppUser = db.Users.FirstOrDefault(g => g.Email == "ra@aoo.com");
+				Reviews.Add(r12);
+
+				Review r13 = new Review()
+				{
+					Rating = 4,
+					Content = " "
+				};
+				r13.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r13.AppUser = db.Users.FirstOrDefault(g => g.Email == "fd@puppy.com");
+				Reviews.Add(r13);
+
+				Review r14 = new Review()
+				{
+					Rating = 4,
+					Content = " "
+				};
+				r14.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853, Lake Patrickstad, WY 67652");
+				r14.AppUser = db.Users.FirstOrDefault(g => g.Email == "lamemartin.Martin@aool.com");
+				Reviews.Add(r14);
+
+				Review r15 = new Review()
+				{
+					Rating = 1,
+					Content = "There were 1...5...22 roaches? I lost count."
+				};
+				r15.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r15.AppUser = db.Users.FirstOrDefault(g => g.Email == "fd@puppy.com");
+				Reviews.Add(r15);
+
+				Review r16 = new Review()
+				{
+					Rating = 1,
+					Content = " "
+				};
+				r16.Property = db.Properties.FirstOrDefault(g => g.Street == "1168 Gary Fords Apt. 308, Port Trevor, RI 96954");
+				r16.AppUser = db.Users.FirstOrDefault(g => g.Email == "sheff44@puppy.com");
+				Reviews.Add(r16);
+
+				Review r17 = new Review()
+				{
+					Rating = 4,
+					Content = "I LOVED the place! Had a nice view of the mountains"
+				};
+				r17.Property = db.Properties.FirstOrDefault(g => g.Street == "1220 Heidi Rue Apt. 998, West Haleyburgh, CO 05222");
+				r17.AppUser = db.Users.FirstOrDefault(g => g.Email == "fd@puppy.com");
+				Reviews.Add(r17);
+
+				Review r18 = new Review()
+				{
+					Rating = 5,
+					Content = " "
+				};
+				r18.Property = db.Properties.FirstOrDefault(g => g.Street == "1220 Heidi Rue Apt. 998, West Haleyburgh, CO 05222");
+				r18.AppUser = db.Users.FirstOrDefault(g => g.Email == "tuck33@puppy.com");
+				Reviews.Add(r18);
+
+				Review r19 = new Review()
+				{
+					Rating = 5,
+					Content = "My stay was amazing! Saved my marriage"
+				};
+				r19.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest, Port Stephanieville, MS 63590");
+				r19.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
+				Reviews.Add(r19);
+
+				Review r20 = new Review()
+				{
+					Rating = 2,
+					Content = " "
+				};
+				r20.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853, Lake Patrickstad, WY 67652");
+				r20.AppUser = db.Users.FirstOrDefault(g => g.Email == "sheff44@puppy.com");
+				Reviews.Add(r20);
+
+				Review r21 = new Review()
+				{
+					Rating = 2,
+					Content = "My wife's attitude was the only thing rougher than the sand at the nearby beaches"
+				};
+				r21.Property = db.Properties.FirstOrDefault(g => g.Street == "03541 Ryan Islands Apt. 562, East Michaelfort, HI 90576");
+				r21.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
+				Reviews.Add(r21);
 
 
-                        //since we found the correct genre object in a previous step,
-                        //this update is easy - both dbBook and bookToAdd have a Genre 
-                        //object for this property
-                        //dbBook.Genre = bookToAdd.Genre;
+				try
+				{
+					foreach (Review reviewToAdd in Reviews)
+					{
+                        int intReviewID = reviewToAdd.ReviewID;
+                        Review dbReview = db.Reviews.FirstOrDefault(b => b.ReviewID == reviewToAdd.ReviewID);
+						if (dbReview == null) //this title doesn't exist
+						{
+							db.Reviews.Add(reviewToAdd);
+							db.SaveChanges();
+							intReviewsAdded += 1;
+						}
+						else //property exists - update values
+						{
 
-                        //update the database and save the changes
-                        db.Update(dbReview);
-                        db.SaveChanges();
-
-                        //update the counter to help with debugging
-                        intReviewsAdded += 1;
-                    } //this is the end of the else
-                } //this is the end of the foreach loop for the books
-            }//this is the end of the try block
-
-            catch (Exception ex)//something went wrong with adding or updating
-            {
-                //Build a messsage using the flags we created
-                String msg = "  Repositories added:" + intReviewsAdded + "; Error on " + strReviewStreet;
-
-                //throw the exception with the new message
-                throw new InvalidOperationException(ex.Message + msg);
-            }
-        }
-
-    }
-
+							dbReview.Rating = reviewToAdd.Rating;
+							dbReview.Content = reviewToAdd.Content;
+							db.Update(dbReview);
+							db.SaveChanges();
+							intReviewsAdded += 1;
+						}
+					}
+				}
+				catch (Exception ex)
+				{
+					String msg = "  Repositories added:" + intReviewsAdded + "; Error on " + strReviewStreet;
+					throw new InvalidOperationException(ex.Message + msg);
+				}
+			}
+			catch (Exception e)
+			{
+				throw new InvalidOperationException(e.Message);
+			}
+		}
+	}
 }

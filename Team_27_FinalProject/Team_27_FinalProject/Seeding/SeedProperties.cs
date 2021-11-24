@@ -38,6 +38,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p1.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p1.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p1);
 
 				Property p2 = new Property()
@@ -56,6 +57,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p2.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p2.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p2);
 
 				Property p3 = new Property()
@@ -74,6 +76,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p3.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p3.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p3);
 
 				Property p4 = new Property()
@@ -92,6 +95,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p4.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p4.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p4);
 
 				Property p5 = new Property()
@@ -110,6 +114,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p5.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p5.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p5);
 
 				Property p6 = new Property()
@@ -128,6 +133,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p6.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p6.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p6);
 
 				Property p7 = new Property()
@@ -146,6 +152,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p7.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p7.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p7);
 
 				Property p8 = new Property()
@@ -164,6 +171,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p8.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p8.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p8);
 
 				Property p9 = new Property()
@@ -182,6 +190,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p9.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p9.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p9);
 
 				Property p10 = new Property()
@@ -200,6 +209,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p10.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p10.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p10);
 
 				Property p11 = new Property()
@@ -218,6 +228,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p11.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p11.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p11);
 
 				Property p12 = new Property()
@@ -236,6 +247,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p12.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p12.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p12);
 
 				Property p13 = new Property()
@@ -254,6 +266,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p13.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p13.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p13);
 
 				Property p14 = new Property()
@@ -272,6 +285,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p14.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p14.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p14);
 
 				Property p15 = new Property()
@@ -290,6 +304,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p15.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p15.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p15);
 
 				Property p16 = new Property()
@@ -308,6 +323,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p16.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p16.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p16);
 
 				Property p17 = new Property()
@@ -326,6 +342,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p17.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p17.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p17);
 
 				Property p18 = new Property()
@@ -344,6 +361,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p18.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p18.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p18);
 
 				Property p19 = new Property()
@@ -362,6 +380,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p19.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p19.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p19);
 
 				Property p20 = new Property()
@@ -380,6 +399,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p20.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p20.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p20);
 
 				Property p21 = new Property()
@@ -398,6 +418,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p21.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p21.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p21);
 
 				Property p22 = new Property()
@@ -416,6 +437,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p22.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p22.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p22);
 
 				Property p23 = new Property()
@@ -434,6 +456,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p23.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p23.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p23);
 
 				Property p24 = new Property()
@@ -452,6 +475,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p24.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p24.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p24);
 
 				Property p25 = new Property()
@@ -470,6 +494,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p25.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p25.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p25);
 
 				Property p26 = new Property()
@@ -488,6 +513,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p26.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p26.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p26);
 
 				Property p27 = new Property()
@@ -506,6 +532,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p27.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p27.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p27);
 
 				Property p28 = new Property()
@@ -524,6 +551,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p28.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p28.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p28);
 
 				Property p29 = new Property()
@@ -542,6 +570,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p29.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p29.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p29);
 
 				Property p30 = new Property()
@@ -560,6 +589,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p30.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p30.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p30);
 
 				Property p31 = new Property()
@@ -578,6 +608,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p31.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p31.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p31);
 
 				Property p32 = new Property()
@@ -596,6 +627,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p32.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p32.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p32);
 
 				Property p33 = new Property()
@@ -614,6 +646,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p33.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p33.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p33);
 
 				Property p34 = new Property()
@@ -632,6 +665,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p34.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p34.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p34);
 
 				Property p35 = new Property()
@@ -650,6 +684,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p35.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p35.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p35);
 
 				Property p36 = new Property()
@@ -668,6 +703,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p36.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p36.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p36);
 
 				Property p37 = new Property()
@@ -686,6 +722,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p37.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p37.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p37);
 
 				Property p38 = new Property()
@@ -704,6 +741,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p38.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p38.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p38);
 
 				Property p39 = new Property()
@@ -722,6 +760,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p39.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p39.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p39);
 
 				Property p40 = new Property()
@@ -740,6 +779,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p40.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p40.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p40);
 
 				Property p41 = new Property()
@@ -758,6 +798,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p41.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p41.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p41);
 
 				Property p42 = new Property()
@@ -776,6 +817,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p42.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p42.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p42);
 
 				Property p43 = new Property()
@@ -794,6 +836,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p43.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p43.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p43);
 
 				Property p44 = new Property()
@@ -812,6 +855,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p44.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p44.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p44);
 
 				Property p45 = new Property()
@@ -830,6 +874,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p45.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p45.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p45);
 
 				Property p46 = new Property()
@@ -848,6 +893,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p46.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p46.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p46);
 
 				Property p47 = new Property()
@@ -866,6 +912,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p47.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p47.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p47);
 
 				Property p48 = new Property()
@@ -884,6 +931,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p48.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p48.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p48);
 
 				Property p49 = new Property()
@@ -902,6 +950,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p49.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p49.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p49);
 
 				Property p50 = new Property()
@@ -920,6 +969,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p50.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p50.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p50);
 
 				Property p51 = new Property()
@@ -938,6 +988,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p51.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p51.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p51);
 
 				Property p52 = new Property()
@@ -956,6 +1007,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p52.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p52.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p52);
 
 				Property p53 = new Property()
@@ -974,6 +1026,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p53.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p53.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p53);
 
 				Property p54 = new Property()
@@ -992,6 +1045,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p54.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p54.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p54);
 
 				Property p55 = new Property()
@@ -1010,6 +1064,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p55.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p55.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p55);
 
 				Property p56 = new Property()
@@ -1028,6 +1083,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p56.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p56.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p56);
 
 				Property p57 = new Property()
@@ -1046,6 +1102,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p57.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p57.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p57);
 
 				Property p58 = new Property()
@@ -1064,6 +1121,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p58.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p58.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p58);
 
 				Property p59 = new Property()
@@ -1082,6 +1140,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p59.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p59.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p59);
 
 				Property p60 = new Property()
@@ -1100,6 +1159,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p60.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p60.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p60);
 
 				Property p61 = new Property()
@@ -1118,6 +1178,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p61.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p61.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p61);
 
 				Property p62 = new Property()
@@ -1136,6 +1197,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p62.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p62.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p62);
 
 				Property p63 = new Property()
@@ -1154,6 +1216,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p63.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p63.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p63);
 
 				Property p64 = new Property()
@@ -1172,6 +1235,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p64.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p64.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p64);
 
 				Property p65 = new Property()
@@ -1190,6 +1254,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p65.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p65.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p65);
 
 				Property p66 = new Property()
@@ -1208,6 +1273,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p66.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p66.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p66);
 
 				Property p67 = new Property()
@@ -1226,6 +1292,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p67.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p67.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p67);
 
 				Property p68 = new Property()
@@ -1244,6 +1311,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p68.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p68.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p68);
 
 				Property p69 = new Property()
@@ -1262,6 +1330,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p69.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p69.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p69);
 
 				Property p70 = new Property()
@@ -1280,6 +1349,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p70.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p70.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p70);
 
 				Property p71 = new Property()
@@ -1298,6 +1368,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p71.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p71.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p71);
 
 				Property p72 = new Property()
@@ -1316,6 +1387,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p72.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p72.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p72);
 
 				Property p73 = new Property()
@@ -1334,6 +1406,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p73.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p73.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p73);
 
 				Property p74 = new Property()
@@ -1352,6 +1425,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p74.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p74.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p74);
 
 				Property p75 = new Property()
@@ -1370,6 +1444,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p75.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p75.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p75);
 
 				Property p76 = new Property()
@@ -1388,6 +1463,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p76.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p76.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p76);
 
 				Property p77 = new Property()
@@ -1406,6 +1482,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p77.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p77.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p77);
 
 				Property p78 = new Property()
@@ -1424,6 +1501,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p78.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p78.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p78);
 
 				Property p79 = new Property()
@@ -1442,6 +1520,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p79.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p79.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p79);
 
 				Property p80 = new Property()
@@ -1460,6 +1539,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p80.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p80.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p80);
 
 				Property p81 = new Property()
@@ -1478,6 +1558,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p81.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p81.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p81);
 
 				Property p82 = new Property()
@@ -1496,6 +1577,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p82.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p82.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p82);
 
 				Property p83 = new Property()
@@ -1514,6 +1596,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p83.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p83.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p83);
 
 				Property p84 = new Property()
@@ -1532,6 +1615,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p84.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p84.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p84);
 
 				Property p85 = new Property()
@@ -1550,6 +1634,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p85.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p85.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p85);
 
 				Property p86 = new Property()
@@ -1568,6 +1653,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p86.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p86.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p86);
 
 				Property p87 = new Property()
@@ -1586,6 +1672,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p87.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p87.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p87);
 
 				Property p88 = new Property()
@@ -1604,6 +1691,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p88.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p88.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p88);
 
 				Property p89 = new Property()
@@ -1622,6 +1710,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p89.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p89.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p89);
 
 				Property p90 = new Property()
@@ -1640,6 +1729,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p90.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p90.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p90);
 
 				Property p91 = new Property()
@@ -1658,6 +1748,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p91.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p91.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p91);
 
 				Property p92 = new Property()
@@ -1676,6 +1767,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p92.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p92.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p92);
 
 				Property p93 = new Property()
@@ -1694,6 +1786,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p93.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p93.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p93);
 
 				Property p94 = new Property()
@@ -1712,6 +1805,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p94.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p94.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p94);
 
 				Property p95 = new Property()
@@ -1730,6 +1824,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p95.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p95.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p95);
 
 				Property p96 = new Property()
@@ -1748,6 +1843,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p96.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p96.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p96);
 
 				Property p97 = new Property()
@@ -1766,6 +1862,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p97.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p97.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p97);
 
 				Property p98 = new Property()
@@ -1784,6 +1881,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p98.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p98.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p98);
 
 				Property p99 = new Property()
@@ -1802,6 +1900,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p99.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p99.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p99);
 
 				Property p100 = new Property()
@@ -1820,6 +1919,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p100.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p100.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p100);
 
 				Property p101 = new Property()
@@ -1838,6 +1938,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p101.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p101.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p101);
 
 				Property p102 = new Property()
@@ -1856,6 +1957,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p102.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p102.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p102);
 
 				Property p103 = new Property()
@@ -1874,6 +1976,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p103.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p103.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p103);
 
 				Property p104 = new Property()
@@ -1892,6 +1995,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 5
 				};
 				p104.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p104.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p104);
 
 				Property p105 = new Property()
@@ -1910,6 +2014,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p105.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p105.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p105);
 
 				Property p106 = new Property()
@@ -1928,6 +2033,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p106.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p106.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p106);
 
 				Property p107 = new Property()
@@ -1946,6 +2052,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p107.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p107.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p107);
 
 				Property p108 = new Property()
@@ -1964,6 +2071,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p108.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p108.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p108);
 
 				Property p109 = new Property()
@@ -1982,6 +2090,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p109.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p109.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p109);
 
 				Property p110 = new Property()
@@ -2000,6 +2109,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p110.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p110.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p110);
 
 				Property p111 = new Property()
@@ -2018,6 +2128,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p111.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p111.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p111);
 
 				Property p112 = new Property()
@@ -2036,6 +2147,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p112.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p112.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p112);
 
 				Property p113 = new Property()
@@ -2054,6 +2166,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p113.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p113.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p113);
 
 				Property p114 = new Property()
@@ -2072,6 +2185,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p114.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p114.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p114);
 
 				Property p115 = new Property()
@@ -2090,6 +2204,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p115.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p115.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p115);
 
 				Property p116 = new Property()
@@ -2108,6 +2223,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p116.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p116.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p116);
 
 				Property p117 = new Property()
@@ -2126,6 +2242,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p117.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p117.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p117);
 
 				Property p118 = new Property()
@@ -2144,6 +2261,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p118.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p118.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p118);
 
 				Property p119 = new Property()
@@ -2162,6 +2280,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p119.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p119.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p119);
 
 				Property p120 = new Property()
@@ -2180,6 +2299,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p120.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p120.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p120);
 
 				Property p121 = new Property()
@@ -2198,6 +2318,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p121.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p121.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p121);
 
 				Property p122 = new Property()
@@ -2216,6 +2337,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p122.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p122.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p122);
 
 				Property p123 = new Property()
@@ -2234,6 +2356,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p123.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p123.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p123);
 
 				Property p124 = new Property()
@@ -2252,6 +2375,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p124.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p124.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p124);
 
 				Property p125 = new Property()
@@ -2270,6 +2394,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p125.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p125.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p125);
 
 				Property p126 = new Property()
@@ -2288,6 +2413,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p126.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p126.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p126);
 
 				Property p127 = new Property()
@@ -2306,6 +2432,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p127.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p127.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p127);
 
 				Property p128 = new Property()
@@ -2324,6 +2451,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p128.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p128.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p128);
 
 				Property p129 = new Property()
@@ -2342,6 +2470,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p129.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p129.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p129);
 
 				Property p130 = new Property()
@@ -2360,6 +2489,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p130.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p130.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p130);
 
 				Property p131 = new Property()
@@ -2378,6 +2508,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p131.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p131.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p131);
 
 				Property p132 = new Property()
@@ -2396,6 +2527,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p132.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p132.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p132);
 
 				Property p133 = new Property()
@@ -2414,6 +2546,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p133.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p133.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p133);
 
 				Property p134 = new Property()
@@ -2432,6 +2565,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p134.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p134.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p134);
 
 				Property p135 = new Property()
@@ -2450,6 +2584,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p135.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p135.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p135);
 
 				Property p136 = new Property()
@@ -2468,6 +2603,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p136.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p136.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p136);
 
 				Property p137 = new Property()
@@ -2486,6 +2622,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p137.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p137.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p137);
 
 				Property p138 = new Property()
@@ -2504,6 +2641,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p138.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p138.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p138);
 
 				Property p139 = new Property()
@@ -2522,6 +2660,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p139.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p139.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p139);
 
 				Property p140 = new Property()
@@ -2540,6 +2679,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p140.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Hotel");
+				p140.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p140);
 
 				Property p141 = new Property()
@@ -2558,6 +2698,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p141.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p141.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p141);
 
 				Property p142 = new Property()
@@ -2576,6 +2717,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p142.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p142.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p142);
 
 				Property p143 = new Property()
@@ -2594,6 +2736,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p143.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p143.AppUser = db.Users.FirstOrDefault(g => g.Email == "morales@aol.com");
 				Properties.Add(p143);
 
 				Property p144 = new Property()
@@ -2612,6 +2755,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 12
 				};
 				p144.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p144.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p144);
 
 				Property p145 = new Property()
@@ -2630,6 +2774,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 8
 				};
 				p145.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p145.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p145);
 
 				Property p146 = new Property()
@@ -2648,6 +2793,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p146.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p146.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p146);
 
 				Property p147 = new Property()
@@ -2666,6 +2812,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p147.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p147.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p147);
 
 				Property p148 = new Property()
@@ -2684,6 +2831,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p148.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p148.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p148);
 
 				Property p149 = new Property()
@@ -2702,6 +2850,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p149.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p149.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p149);
 
 				Property p150 = new Property()
@@ -2720,6 +2869,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p150.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p150.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p150);
 
 				Property p151 = new Property()
@@ -2738,6 +2888,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p151.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p151.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p151);
 
 				Property p152 = new Property()
@@ -2756,6 +2907,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p152.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p152.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p152);
 
 				Property p153 = new Property()
@@ -2774,6 +2926,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p153.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p153.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p153);
 
 				Property p154 = new Property()
@@ -2792,6 +2945,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p154.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p154.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p154);
 
 				Property p155 = new Property()
@@ -2810,6 +2964,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 2
 				};
 				p155.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p155.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p155);
 
 				Property p156 = new Property()
@@ -2828,6 +2983,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 13
 				};
 				p156.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p156.AppUser = db.Users.FirstOrDefault(g => g.Email == "rankin@yahoo.com");
 				Properties.Add(p156);
 
 				Property p157 = new Property()
@@ -2846,6 +3002,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p157.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p157.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p157);
 
 				Property p158 = new Property()
@@ -2864,6 +3021,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p158.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p158.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p158);
 
 				Property p159 = new Property()
@@ -2882,6 +3040,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p159.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p159.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p159);
 
 				Property p160 = new Property()
@@ -2900,6 +3059,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p160.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p160.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p160);
 
 				Property p161 = new Property()
@@ -2918,6 +3078,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p161.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p161.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p161);
 
 				Property p162 = new Property()
@@ -2936,6 +3097,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p162.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p162.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p162);
 
 				Property p163 = new Property()
@@ -2954,6 +3116,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p163.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p163.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p163);
 
 				Property p164 = new Property()
@@ -2972,6 +3135,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p164.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p164.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p164);
 
 				Property p165 = new Property()
@@ -2990,6 +3154,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p165.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p165.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p165);
 
 				Property p166 = new Property()
@@ -3008,6 +3173,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p166.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p166.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p166);
 
 				Property p167 = new Property()
@@ -3026,6 +3192,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p167.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p167.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p167);
 
 				Property p168 = new Property()
@@ -3044,6 +3211,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 14
 				};
 				p168.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p168.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p168);
 
 				Property p169 = new Property()
@@ -3062,6 +3230,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p169.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p169.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p169);
 
 				Property p170 = new Property()
@@ -3080,6 +3249,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p170.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p170.AppUser = db.Users.FirstOrDefault(g => g.Email == "rice@yahoo.com");
 				Properties.Add(p170);
 
 				Property p171 = new Property()
@@ -3098,6 +3268,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p171.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p171.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p171);
 
 				Property p172 = new Property()
@@ -3116,6 +3287,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 11
 				};
 				p172.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Apartment");
+				p172.AppUser = db.Users.FirstOrDefault(g => g.Email == "ingram@gmail.com");
 				Properties.Add(p172);
 
 				Property p173 = new Property()
@@ -3134,6 +3306,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p173.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p173.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p173);
 
 				Property p174 = new Property()
@@ -3152,6 +3325,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 10
 				};
 				p174.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Condo");
+				p174.AppUser = db.Users.FirstOrDefault(g => g.Email == "jacobs@yahoo.com");
 				Properties.Add(p174);
 
 				Property p175 = new Property()
@@ -3170,6 +3344,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p175.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p175.AppUser = db.Users.FirstOrDefault(g => g.Email == "gonzalez@aol.com");
 				Properties.Add(p175);
 
 				Property p176 = new Property()
@@ -3188,6 +3363,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 9
 				};
 				p176.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p176.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p176);
 
 				Property p177 = new Property()
@@ -3206,6 +3382,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p177.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p177.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p177);
 
 				Property p178 = new Property()
@@ -3224,6 +3401,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 7
 				};
 				p178.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p178.AppUser = db.Users.FirstOrDefault(g => g.Email == "martinez@aol.com");
 				Properties.Add(p178);
 
 				Property p179 = new Property()
@@ -3242,6 +3420,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p179.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p179.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p179);
 
 				Property p180 = new Property()
@@ -3260,6 +3439,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 3
 				};
 				p180.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p180.AppUser = db.Users.FirstOrDefault(g => g.Email == "loter@yahoo.com");
 				Properties.Add(p180);
 
 				Property p181 = new Property()
@@ -3278,6 +3458,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 6
 				};
 				p181.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "House");
+				p181.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p181);
 
 				Property p182 = new Property()
@@ -3296,6 +3477,7 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 4
 				};
 				p182.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p182.AppUser = db.Users.FirstOrDefault(g => g.Email == "chung@yahoo.com");
 				Properties.Add(p182);
 
 				Property p183 = new Property()
@@ -3314,7033 +3496,8 @@ namespace Team_27_FinalProject.Seeding
 					GuestsAllowed = 1
 				};
 				p183.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "Cabin");
+				p183.AppUser = db.Users.FirstOrDefault(g => g.Email == "tanner@utexas.edu");
 				Properties.Add(p183);
-
-				Property p184 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p184.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p184);
-
-				Property p185 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p185.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p185);
-
-				Property p186 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p186.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p186);
-
-				Property p187 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p187.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p187);
-
-				Property p188 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p188.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p188);
-
-				Property p189 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p189.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p189);
-
-				Property p190 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p190.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p190);
-
-				Property p191 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p191.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p191);
-
-				Property p192 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p192.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p192);
-
-				Property p193 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p193.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p193);
-
-				Property p194 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p194.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p194);
-
-				Property p195 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p195.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p195);
-
-				Property p196 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p196.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p196);
-
-				Property p197 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p197.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p197);
-
-				Property p198 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p198.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p198);
-
-				Property p199 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p199.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p199);
-
-				Property p200 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p200.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p200);
-
-				Property p201 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p201.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p201);
-
-				Property p202 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p202.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p202);
-
-				Property p203 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p203.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p203);
-
-				Property p204 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p204.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p204);
-
-
-				p210.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p210);
-
-				Properties.Add(p238);
-
-				Property p239 = n
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p247.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p247);
-
-				Property p248 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-				};
-				p304.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p304);
-
-				Property p305 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p305.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p305);
-
-				Property p306 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p306.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p306);
-
-				Property p307 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p307.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p307);
-
-				Property p308 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p319.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p319);
-
-				Property p320 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p320.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p320);
-
-				Property p321 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p321.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p321);
-
-				Property p322 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p322.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p322);
-
-				Property p323 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-				Property p338 = new Property()
-				{
-					Zip = ,
-					State = "",
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					ParkingFree = ,
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p539.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p539);
-
-				Property p540 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p540.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-		
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p642.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p642);
-
-				Property p643 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p643.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p643);
-
-				Property p644 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p644.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p644);
-
-				Property p645 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p645.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p645);
-
-				Property p646 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p646.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p646);
-
-				Property p647 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p647.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p647);
-
-				Property p648 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p648.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p648);
-
-				Property p649 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p649.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p649);
-
-				Property p650 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p650.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p650);
-
-				Property p651 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p651.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p651);
-
-				Property p652 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p652.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p652);
-
-				Property p653 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p653.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p653);
-
-				Property p654 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p654.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p654);
-
-				Property p655 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p655.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p655);
-
-				Property p656 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p656.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p656);
-
-				Property p657 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p657.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p657);
-
-				Property p658 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p658.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p658);
-
-				Property p659 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p659.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p659);
-
-				Property p660 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p660.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p660);
-
-				Property p661 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p661.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p661);
-
-				Property p662 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p662.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p662);
-
-				Property p663 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p663.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p663);
-
-				Property p664 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p664.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p664);
-
-				Property p665 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p665.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p665);
-
-				Property p666 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p666.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p666);
-
-				Property p667 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p667.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p667);
-
-				Property p668 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p668.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p668);
-
-				Property p669 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p669.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p669);
-
-				Property p670 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p670.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p670);
-
-				Property p671 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p671.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p671);
-
-				Property p672 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p672.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p672);
-
-				Property p673 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p673.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p673);
-
-				Property p674 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p674.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p674);
-
-				Property p675 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p675.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p675);
-
-				Property p676 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p676.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p676);
-
-				Property p677 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p677.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p677);
-
-				Property p678 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p678.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p678);
-
-				Property p679 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p679.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p679);
-
-				Property p680 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p680.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p680);
-
-				Property p681 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p681.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p681);
-
-				Property p682 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p682.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p682);
-
-				Property p683 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p683.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p683);
-
-				Property p684 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p684.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p684);
-
-				Property p685 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p685.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p685);
-
-				Property p686 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p686.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p686);
-
-				Property p687 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p687.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p687);
-
-				Property p688 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p688.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p688);
-
-				Property p689 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p689.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p689);
-
-				Property p690 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p690.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p690);
-
-				Property p691 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p691.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p691);
-
-				Property p692 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p692.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p692);
-
-				Property p693 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p693.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p693);
-
-				Property p694 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p694.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p694);
-
-				Property p695 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p695.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p695);
-
-				Property p696 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p696.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p696);
-
-				Property p697 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p697.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p697);
-
-				Property p698 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p698.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p698);
-
-				Property p699 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p699.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p699);
-
-				Property p700 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p700.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p700);
-
-				Property p701 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p701.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p701);
-
-				Property p702 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p702.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p702);
-
-				Property p703 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p703.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p703);
-
-				Property p704 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p704.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p704);
-
-				Property p705 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p705.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p705);
-
-				Property p706 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p706.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p706);
-
-				Property p707 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p707.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p707);
-
-				Property p708 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p708.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p708);
-
-				Property p709 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p709.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p709);
-
-				Property p710 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p710.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p710);
-
-				Property p711 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p711.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p711);
-
-				Property p712 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p712.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p712);
-
-				Property p713 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p713.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p713);
-
-				Property p714 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p714.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p714);
-
-				Property p715 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p715.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p715);
-
-				Property p716 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p716.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p716);
-
-				Property p717 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p717.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p717);
-
-				Property p718 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p718.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p718);
-
-				Property p719 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p719.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p719);
-
-				Property p720 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p720.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p720);
-
-				Property p721 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p721.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p721);
-
-				Property p722 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p722.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p722);
-
-				Property p723 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p723.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p723);
-
-				Property p724 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p724.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p724);
-
-				Property p725 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p725.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p725);
-
-				Property p726 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p726.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p726);
-
-				Property p727 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p727.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p727);
-
-				Property p728 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p728.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p728);
-
-				Property p729 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p729.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p729);
-
-				Property p730 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p730.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p730);
-
-				Property p731 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p731.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p731);
-
-				Property p732 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p732.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p732);
-
-				Property p733 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p733.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p733);
-
-				Property p734 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p734.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p734);
-
-				Property p735 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p735.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p735);
-
-				Property p736 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p736.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p736);
-
-				Property p737 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p737.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p737);
-
-				Property p738 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p738.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p738);
-
-				Property p739 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p739.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p739);
-
-				Property p740 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p740.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p740);
-
-				Property p741 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p741.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p741);
-
-				Property p742 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p742.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p742);
-
-				Property p743 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p743.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p743);
-
-				Property p744 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p744.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p744);
-
-				Property p745 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p745.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p745);
-
-				Property p746 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p746.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p746);
-
-				Property p747 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p747.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p747);
-
-				Property p748 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p748.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p748);
-
-				Property p749 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p749.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p749);
-
-				Property p750 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p750.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p750);
-
-				Property p751 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p751.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p751);
-
-				Property p752 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p752.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p752);
-
-				Property p753 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p753.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p753);
-
-				Property p754 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p754.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p754);
-
-				Property p755 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p755.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p755);
-
-				Property p756 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p756.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p756);
-
-				Property p757 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p757.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p757);
-
-				Property p758 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p758.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p758);
-
-				Property p759 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p759.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p759);
-
-				Property p760 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p760.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p760);
-
-				Property p761 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p761.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p761);
-
-				Property p762 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p762.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p762);
-
-				Property p763 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p763.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p763);
-
-				Property p764 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p764.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p764);
-
-				Property p765 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p765.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p765);
-
-				Property p766 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p766.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p766);
-
-				Property p767 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p767.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p767);
-
-				Property p768 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p768.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p768);
-
-				Property p769 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p769.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p769);
-
-				Property p770 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p770.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p770);
-
-				Property p771 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p771.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p771);
-
-				Property p772 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p772.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p772);
-
-				Property p773 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p773.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p773);
-
-				Property p774 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p774.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p774);
-
-				Property p775 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p775.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p775);
-
-				Property p776 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p776.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p776);
-
-				Property p777 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p777.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p777);
-
-				Property p778 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p778.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p778);
-
-				Property p779 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p779.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p779);
-
-				Property p780 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p780.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p780);
-
-				Property p781 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p781.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p781);
-
-				Property p782 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p782.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p782);
-
-				Property p783 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p783.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p783);
-
-				Property p784 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p784.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p784);
-
-				Property p785 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p785.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p785);
-
-				Property p786 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p786.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p786);
-
-				Property p787 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p787.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p787);
-
-				Property p788 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p788.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p788);
-
-				Property p789 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p789.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p789);
-
-				Property p790 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p790.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p790);
-
-				Property p791 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p791.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p791);
-
-				Property p792 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p792.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p792);
-
-				Property p793 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p793.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p793);
-
-				Property p794 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p794.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p794);
-
-				Property p795 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p795.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p795);
-
-				Property p796 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p796.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p796);
-
-				Property p797 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p797.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p797);
-
-				Property p798 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p798.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p798);
-
-				Property p799 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p799.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p799);
-
-				Property p800 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p800.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p800);
-
-				Property p801 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p801.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p801);
-
-				Property p802 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p802.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p802);
-
-				Property p803 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p803.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p803);
-
-				Property p804 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p804.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p804);
-
-				Property p805 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p805.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p805);
-
-				Property p806 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p806.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p806);
-
-				Property p807 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p807.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p807);
-
-				Property p808 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p808.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p808);
-
-				Property p809 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p809.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p809);
-
-				Property p810 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p810.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p810);
-
-				Property p811 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p811.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p811);
-
-				Property p812 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p812.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p812);
-
-				Property p813 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p813.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p813);
-
-				Property p814 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p814.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p814);
-
-				Property p815 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p815.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p815);
-
-				Property p816 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p816.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p816);
-
-				Property p817 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p817.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p817);
-
-				Property p818 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p818.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p818);
-
-				Property p819 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p819.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p819);
-
-				Property p820 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p820.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p820);
-
-				Property p821 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p821.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p821);
-
-				Property p822 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p822.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p822);
-
-				Property p823 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p823.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p823);
-
-				Property p824 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p824.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p824);
-
-				Property p825 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p825.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p825);
-
-				Property p826 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p826.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p826);
-
-				Property p827 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p827.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p827);
-
-				Property p828 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p828.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p828);
-
-				Property p829 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p829.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p829);
-
-				Property p830 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p830.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p830);
-
-				Property p831 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p831.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p831);
-
-				Property p832 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p832.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p832);
-
-				Property p833 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p833.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p833);
-
-				Property p834 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p834.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p834);
-
-				Property p835 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p835.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p835);
-
-				Property p836 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p836.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p836);
-
-				Property p837 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p837.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p837);
-
-				Property p838 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p838.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p838);
-
-				Property p839 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p839.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p839);
-
-				Property p840 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p840.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p840);
-
-				Property p841 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p841.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p841);
-
-				Property p842 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p842.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p842);
-
-				Property p843 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p843.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p843);
-
-				Property p844 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p844.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p844);
-
-				Property p845 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p845.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p845);
-
-				Property p846 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p846.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p846);
-
-				Property p847 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p847.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p847);
-
-				Property p848 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p848.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p848);
-
-				Property p849 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p849.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p849);
-
-				Property p850 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p850.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p850);
-
-				Property p851 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p851.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p851);
-
-				Property p852 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p852.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p852);
-
-				Property p853 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p853.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p853);
-
-				Property p854 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p854.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p854);
-
-				Property p855 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p855.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p855);
-
-				Property p856 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p856.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p856);
-
-				Property p857 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p857.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p857);
-
-				Property p858 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p858.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p858);
-
-				Property p859 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p859.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p859);
-
-				Property p860 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p860.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p860);
-
-				Property p861 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p861.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p861);
-
-				Property p862 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p862.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p862);
-
-				Property p863 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p863.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p863);
-
-				Property p864 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p864.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p864);
-
-				Property p865 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p865.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p865);
-
-				Property p866 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p866.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p866);
-
-				Property p867 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p867.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p867);
-
-				Property p868 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p868.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p868);
-
-				Property p869 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p869.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p869);
-
-				Property p870 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p870.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p870);
-
-				Property p871 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p871.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p871);
-
-				Property p872 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p872.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p872);
-
-				Property p873 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p873.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p873);
-
-				Property p874 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p874.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p874);
-
-				Property p875 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p875.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p875);
-
-				Property p876 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p876.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p876);
-
-				Property p877 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p877.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p877);
-
-				Property p878 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p878.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p878);
-
-				Property p879 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p879.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p879);
-
-				Property p880 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p880.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p880);
-
-				Property p881 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p881.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p881);
-
-				Property p882 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p882.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p882);
-
-				Property p883 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p883.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p883);
-
-				Property p884 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p884.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p884);
-
-				Property p885 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p885.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p885);
-
-				Property p886 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p886.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p886);
-
-				Property p887 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p887.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p887);
-
-				Property p888 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p888.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p888);
-
-				Property p889 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p889.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p889);
-
-				Property p890 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p890.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p890);
-
-				Property p891 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p891.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p891);
-
-				Property p892 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p892.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p892);
-
-				Property p893 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p893.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p893);
-
-				Property p894 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p894.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p894);
-
-				Property p895 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p895.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p895);
-
-				Property p896 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p896.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p896);
-
-				Property p897 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p897.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p897);
-
-				Property p898 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p898.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p898);
-
-				Property p899 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p899.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p899);
-
-				Property p900 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p900.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p900);
-
-				Property p901 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p901.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p901);
-
-				Property p902 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p902.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p902);
-
-				Property p903 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p903.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p903);
-
-				Property p904 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p904.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p904);
-
-				Property p905 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p905.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p905);
-
-				Property p906 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p906.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p906);
-
-				Property p907 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p907.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p907);
-
-				Property p908 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p908.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p908);
-
-				Property p909 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p909.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p909);
-
-				Property p910 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p910.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p910);
-
-				Property p911 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p911.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p911);
-
-				Property p912 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p912.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p912);
-
-				Property p913 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p913.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p913);
-
-				Property p914 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p914.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p914);
-
-				Property p915 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p915.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p915);
-
-				Property p916 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p916.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p916);
-
-				Property p917 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p917.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p917);
-
-				Property p918 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p918.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p918);
-
-				Property p919 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p919.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p919);
-
-				Property p920 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p920.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p920);
-
-				Property p921 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p921.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p921);
-
-				Property p922 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p922.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p922);
-
-				Property p923 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p923.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p923);
-
-				Property p924 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p924.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p924);
-
-				Property p925 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p925.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p925);
-
-				Property p926 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p926.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p926);
-
-				Property p927 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p927.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p927);
-
-				Property p928 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p928.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p928);
-
-				Property p929 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p929.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p929);
-
-				Property p930 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p930.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p930);
-
-				Property p931 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p931.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p931);
-
-				Property p932 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p932.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p932);
-
-				Property p933 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p933.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p933);
-
-				Property p934 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p934.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p934);
-
-				Property p935 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p935.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p935);
-
-				Property p936 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p936.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p936);
-
-				Property p937 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p937.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p937);
-
-				Property p938 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p938.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p938);
-
-				Property p939 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p939.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p939);
-
-				Property p940 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p940.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p940);
-
-				Property p941 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p941.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p941);
-
-				Property p942 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p942.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p942);
-
-				Property p943 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p943.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p943);
-
-				Property p944 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p944.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p944);
-
-				Property p945 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p945.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p945);
-
-				Property p946 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p946.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p946);
-
-				Property p947 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p947.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p947);
-
-				Property p948 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p948.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p948);
-
-				Property p949 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p949.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p949);
-
-				Property p950 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p950.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p950);
-
-				Property p951 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p951.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p951);
-
-				Property p952 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p952.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p952);
-
-				Property p953 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p953.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p953);
-
-				Property p954 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p954.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p954);
-
-				Property p955 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p955.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p955);
-
-				Property p956 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p956.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p956);
-
-				Property p957 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p957.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p957);
-
-				Property p958 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p958.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p958);
-
-				Property p959 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p959.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p959);
-
-				Property p960 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p960.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p960);
-
-				Property p961 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p961.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p961);
-
-				Property p962 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p962.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p962);
-
-				Property p963 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p963.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p963);
-
-				Property p964 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p964.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p964);
-
-				Property p965 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p965.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p965);
-
-				Property p966 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p966.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p966);
-
-				Property p967 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p967.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p967);
-
-				Property p968 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p968.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p968);
-
-				Property p969 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p969.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p969);
-
-				Property p970 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p970.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p970);
-
-				Property p971 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p971.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p971);
-
-				Property p972 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p972.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p972);
-
-				Property p973 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p973.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p973);
-
-				Property p974 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p974.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p974);
-
-				Property p975 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p975.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p975);
-
-				Property p976 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p976.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p976);
-
-				Property p977 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p977.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p977);
-
-				Property p978 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p978.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p978);
-
-				Property p979 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p979.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p979);
-
-				Property p980 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p980.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p980);
-
-				Property p981 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p981.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p981);
-
-				Property p982 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p982.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p982);
-
-				Property p983 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p983.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p983);
-
-				Property p984 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p984.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p984);
-
-				Property p985 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p985.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p985);
-
-				Property p986 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p986.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p986);
-
-				Property p987 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p987.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p987);
-
-				Property p988 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p988.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p988);
-
-				Property p989 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p989.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p989);
-
-				Property p990 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p990.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p990);
-
-				Property p991 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p991.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p991);
-
-				Property p992 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p992.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p992);
-
-				Property p993 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p993.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p993);
-
-				Property p994 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p994.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p994);
-
-				Property p995 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p995.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p995);
-
-				Property p996 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p996.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p996);
-
-				Property p997 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p997.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p997);
-
-				Property p998 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p998.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p998);
-
-				Property p999 = new Property()
-				{
-					Zip = ,
-					State = "",
-					Street = "",
-					City = "",
-					WeekendPrice = m,
-					WeekDayPrice = m,
-					PetsAllowed = ,
-					ParkingFree = ,
-					CleaningFee = m,
-					Bedrooms = ,
-					Bathrooms = ,
-					GuestsAllowed = 
-				};
-				p999.Category = db.Categories.FirstOrDefault(g => g.CategoryName == "");
-				Properties.Add(p999);
 
 				try
 				{
@@ -10360,7 +3517,6 @@ namespace Team_27_FinalProject.Seeding
 							dbProperty.State = propertyToAdd.State;
 							dbProperty.Street = propertyToAdd.Street;
 							dbProperty.City = propertyToAdd.City;
-							dbProperty.Email = propertyToAdd.Email;
 							dbProperty.WeekendPrice = propertyToAdd.WeekendPrice;
 							dbProperty.WeekDayPrice = propertyToAdd.WeekDayPrice;
 							dbProperty.Category = propertyToAdd.Category;
@@ -10381,6 +3537,10 @@ namespace Team_27_FinalProject.Seeding
 					String msg = "  Repositories added:" + intPropertiesAdded + "; Error on " + strPropertyStreet;
 					throw new InvalidOperationException(ex.Message + msg);
 				}
+			}
+			catch (Exception e)
+			{
+				throw new InvalidOperationException(e.Message);
 			}
 		}
 	}
