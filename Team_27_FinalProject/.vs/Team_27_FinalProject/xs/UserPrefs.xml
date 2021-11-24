@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Seeding/SeedRoles.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Models/Review.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Seeding/SeedRoles.cs" Line="5" Column="31" />
+      <File FileName="Team_27_FinalProject/Models/Review.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -9,13 +9,16 @@
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="DAL" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="ViewModels" selected="True" />
+                <Node name="ViewModels" expanded="True" />
+                <Node name="Review.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True" />
+                <Node name="Reviews" expanded="True" />
               </Node>
             </Node>
           </Node>
