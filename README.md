@@ -1,21 +1,25 @@
 # MIS333K Final Project 
 
-### !! MODEL CLASS DIAGRAM HAS BEEN UPDATED !! (Last updated: Nov 23 @1AM) 
+### GITHUB WORKFLOW
+- From your branch > Commit > Push > Create Pull Request 
+- Notify your Pull Request (GroupMe/Call/Text) > Get approved 
+- Merge your branch into main 
+
+### ACCESS MODEL CLASS DIAGRAM
 https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_loc=-2141%2C-580%2C3853%2C2506%2C0_0&invitationId=inv_d5a5ee70-58a7-4588-9446-b5ba780354cf
 
 ### IMPORTANT: DELIVERABLES SCHEDULED DATES
 #### 1. Tuesday 11/23 @5PM: 
 - Finish Identity, Models, and Seeding files
 - Debug 
-- Start migrations and seeding
-- Start editing Controllers and Views 
-#### 2. TBA: 
-- Review Controllers and Views 
+- Start migrations and seeding 
+#### 2. Saturday 11/27 @8PM: 
+- Search Function, Controllers, and Views
 - Debug 
 #### 3. TBA: 
 - [Continue] Review Controllers and Views 
 - Debug
-- Start styling 
+- Start styling (Optional) 
 
 __________________________________________________________________
 
@@ -24,9 +28,11 @@ __________________________________________________________________
 https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_loc=-2141%2C-580%2C3853%2C2506%2C0_0&invitationId=inv_d5a5ee70-58a7-4588-9446-b5ba780354cf
 - NOTE: Guys please check this link often. As we move forward with the project, there will probably be a lot of changes made on the diagram. There has been so many edits made that I stopped updating the version number or creating a png/pdf file for the diagram. 
 #### 2. OneNotes: 
-- Logistics: Meeting schedules and contents 
+- Logistics: Meeting Schedules, Project Timeline, and Agenda 
 - Codes: Code notes and Debug 
-#### 3. Communication: 
+#### 3. OneDrive: 
+https://drive.google.com/drive/folders/1cUfbXsHoLnVvDZd6gsmH9rFWtV1RfacZ?usp=sharing
+#### 4. Communication: 
 - GroupMe
 - Email for important tasks/ documents delivery 
 - Phone Number: 
