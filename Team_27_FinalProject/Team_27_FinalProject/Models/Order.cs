@@ -54,7 +54,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal OrderSubtotal
         {
-            get { return Reservations.Sum(od => od.Subtotal); }
+            get { return Reservations.Sum(rs => rs.Subtotal); }
         }
 
         //Tax Fee

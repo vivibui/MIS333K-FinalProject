@@ -31,7 +31,7 @@ namespace Team_27_FinalProject.Models
         //Number of Guests (*)
         [Required(ErrorMessage = "You must specify the total number of guests.")]
         [Display(Name = "Number of Guests:")]
-        [Range(1, 1000000, ErrorMessage = "Number must be a positive integer.")]
+        [Range(1, 1000, ErrorMessage = "Number must be a positive integer.")]
         public Int32 NumberOfGuests { get; set; }
 
         // Cleaning Price (at time paid)
@@ -73,10 +73,10 @@ namespace Team_27_FinalProject.Models
         private Int32 TotalWeekends = 0;
 
         //List of Dates between Checkout and Checkin
-        public IEnumerable<DateTime> DateRange(DateTime CheckinDate, DateTime CheckoutDate)
+        public IEnumerable<DateTime> DateRange()
         {
 
-            for (DateTime i = CheckinDate; i <= CheckoutDate; i = i.AddDays(1))
+            for (DateTime i = CheckinDate; i < CheckoutDate; i = i.AddDays(1))
             {
                 allDates.Add(i);
             }
@@ -108,21 +108,12 @@ namespace Team_27_FinalProject.Models
         //----------------------START: CALCULATE DISCOUNT-----------------------
 
         private bool? _IsDiscounted;
+
         //Is Discounted (T/F) (*)
         [Display(Name = "Discount Eligible? (T/F):")]
         public Boolean? IsDiscounted
         {
-            get
-            {
-                if (NumberOfNights > Property.DiscountMinNights)
-                {
-                    return _IsDiscounted;
-                }
-                else
-                {
-                    return null;
-                }
-            }
+            get { return _IsDiscounted; }
             set
             {
                 if (NumberOfNights > Property.DiscountMinNights)
@@ -139,6 +130,7 @@ namespace Team_27_FinalProject.Models
 
         //Discount (*)
         private decimal _discount;
+
         [Display(Name = "Discount Applied: ")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Discount
@@ -183,7 +175,7 @@ namespace Team_27_FinalProject.Models
         }
 
         //Reservation Total
-        [Display(Name = "Order Total")]
+        [Display(Name = "Reservation Total")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal ReservationTotal
         {
