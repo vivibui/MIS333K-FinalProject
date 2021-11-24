@@ -7282,7 +7282,7 @@
       "outputPath": "/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/vivianbui/.config/NuGet/NuGet.Config"
+        "/Users/vivianbui/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
