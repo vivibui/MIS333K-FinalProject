@@ -190,3 +190,4 @@
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Reviews/Details.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Reviews/Edit.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Reviews/Index.cshtml.g.cs
+/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs

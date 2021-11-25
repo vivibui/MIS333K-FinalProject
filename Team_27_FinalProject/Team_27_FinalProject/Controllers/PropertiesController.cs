@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
+    //Only Admin and Host can access
+    [Authorize(Roles = "Admin, Host")]
+
     public class PropertiesController : Controller
     {
         private readonly AppDbContext _context;

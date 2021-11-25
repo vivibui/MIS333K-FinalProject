@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 
+
 namespace Team_27_FinalProject.Controllers
 {
-    //TODO: Uncomment this line once you have roles working correctly
+    //Only Admin can access
     [Authorize(Roles = "Admin")]
+
     public class RoleAdminController : Controller
     {
         //create private variables for the services needed in this controller

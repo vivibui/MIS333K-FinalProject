@@ -10,7 +10,9 @@ using Team_27_FinalProject.Utilities;
 
 namespace Team_27_FinalProject.Controllers
 {
+    //Only logged in users can access
     [Authorize]
+
     public class AccountController : Controller
     {
         private SignInManager<AppUser> _signInManager;

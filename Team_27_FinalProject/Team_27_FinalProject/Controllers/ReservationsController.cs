@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
+    //Only logged-in users can make reservation
+    [Authorize]
+
     public class ReservationsController : Controller
     {
         private readonly AppDbContext _context;

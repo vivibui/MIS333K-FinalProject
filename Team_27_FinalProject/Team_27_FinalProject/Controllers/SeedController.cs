@@ -5,9 +5,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Team_27_FinalProject.Models;
 using Team_27_FinalProject.DAL;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
+    //Only Admin can access
+    [Authorize(Roles = "Admin")]
+
     public class SeedController : Controller
     {
         private readonly AppDbContext _context;
