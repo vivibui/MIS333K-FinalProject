@@ -52,6 +52,10 @@
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
+                <!-- Email duplicate validation -->
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Email exists.")
+                </dl>
             </div>
 
             <!-- Phone -->

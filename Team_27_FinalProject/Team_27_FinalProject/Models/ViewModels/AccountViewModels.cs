@@ -63,14 +63,13 @@ namespace Team_27_FinalProject.Models
 
         //Street
         [Required(ErrorMessage = "Address cannot be blank.")]
-        [Display(Name = "Street:")]
+        [Display(Name = "Street")]
         public String Street { get; set; }
 
         //Zipcode 
-        [Required(ErrorMessage = "Zipcode cannot be blank.")]
-        [StringLength(5, ErrorMessage = "Zipcode must be 5 digits.", MinimumLength = 5)]
-        [RegularExpression("[0-9]", ErrorMessage = "Zipcode must be a 5-digit number.")]
-        [Display(Name = "Zip:")]
+        [Required(ErrorMessage = "Please enter a 5-digit number. Zipcode cannot be blank.")]
+        [RegularExpression(@"\d{5}", ErrorMessage = "Zipcode must be a 5-digit number.")]
+        [Display(Name = "Zip")]
         public Int32 Zip { get; set; }
 
         //Register Password

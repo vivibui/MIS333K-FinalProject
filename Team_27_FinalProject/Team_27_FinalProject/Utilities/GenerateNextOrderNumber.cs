@@ -25,7 +25,7 @@ namespace Team_27_FinalProject.Utilities
                 intMaxOrderNumber = _context.Orders.Max(o => o.OrderNumber); //this is the highest number in the database right now
             }
 
-            //You added records to the datbase before you realized 
+            //You added records to the database before you realized 
             //that you needed this and now you have numbers less than 100 
             //in the database
             if (intMaxOrderNumber < START_NUMBER)

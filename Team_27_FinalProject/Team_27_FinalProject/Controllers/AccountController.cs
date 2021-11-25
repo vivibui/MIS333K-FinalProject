@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -12,7 +13,6 @@ namespace Team_27_FinalProject.Controllers
 {
     //Only logged in users can access
     [Authorize]
-
     public class AccountController : Controller
     {
         private SignInManager<AppUser> _signInManager;
@@ -42,6 +42,7 @@ namespace Team_27_FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel rvm)
         {
+            //-----------------ADD: AGE VALIDATION
             //if the date of 18th birthday is more than now, then: 
             if (rvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
             {
@@ -49,6 +50,17 @@ namespace Team_27_FinalProject.Controllers
                 return View(rvm);
             }
 
+            //-----------------ADD: EMAIL DUPLICATION CHECK 
+            //if email is already in database, return error:
+            List<AppUser> allUsers = _context.Users.ToList();
+            foreach (var u in allUsers)
+            {
+                if (rvm.Email == u.Email)
+                {
+                    ModelState.AddModelError("Email exists.", "Email exists. Please use another one.");
+                    return View(rvm);
+                }
+            }
 
             //if registration data is valid, create a new user on the database
             if (ModelState.IsValid == false)
