@@ -57,7 +57,7 @@ namespace Team_27_FinalProject.Controllers
             {
                 if (rvm.Email == u.Email)
                 {
-                    ModelState.AddModelError("Email exists.", "Email exists. Please use another one.");
+                    ModelState.AddModelError("Email Error", "Email exists. Please use another one.");
                     return View(rvm);
                 }
             }

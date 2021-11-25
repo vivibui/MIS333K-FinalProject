@@ -1,13 +1,12 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Views/Account/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Views/Account/Register.cshtml">
     <Files>
       <File FileName="Team_27_FinalProject/Controllers/OrdersController.cs" Line="26" Column="23" />
-      <File FileName="Team_27_FinalProject/Models/AppUser.cs" Line="37" Column="38" />
-      <File FileName="Team_27_FinalProject/Models/ViewModels/AccountViewModels.cs" Line="38" Column="16" />
-      <File FileName="Team_27_FinalProject/Models/Property.cs" Line="39" Column="1" />
-      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="60" Column="78" />
-      <File FileName="Team_27_FinalProject/Views/Account/Register.cshtml" Line="51" Column="58" />
-      <File FileName="Team_27_FinalProject/Views/Account/Index.cshtml" Line="11" Column="30" />
+      <File FileName="Team_27_FinalProject/Models/AppUser.cs" />
+      <File FileName="Team_27_FinalProject/Models/ViewModels/AccountViewModels.cs" />
+      <File FileName="Team_27_FinalProject/Models/Property.cs" />
+      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="60" Column="53" />
+      <File FileName="Team_27_FinalProject/Views/Account/Register.cshtml" Line="61" Column="27" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,7 +21,7 @@
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="Account" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
+                  <Node name="Register.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>

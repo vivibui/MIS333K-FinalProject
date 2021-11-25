@@ -33,6 +33,17 @@
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
 
+            <!-- Calendar: Birthday -->
+            <div class="form-group">
+                <label asp-for="Birthday" class="control-label"></label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+                <!-- Age validation -->
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Age Error")
+                </dl>
+            </div>
+
             <!-- Street -->
             <div class="form-group">
                 <label asp-for="Street" class="control-label"></label>
@@ -54,7 +65,7 @@
                 <span asp-validation-for="Email" class="text-danger"></span>
                 <!-- Email duplicate validation -->
                 <dl class="text-danger">
-                    @Html.ValidationMessage("Email exists.")
+                    @Html.ValidationMessage("Email Error")
                 </dl>
             </div>
 
