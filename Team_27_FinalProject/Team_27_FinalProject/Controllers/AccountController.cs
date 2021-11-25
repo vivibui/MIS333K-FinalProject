@@ -42,7 +42,7 @@ namespace Team_27_FinalProject.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel rvm)
         {
-            //-----------------ADD: AGE VALIDATION
+            //-----------------ADD: AGE VALIDATION-----------------
             //if the date of 18th birthday is more than now, then: 
             if (rvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
             {
@@ -50,7 +50,7 @@ namespace Team_27_FinalProject.Controllers
                 return View(rvm);
             }
 
-            //-----------------ADD: EMAIL DUPLICATION CHECK 
+            //-----------------ADD: EMAIL DUPLICATION CHECK----------------- 
             //if email is already in database, return error:
             List<AppUser> allUsers = _context.Users.ToList();
             foreach (var u in allUsers)

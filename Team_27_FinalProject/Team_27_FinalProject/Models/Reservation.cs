@@ -140,7 +140,7 @@ namespace Team_27_FinalProject.Models
             {
                 if (_IsDiscounted == true)
                 {
-                    _discount = Subtotal * Property.DiscountRate;
+                    _discount = Subtotal* Property.DiscountRate;
                 }
                 else
                 {
@@ -193,7 +193,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Commission
         {
-            get { return (Subtotal*COMMISSION_RATE); }
+            get { return (StayPrice*COMMISSION_RATE); }
         }
 
         //Revenue (*)
