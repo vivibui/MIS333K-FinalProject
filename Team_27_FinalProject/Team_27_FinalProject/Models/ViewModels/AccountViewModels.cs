@@ -36,6 +36,7 @@ namespace Team_27_FinalProject.Models
         //Phone Number 
         [Required(ErrorMessage = "Phone number is required")]
         [Phone]
+        [RegularExpression(@"\d{10}", ErrorMessage = "Phone number must be a 10-digit number.")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; }
 
@@ -111,9 +112,69 @@ namespace Team_27_FinalProject.Models
     //on the index page
     public class IndexViewModel
     {
+
+        //First Name
+        public String FirstName { get; set; }
+
+        //Last Name
+        public String LastName { get; set; }
+
+        //Phone
+        [Phone]
+        [RegularExpression(@"\d{10}", ErrorMessage = "Phone number must be a 10-digit number.")]
+        public string PhoneNumber { get; set; }
+
         public bool HasPassword { get; set; }
         public String UserName { get; set; }
         public String Email { get; set; }
         public String UserID { get; set; }
+
+        //Street
+        public String Street { get; set; }
+
+        //Zipcode 
+        public Int32 Zip { get; set; }
+
+        //Birthday
+        [DataType(DataType.Date)]
+        public DateTime Birthday { get; set; }
+    }
+
+    //NOTE: This is the view model used to allow the user to 
+    //change their birthday
+    public class ChangeBirthdayViewModel
+    {
+        [Required(ErrorMessage = "Please enter your birthday.")]
+        [Display(Name = "Birthday")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MMMM d, yyyy}")]
+        public DateTime Birthday { get; set; }
+    }
+
+    //NOTE: This is the view model used to allow the user to 
+    //change their address
+    public class ChangeAddressViewModel
+    {
+        //Street
+        [Required(ErrorMessage = "Address cannot be blank.")]
+        [Display(Name = "Street")]
+        public String Street { get; set; }
+
+        //Zipcode 
+        [Required(ErrorMessage = "Please enter a 5-digit number. Zipcode cannot be blank.")]
+        [RegularExpression(@"\d{5}", ErrorMessage = "Zipcode must be a 5-digit number.")]
+        [Display(Name = "Zip")]
+        public Int32 Zip { get; set; }
+    }
+
+    //NOTE: This is the view model used to allow the user to 
+    //change their phone
+    public class ChangePhoneViewModel
+    {
+        [Required(ErrorMessage = "Phone number is required")]
+        [Phone]
+        [RegularExpression(@"\d{10}", ErrorMessage = "Phone number must be a 10-digit number.")]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
     }
 }

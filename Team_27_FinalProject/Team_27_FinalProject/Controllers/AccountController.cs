@@ -46,7 +46,7 @@ namespace Team_27_FinalProject.Controllers
             //if the date of 18th birthday is more than now, then: 
             if (rvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
             {
-                ModelState.AddModelError("Age Error", "You must be 18 to register");
+                ModelState.AddModelError("Age Error", "You must be 18 to register.");
                 return View(rvm);
             }
 
@@ -180,6 +180,10 @@ namespace Team_27_FinalProject.Controllers
             ivm.HasPassword = true;
             ivm.UserID = user.Id;
             ivm.UserName = user.UserName;
+            ivm.Street = user.Street;
+            ivm.Zip = user.Zip;
+            ivm.Birthday = user.Birthday;
+            ivm.PhoneNumber = user.PhoneNumber;
 
             //send data to the view
             return View(ivm);
@@ -252,6 +256,153 @@ namespace Team_27_FinalProject.Controllers
 
             //send the user back to the home page
             return RedirectToAction("Index", "Home");
-        }           
+        }
+
+
+
+        //-------------------ALLOW USER TO CHANGE ADDRESS---------------------
+
+        //Logic for change address
+        // GET: /Account/ChangeAddress
+        public ActionResult ChangeAddress()
+        {
+            return View();
+        }
+
+
+
+        // POST: /Account/ChangeAddress
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeAddress(ChangeAddressViewModel cavm)
+        {
+            //if user forgot a field, send them back to 
+            //change address page to try again
+            if (ModelState.IsValid == false)
+            {
+                return View(cavm);
+            }
+
+            try
+            {
+                //Find the logged in user using the UserManager
+                AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+
+                //Update the address
+                userLoggedIn.Street = cavm.Street;
+                userLoggedIn.Zip = cavm.Zip;
+
+                _context.Update(userLoggedIn);
+                await _context.SaveChangesAsync();
+
+
+                //send the user back to the Account/Index to view change 
+                return RedirectToAction("Index", "Account");
+
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was an error updating this address!", ex.Message });
+            }
+        }
+
+
+        //-------------------ALLOW USER TO CHANGE BIRTHDAY ---------------------
+
+        //Logic for change address
+        // GET: /Account/ChangeAddress
+        public ActionResult ChangeBirthday()
+        {
+            return View();
+        }
+
+
+
+        // POST: /Account/ChangeAddress
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangeBirthday(ChangeBirthdayViewModel cbvm)
+        {
+            //if user forgot a field, send them back to 
+            //change birthday page to try again
+            if (ModelState.IsValid == false)
+            {
+                return View(cbvm);
+            }
+
+            try
+            {
+                //Find the logged in user using the UserManager
+                AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+
+                //Update the birthday
+                userLoggedIn.Birthday = cbvm.Birthday;
+
+                //-----------------ADD: AGE VALIDATION
+                //if the date of 18th birthday is more than now, then: 
+                if (cbvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
+                {
+                    ModelState.AddModelError("Age Error", "You must be 18 to register");
+                    return View(cbvm);
+                }
+
+                else
+                {
+                    _context.Update(userLoggedIn);
+
+                    await _context.SaveChangesAsync();
+
+                    //send the user back to the Account/Index to view change 
+                    return RedirectToAction("Index", "Account");
+                }
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was an error updating this address!", ex.Message });
+            }
+        }
+
+        //-------------------ALLOW USER TO CHANGE PHONE ---------------------
+        //Logic for change address
+        // GET: /Account/ChangeAddress
+        public ActionResult ChangePhone()
+        {
+            return View();
+        }
+
+
+
+        // POST: /Account/ChangeAddress
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangePhone(ChangePhoneViewModel cpvm)
+        {
+            //if user forgot a field, send them back to 
+            //change birthday page to try again
+            if (ModelState.IsValid == false)
+            {
+                return View(cpvm);
+            }
+
+            try
+            {
+                //Find the logged in user using the UserManager
+                AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+
+                //Update the birthday
+                userLoggedIn.PhoneNumber = cpvm.PhoneNumber;
+
+                _context.Update(userLoggedIn);
+                await _context.SaveChangesAsync();
+
+                //send the user back to the Account/Index to view change 
+                return RedirectToAction("Index", "Account");
+
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was an error updating this address!", ex.Message });
+            }
+        }
     }
 }

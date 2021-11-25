@@ -1,0 +1,31 @@
+@model ChangeBirthdayViewModel
+
+@{
+    ViewData["Title"] = "Change Birthday";
+}
+
+<h1>Change Birthday</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ChangeBirthday" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Birthday" class="control-label"></label>
+                <input asp-for="Birthday" class="form-control" />
+                <span asp-validation-for="Birthday" class="text-danger"></span>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Age Error")
+                </dl>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Change Birthday" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to Home</a>
+</div>
