@@ -404,5 +404,95 @@ namespace Team_27_FinalProject.Controllers
                 return View("Error", new String[] { "There was an error updating this address!", ex.Message });
             }
         }
+
+
+        //------------------- CREATE NEW ADMIN ---------------------
+
+        // GET: /Account/RegisterAdmin
+        [Authorize(Roles = "Admin")]
+        public IActionResult RegisterAdmin()
+        {
+            return View("RegisterAdmin");
+        }
+
+        // POST: /Account/RegisterAdmin
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterAdmin(RegisterViewModel rvm)
+        {
+            //-----------------ADD: AGE VALIDATION-----------------
+            //if the date of 18th birthday is more than now, then: 
+            if (rvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
+            {
+                ModelState.AddModelError("Age Error", "You must be 18 to register.");
+                return View(rvm);
+            }
+
+            //-----------------ADD: EMAIL DUPLICATION CHECK----------------- 
+            //if email is already in database, return error:
+            List<AppUser> allUsers = _context.Users.ToList();
+            foreach (var u in allUsers)
+            {
+                if (rvm.Email == u.Email)
+                {
+                    ModelState.AddModelError("Email Error", "Email exists. Please use another one.");
+                    return View(rvm);
+                }
+            }
+
+            //if registration data is valid, create a new user on the database
+            if (ModelState.IsValid == false)
+            {
+                //this is the sad path - something went wrong, 
+                //return the user to the register page to try again
+                return View(rvm);
+            }
+
+            //this code maps the RegisterViewModel to the AppUser domain model
+            AppUser newUser = new AppUser
+            {
+                UserName = rvm.Email,
+                Email = rvm.Email,
+                PhoneNumber = rvm.PhoneNumber,
+                FirstName = rvm.FirstName,
+                LastName = rvm.LastName,
+                MI = rvm.MI,
+                Birthday = rvm.Birthday,
+                Street = rvm.Street,
+                Zip = rvm.Zip,
+            };
+
+            //create AddUserModel
+            AddUserModel aum = new AddUserModel()
+            {
+                User = newUser,
+                Password = rvm.Password,
+
+                //TODO: You will need to change this value if you want to 
+                //add the user to a different role - just specify the role name.
+                RoleName = "Admin"
+            };
+
+            //This code uses the AddUser utility to create a new user with the specified password
+            IdentityResult result = await Utilities.AddUser.AddUserWithRoleAsync(aum, _userManager, _context);
+
+            if (result.Succeeded) //everything is okay
+            {
+
+                //Send the user to the Manage Users page
+                return RedirectToAction("Edit", "RoleAdmin");
+            }
+            else  //the add user operation didn't work, and we need to show an error message
+            {
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                //send user back to page with errors
+                return View(rvm);
+            }
+        }
     }
 }

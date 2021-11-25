@@ -70,6 +70,7 @@ namespace Team_27_FinalProject.Models
         //Zipcode 
         [Required(ErrorMessage = "Please enter a 5-digit number. Zipcode cannot be blank.")]
         [RegularExpression(@"\d{5}", ErrorMessage = "Zipcode must be a 5-digit number.")]
+        [Range(10000, 99999, ErrorMessage = "Please enter a valid zipcode range.")]
         [Display(Name = "Zip")]
         public Int32 Zip { get; set; }
 
@@ -163,6 +164,7 @@ namespace Team_27_FinalProject.Models
         //Zipcode 
         [Required(ErrorMessage = "Please enter a 5-digit number. Zipcode cannot be blank.")]
         [RegularExpression(@"\d{5}", ErrorMessage = "Zipcode must be a 5-digit number.")]
+        [Range(10000, 99999, ErrorMessage = "Please enter a valid zipcode range.")]
         [Display(Name = "Zip")]
         public Int32 Zip { get; set; }
     }

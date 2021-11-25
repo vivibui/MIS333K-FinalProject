@@ -23,12 +23,25 @@
                     <li class="nav-item">
                         <a asp-controller="Properties" asp-action="Index" class="nav-link">Properties</a>
                     </li>
+
+                    <!-- Admin Only -->
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Admin"))
                         {
                             <li>
                                 <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Users</a>
+                            </li>
+                        }
+                    }
+
+                    <!-- Admin Only -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Account" asp-action="RegisterAdmin" class="nav-link">Create New Admin</a>
                             </li>
                         }
                     }
