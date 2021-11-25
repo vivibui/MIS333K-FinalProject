@@ -5,7 +5,14 @@
 - Notify your Pull Request (GroupMe/Call/Text) > Get approved 
 - Merge your branch into main 
 
+### WORKING TIPS: 
+- Before starting making any change on your branch, make sure your branch is up-to-date with the main. 
+- Commit your changes regularly to your branch, so your process will be saved. 
+- Make sure the coded properties' names and datatype match with the database. Double check it by reviewing the Model Class Diagram or logging onto the database. 
+- It is best to only create Pull Request when your code has no error (unless you want other teammates to take a look and help you debug). 
+
 ### MODEL CLASS DIAGRAM HAS UPDATED! (Last Update: 11/24 @12PM)
+
 https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_loc=-2141%2C-580%2C3853%2C2506%2C0_0&invitationId=inv_d5a5ee70-58a7-4588-9446-b5ba780354cf
 
 ### IMPORTANT: DELIVERABLES SCHEDULED DATES
