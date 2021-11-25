@@ -22,7 +22,19 @@ namespace Team_27_FinalProject.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            var query = from p in _context.Properties
+                        select p;
+
+            //.ToList() method to execute the query. Include statement to get the navigational data
+            List<Property> SelectedProperties = query.Include(p => p.Category).ToList();
+
+            //Populate the view bag with a count of all properties
+            ViewBag.AllProperties = _context.Properties.Count();
+            //Populate the view bag with a count of selected properties
+            ViewBag.SelectedProperties = SelectedProperties.Count;
+
+
+            return View(SelectedProperties);
         }
 
         //allow the user to see details of a property
@@ -70,11 +82,92 @@ namespace Team_27_FinalProject.Controllers
 
             //convert the list to a SelectList by calling SelectList constructor
             //CategoryID and CategoryName are the names of the properties on the Category class
-          
+
             SelectList categorySelectList = new SelectList(categoryList.OrderBy(c => c.CategoryID), "CategoryID", "CategoryName");
 
             //return the SelectList
             return categorySelectList;
+        }
+
+        public IActionResult DisplaySearchResults(SearchViewModel svm)
+        {
+            var query = from p in _context.Properties
+                        select p;
+            //var query1 = from r in _context.Reservations
+            //select r;
+
+            //search by City 
+            if (String.IsNullOrEmpty(svm.SelectedCity) == false)
+            {
+                query = query.Where(p => p.City.Contains(svm.SelectedCity));
+            }
+
+            //search by State
+            if (String.IsNullOrEmpty(svm.SelectedState) == false)
+            {
+                query = query.Where(p => p.State.Contains(svm.SelectedState));
+            }
+
+            //Search by Bedrooms
+            if (svm.SelectedBedrooms != null)
+            {
+                query = query.Where(p => p.Bedrooms == svm.SelectedBedrooms);
+            }
+
+            //Search by Bathrooms
+            if (svm.SelectedBathrooms != null)
+            {
+                query = query.Where(p => p.Bathrooms == svm.SelectedBathrooms);
+            }
+
+            //search by category
+            if (svm.SelectedCategoryID != 0)
+            {
+                query = query.Where(p => p.Category.CategoryID == svm.SelectedCategoryID);
+            }
+
+            //search by guest limit
+            if (svm.SelectedGuests != 0)
+            {
+                query = query.Where(p => p.GuestsAllowed >= svm.SelectedGuests);
+            }
+
+            //search by PetsAllowed
+                if (svm.SelectedPets == true)
+                {
+                    query = query.Where(p => p.PetsAllowed == true);
+                }
+
+                if (svm.SelectedPets == false)
+                {
+                    query = query.Where(p => p.PetsAllowed == false);
+                }
+
+            //search by FreeParking
+            if (svm.SelectedParking == true)
+            {
+                query = query.Where(p => p.ParkingFree == true);
+            }
+
+            if (svm.SelectedParking == false)
+            {
+                query = query.Where(p => p.ParkingFree == false);
+            }
+
+
+
+
+
+            //.ToList() method to execute the query. Include statement to get the navigational data
+            List<Property> SelectedProperties = query.Include(p => p.Category).ToList();
+
+            //Populate the view bag with a count of all properties
+            ViewBag.AllProperties = _context.Properties.Count();
+            //Populate the view bag with a count of selected properties
+            ViewBag.SelectedProperties = SelectedProperties.Count;
+
+            //Return the view with SelectedProperties
+            return View("Index", SelectedProperties);
         }
     }
 }
