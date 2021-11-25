@@ -4,6 +4,7 @@
 - Admin: macleod@bevobnb.com || Pass: kittys 
 - Customer: wendy@puppy.com || Pass: Kansas
 - Host: gonzalez@aol.com || Pass: gg2017
+*If you have registered any new account on the database, record them on OneNote > Account Registered. That way we can delete them before presentation day.*
 
 ### GITHUB WORKFLOW
 - From your branch > Commit > Push > Create Pull Request 
@@ -14,7 +15,7 @@
 - Before starting making any change on your branch, make sure your branch is up-to-date with the main. 
 - Commit your changes regularly to your branch, so your process will be saved. 
 - Make sure the coded properties' names and datatype match with the database. Double check it by reviewing the Model Class Diagram or logging onto the database. 
-- It is best to only create Pull Request when your code has no error (unless you want other teammates to take a look and help you debug). 
+- It is best to only create Pull Request when your code has no error and complete (unless you want other teammates to take a look and help you debug). 
 
 ### MODEL CLASS DIAGRAM HAS UPDATED! (Last Update: 11/24 @12PM)
 
