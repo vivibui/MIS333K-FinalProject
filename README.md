@@ -4,7 +4,7 @@
 - Admin: macleod@bevobnb.com || Pass: kittys 
 - Customer: wendy@puppy.com || Pass: Kansas
 - Host: gonzalez@aol.com || Pass: gg2017
-*If you have registered any new account on the database, record them on OneNote > Account Registered. That way we can delete them before presentation day.*
+- *If you have registered any new account on the database, record them on OneNote > Account Registered. That way we can delete them before presentation day.*
 
 ### GITHUB WORKFLOW
 - From your branch > Commit > Push > Create Pull Request 
