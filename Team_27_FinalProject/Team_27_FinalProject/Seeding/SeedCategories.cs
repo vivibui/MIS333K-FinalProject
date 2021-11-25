@@ -35,7 +35,7 @@ namespace Team_27_FinalProject.Seeding
                 Category c4 = new Category() { CategoryName = "Condo" };
                 Categories.Add(c4);
 
-                Category c5 = new Category() { CategoryName = "Hotel Room" };
+                Category c5 = new Category() { CategoryName = "Hotel" };
                 Categories.Add(c5);
         
 

@@ -56,9 +56,8 @@ namespace Team_27_FinalProject
                 await next.Invoke();
             });
 
-            //TODO: (HW4 & Beyond) Once you have added Identity into your project, you will need to uncomment these lines
-            //app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             
             //This method maps the controllers and their actions to a patter for
