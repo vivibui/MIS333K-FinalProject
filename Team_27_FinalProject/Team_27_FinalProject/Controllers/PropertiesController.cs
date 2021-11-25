@@ -11,8 +11,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
-    //Only Admin and Host can access
-    [Authorize(Roles = "Admin, Host")]
 
     public class PropertiesController : Controller
     {
@@ -47,6 +45,8 @@ namespace Team_27_FinalProject.Controllers
             return View(@property);
         }
 
+        //Only Admin and Host can access
+        [Authorize(Roles = "Admin, Host")]
         // GET: Properties/Create
         public IActionResult Create()
         {
@@ -69,6 +69,8 @@ namespace Team_27_FinalProject.Controllers
             return View(@property);
         }
 
+        //Only Admin and Host can access
+        [Authorize(Roles = "Admin, Host")]
         // GET: Properties/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -120,35 +122,7 @@ namespace Team_27_FinalProject.Controllers
             return View(@property);
         }
 
-        // GET: Properties/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var @property = await _context.Properties
-                .FirstOrDefaultAsync(m => m.PropertyID == id);
-            if (@property == null)
-            {
-                return NotFound();
-            }
-
-            return View(@property);
-        }
-
-        // POST: Properties/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var @property = await _context.Properties.FindAsync(id);
-            _context.Properties.Remove(@property);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
+        //Property Exists Method
         private bool PropertyExists(int id)
         {
             return _context.Properties.Any(e => e.PropertyID == id);

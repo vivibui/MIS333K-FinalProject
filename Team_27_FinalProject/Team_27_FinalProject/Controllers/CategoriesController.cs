@@ -12,8 +12,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
-    //Only Admin can access
-    [Authorize(Roles = "Admin")]
 
     public class CategoriesController : Controller
     {
@@ -48,6 +46,8 @@ namespace Team_27_FinalProject.Controllers
             return View(category);
         }
 
+        //Only Admin can access
+        [Authorize(Roles = "Admin")]
         // GET: Categories/Create
         public IActionResult Create()
         {
@@ -70,6 +70,8 @@ namespace Team_27_FinalProject.Controllers
             return View(category);
         }
 
+        //Only Admin can access
+        [Authorize(Roles = "Admin")]
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
