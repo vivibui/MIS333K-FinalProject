@@ -9,8 +9,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
-    //Only Admin can access
-    [Authorize(Roles = "Admin")]
 
     public class SeedController : Controller
     {

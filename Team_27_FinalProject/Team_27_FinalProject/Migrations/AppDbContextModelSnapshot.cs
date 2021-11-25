@@ -343,7 +343,6 @@ namespace Team_27_FinalProject.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Zip")
-                        .HasMaxLength(5)
                         .HasColumnType("int");
 
                     b.HasKey("PropertyID");

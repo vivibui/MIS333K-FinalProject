@@ -207,7 +207,7 @@ namespace Team_27_FinalProject.Migrations
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
-                    Zip = table.Column<int>(type: "int", maxLength: 5, nullable: false),
+                    Zip = table.Column<int>(type: "int", nullable: false),
                     Bedrooms = table.Column<int>(type: "int", nullable: false),
                     Bathrooms = table.Column<int>(type: "int", nullable: false),
                     PetsAllowed = table.Column<bool>(type: "bit", nullable: false),

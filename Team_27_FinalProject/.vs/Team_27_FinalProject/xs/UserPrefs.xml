@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Views/RoleAdmin/Edit.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Models/Review.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="475" Column="15" />
-      <File FileName="Team_27_FinalProject/Views/Account/RegisterAdmin.cshtml" Line="1" Column="1" />
-      <File FileName="Team_27_FinalProject/Views/RoleAdmin/Edit.cshtml" Line="59" Column="14" />
+      <File FileName="Team_27_FinalProject/Migrations/20211125201926_Setup.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Controllers/SeedController.cs" Line="11" Column="2" />
+      <File FileName="Team_27_FinalProject/Models/Review.cs" Line="20" Column="35" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,17 +11,11 @@
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Migrations" expanded="True" />
               <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
+                <Node name="Review.cs" selected="True" />
               </Node>
               <Node name="Seeding" expanded="True" />
-              <Node name="Utilities" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Account" expanded="True" />
-                <Node name="RoleAdmin" expanded="True">
-                  <Node name="Edit.cshtml" selected="True" />
-                </Node>
-              </Node>
             </Node>
           </Node>
         </State>
