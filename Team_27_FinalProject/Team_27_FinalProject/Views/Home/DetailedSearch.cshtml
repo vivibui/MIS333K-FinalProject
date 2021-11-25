@@ -1,0 +1,89 @@
+﻿@model Team_27_FinalProject.Models.SearchViewModel
+
+@{
+    ViewData["Title"] = "DetailedSearch";
+}
+
+<h1>DetailedSearch</h1>
+
+<h4>SearchViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DetailedSearch">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SelectedCity" class="control-label"></label>
+                <input asp-for="SelectedCity" class="form-control" />
+                <span asp-validation-for="SelectedCity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedState" class="control-label"></label>
+                <input asp-for="SelectedState" class="form-control" />
+                <span asp-validation-for="SelectedState" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedCategoryID" class="control-label"></label>
+                @Html.DropDownListFor(model => model.SelectedCategoryID, (SelectList)ViewBag.AllGenres, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedCheckin" class="control-label"></label>
+                <input asp-for="SelectedCheckin" class="form-control" />
+                <span asp-validation-for="SelectedCheckin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedCheckout" class="control-label"></label>
+                <input asp-for="SelectedCheckout" class="form-control" />
+                <span asp-validation-for="SelectedCheckout" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedRating" class="control-label"></label>
+                <input asp-for="SelectedRating" class="form-control" />
+                <span asp-validation-for="SelectedRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RatingType" class="control-label"></label>
+                <input asp-for="RatingType" class="form-control" />
+                <span asp-validation-for="RatingType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedGuests" class="control-label"></label>
+                <input asp-for="SelectedGuests" class="form-control" />
+                <span asp-validation-for="SelectedGuests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedPrice" class="control-label"></label>
+                <input asp-for="SelectedPrice" class="form-control" />
+                <span asp-validation-for="SelectedPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedBedrooms" class="control-label"></label>
+                <input asp-for="SelectedBedrooms" class="form-control" />
+                <span asp-validation-for="SelectedBedrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedBathrooms" class="control-label"></label>
+                <input asp-for="SelectedBathrooms" class="form-control" />
+                <span asp-validation-for="SelectedBathrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedPets" class="control-label"></label>
+                
+
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedParking" class="control-label"></label>
+                <input asp-for="SelectedParking" class="form-control" />
+                <span asp-validation-for="SelectedParking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
