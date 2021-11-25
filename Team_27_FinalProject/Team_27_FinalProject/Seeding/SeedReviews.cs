@@ -27,7 +27,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 4,
 					Content = " "
 				};
-				r1.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest, Port Stephanieville, MS 63590");
+				r1.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest");
+				//r1.Property = db.Properties.FirstOrDefault(g => g.City == " Port Stephanieville");
+				//r1.Property = db.Properties.FirstOrDefault(g => g.State == "MS");
+				//r1.Property = db.Properties.FirstOrDefault(g => g.Zip == "63590");
 				r1.AppUser = db.Users.FirstOrDefault(g => g.Email == "father.Ingram@aool.com");
 				Reviews.Add(r1);
 
@@ -36,7 +39,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 3,
 					Content = "It was meh, ya know? It was really close to the coast, but the beaches were kinda trashed. The apartment was nice, but there wasn't an elevator."
 				};
-				r2.Property = db.Properties.FirstOrDefault(g => g.Street == "1168 Gary Fords Apt. 308, Port Trevor, RI 96954");
+				r2.Property = db.Properties.FirstOrDefault(g => g.Street == "1168 Gary Fords Apt. 308");
+				//r2.Property = db.Properties.FirstOrDefault(g => g.City == " Port Trevor");
+				//r2.Property = db.Properties.FirstOrDefault(g => g.State == "RI");
+				//r2.Property = db.Properties.FirstOrDefault(g => g.Zip == "96954");
 				r2.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
 				Reviews.Add(r2);
 
@@ -45,7 +51,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 4,
 					Content = ""
 				};
-				r3.Property = db.Properties.FirstOrDefault(g => g.Street == "03541 Ryan Islands Apt. 562, East Michaelfort, HI 90576");
+				r3.Property = db.Properties.FirstOrDefault(g => g.Street == "03541 Ryan Islands Apt. 562");
+				//r3.Property = db.Properties.FirstOrDefault(g => g.City == " East Michaelfort");
+				//r3.Property = db.Properties.FirstOrDefault(g => g.State == "HI");
+				//r3.Property = db.Properties.FirstOrDefault(g => g.Zip == "90576");
 				r3.AppUser = db.Users.FirstOrDefault(g => g.Email == "father.Ingram@aool.com");
 				Reviews.Add(r3);
 
@@ -54,7 +63,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 2,
 					Content = " "
 				};
-				r4.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest, Port Stephanieville, MS 63590");
+				r4.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest");
+				//r4.Property = db.Properties.FirstOrDefault(g => g.City == " Port Stephanieville");
+				//r4.Property = db.Properties.FirstOrDefault(g => g.State == "MS");
+				//r4.Property = db.Properties.FirstOrDefault(g => g.Zip == "63590");
 				r4.AppUser = db.Users.FirstOrDefault(g => g.Email == "tuck33@puppy.com");
 				Reviews.Add(r4);
 
@@ -63,7 +75,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 3,
 					Content = "Nebraska was... interesting"
 				};
-				r5.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r5.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187");
+				//r5.Property = db.Properties.FirstOrDefault(g => g.City == " Florestown");
+				//r5.Property = db.Properties.FirstOrDefault(g => g.State == "NE");
+				//r5.Property = db.Properties.FirstOrDefault(g => g.Zip == "80082");
 				r5.AppUser = db.Users.FirstOrDefault(g => g.Email == "father.Ingram@aool.com");
 				Reviews.Add(r5);
 
@@ -72,7 +87,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 1,
 					Content = "There was corn EVERYWHERE! I looked left and BAM, CORN. Looked right, BAM, CORN"
 				};
-				r6.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r6.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187");
+				//r6.Property = db.Properties.FirstOrDefault(g => g.City == " Florestown");
+				//r6.Property = db.Properties.FirstOrDefault(g => g.State == "NE");
+				//r6.Property = db.Properties.FirstOrDefault(g => g.Zip == "80082");
 				r6.AppUser = db.Users.FirstOrDefault(g => g.Email == "tfreeley@puppy.com");
 				Reviews.Add(r6);
 
@@ -81,7 +99,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 1,
 					Content = "Worst. Stay. Ever. Never using BevoBnB again"
 				};
-				r7.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r7.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187");
+				//r7.Property = db.Properties.FirstOrDefault(g => g.City == " Florestown");
+				//r7.Property = db.Properties.FirstOrDefault(g => g.State == "NE");
+				//r7.Property = db.Properties.FirstOrDefault(g => g.Zip == "80082");
 				r7.AppUser = db.Users.FirstOrDefault(g => g.Email == "ra@aoo.com");
 				Reviews.Add(r7);
 
@@ -90,7 +111,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 5,
 					Content = " "
 				};
-				r8.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r8.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate");
+				//r8.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Michael");
+				//r8.Property = db.Properties.FirstOrDefault(g => g.State == "NM");
+				//r8.Property = db.Properties.FirstOrDefault(g => g.Zip == "3009");
 				r8.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
 				Reviews.Add(r8);
 
@@ -99,7 +123,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 2,
 					Content = " "
 				};
-				r9.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853, Lake Patrickstad, WY 67652");
+				r9.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853");
+				//r9.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Patrickstad");
+				//r9.Property = db.Properties.FirstOrDefault(g => g.State == "WY");
+				//r9.Property = db.Properties.FirstOrDefault(g => g.Zip == "67652");
 				r9.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
 				Reviews.Add(r9);
 
@@ -108,7 +135,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 1,
 					Content = "It was SO hard to book this place. Who coded this site anyway? ;)"
 				};
-				r10.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r10.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate");
+				//r10.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Michael");
+				//r10.Property = db.Properties.FirstOrDefault(g => g.State == "NM");
+				//r10.Property = db.Properties.FirstOrDefault(g => g.Zip == "3009");
 				r10.AppUser = db.Users.FirstOrDefault(g => g.Email == "tfreeley@puppy.com");
 				Reviews.Add(r10);
 
@@ -117,7 +147,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 4,
 					Content = " "
 				};
-				r11.Property = db.Properties.FirstOrDefault(g => g.Street == "71664 Kim Throughway, Chelsealand, AK 65056");
+				r11.Property = db.Properties.FirstOrDefault(g => g.Street == "71664 Kim Throughway");
+				//r11.Property = db.Properties.FirstOrDefault(g => g.City == " Chelsealand");
+				//r11.Property = db.Properties.FirstOrDefault(g => g.State == "AK");
+				//r11.Property = db.Properties.FirstOrDefault(g => g.Zip == "65056");
 				r11.AppUser = db.Users.FirstOrDefault(g => g.Email == "tuck33@puppy.com");
 				Reviews.Add(r11);
 
@@ -126,7 +159,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 5,
 					Content = "This place rocked!"
 				};
-				r12.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r12.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate");
+				//r12.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Michael");
+				//r12.Property = db.Properties.FirstOrDefault(g => g.State == "NM");
+				//r12.Property = db.Properties.FirstOrDefault(g => g.Zip == "3009");
 				r12.AppUser = db.Users.FirstOrDefault(g => g.Email == "ra@aoo.com");
 				Reviews.Add(r12);
 
@@ -135,7 +171,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 4,
 					Content = " "
 				};
-				r13.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate, Lake Michael, NM 03009");
+				r13.Property = db.Properties.FirstOrDefault(g => g.Street == "693 Michael Estate");
+				//r13.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Michael");
+				//r13.Property = db.Properties.FirstOrDefault(g => g.State == "NM");
+				//r13.Property = db.Properties.FirstOrDefault(g => g.Zip == "3009");
 				r13.AppUser = db.Users.FirstOrDefault(g => g.Email == "fd@puppy.com");
 				Reviews.Add(r13);
 
@@ -144,7 +183,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 4,
 					Content = " "
 				};
-				r14.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853, Lake Patrickstad, WY 67652");
+				r14.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853");
+				//r14.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Patrickstad");
+				//r14.Property = db.Properties.FirstOrDefault(g => g.State == "WY");
+				//r14.Property = db.Properties.FirstOrDefault(g => g.Zip == "67652");
 				r14.AppUser = db.Users.FirstOrDefault(g => g.Email == "lamemartin.Martin@aool.com");
 				Reviews.Add(r14);
 
@@ -153,7 +195,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 1,
 					Content = "There were 1...5...22 roaches? I lost count."
 				};
-				r15.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187, Florestown, NE 80082");
+				r15.Property = db.Properties.FirstOrDefault(g => g.Street == "94102 Sims Port Suite 187");
+				//r15.Property = db.Properties.FirstOrDefault(g => g.City == " Florestown");
+				//r15.Property = db.Properties.FirstOrDefault(g => g.State == "NE");
+				//r15.Property = db.Properties.FirstOrDefault(g => g.Zip == "80082");
 				r15.AppUser = db.Users.FirstOrDefault(g => g.Email == "fd@puppy.com");
 				Reviews.Add(r15);
 
@@ -162,7 +207,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 1,
 					Content = " "
 				};
-				r16.Property = db.Properties.FirstOrDefault(g => g.Street == "1168 Gary Fords Apt. 308, Port Trevor, RI 96954");
+				r16.Property = db.Properties.FirstOrDefault(g => g.Street == "1168 Gary Fords Apt. 308");
+				//r16.Property = db.Properties.FirstOrDefault(g => g.City == " Port Trevor");
+				//r16.Property = db.Properties.FirstOrDefault(g => g.State == "RI");
+				//r16.Property = db.Properties.FirstOrDefault(g => g.Zip == "96954");
 				r16.AppUser = db.Users.FirstOrDefault(g => g.Email == "sheff44@puppy.com");
 				Reviews.Add(r16);
 
@@ -171,7 +219,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 4,
 					Content = "I LOVED the place! Had a nice view of the mountains"
 				};
-				r17.Property = db.Properties.FirstOrDefault(g => g.Street == "1220 Heidi Rue Apt. 998, West Haleyburgh, CO 05222");
+				r17.Property = db.Properties.FirstOrDefault(g => g.Street == "1220 Heidi Rue Apt. 998");
+				//r17.Property = db.Properties.FirstOrDefault(g => g.City == " West Haleyburgh");
+				//r17.Property = db.Properties.FirstOrDefault(g => g.State == "CO");
+				//r17.Property = db.Properties.FirstOrDefault(g => g.Zip == "5222");
 				r17.AppUser = db.Users.FirstOrDefault(g => g.Email == "fd@puppy.com");
 				Reviews.Add(r17);
 
@@ -180,7 +231,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 5,
 					Content = " "
 				};
-				r18.Property = db.Properties.FirstOrDefault(g => g.Street == "1220 Heidi Rue Apt. 998, West Haleyburgh, CO 05222");
+				r18.Property = db.Properties.FirstOrDefault(g => g.Street == "1220 Heidi Rue Apt. 998");
+				//r18.Property = db.Properties.FirstOrDefault(g => g.City == " West Haleyburgh");
+				//r18.Property = db.Properties.FirstOrDefault(g => g.State == "CO");
+				//r18.Property = db.Properties.FirstOrDefault(g => g.Zip == "5222");
 				r18.AppUser = db.Users.FirstOrDefault(g => g.Email == "tuck33@puppy.com");
 				Reviews.Add(r18);
 
@@ -189,7 +243,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 5,
 					Content = "My stay was amazing! Saved my marriage"
 				};
-				r19.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest, Port Stephanieville, MS 63590");
+				r19.Property = db.Properties.FirstOrDefault(g => g.Street == "588 Alan Rest");
+				//r19.Property = db.Properties.FirstOrDefault(g => g.City == " Port Stephanieville");
+				//r19.Property = db.Properties.FirstOrDefault(g => g.State == "MS");
+				//r19.Property = db.Properties.FirstOrDefault(g => g.Zip == "63590");
 				r19.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
 				Reviews.Add(r19);
 
@@ -198,7 +255,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 2,
 					Content = " "
 				};
-				r20.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853, Lake Patrickstad, WY 67652");
+				r20.Property = db.Properties.FirstOrDefault(g => g.Street == "457 Vargas Island Suite 853");
+				//r20.Property = db.Properties.FirstOrDefault(g => g.City == " Lake Patrickstad");
+				//r20.Property = db.Properties.FirstOrDefault(g => g.State == "WY");
+				//r20.Property = db.Properties.FirstOrDefault(g => g.Zip == "67652");
 				r20.AppUser = db.Users.FirstOrDefault(g => g.Email == "sheff44@puppy.com");
 				Reviews.Add(r20);
 
@@ -207,7 +267,10 @@ namespace Team_27_FinalProject.Seeding
 					Rating = 2,
 					Content = "My wife's attitude was the only thing rougher than the sand at the nearby beaches"
 				};
-				r21.Property = db.Properties.FirstOrDefault(g => g.Street == "03541 Ryan Islands Apt. 562, East Michaelfort, HI 90576");
+				r21.Property = db.Properties.FirstOrDefault(g => g.Street == "03541 Ryan Islands Apt. 562");
+				//r21.Property = db.Properties.FirstOrDefault(g => g.City == " East Michaelfort");
+				//r21.Property = db.Properties.FirstOrDefault(g => g.State == "HI");
+				//r21.Property = db.Properties.FirstOrDefault(g => g.Zip == "90576");
 				r21.AppUser = db.Users.FirstOrDefault(g => g.Email == "orielly@foxnets.com");
 				Reviews.Add(r21);
 

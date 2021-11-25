@@ -481,7 +481,7 @@ namespace Team_27_FinalProject.Controllers
             {
 
                 //Send the user to the Manage Users page
-                return RedirectToAction("Edit", "RoleAdmin");
+                return RedirectToAction("Index", "RoleAdmin");
             }
             else  //the add user operation didn't work, and we need to show an error message
             {
