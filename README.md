@@ -1,9 +1,9 @@
 # MIS333K Final Project 
 
 ### Email and Password for testing 
-Admin: macleod@bevobnb.com || Pass: kittys 
-Customer: wendy@puppy.com || Pass: Kansas
-Host: gonzalez@aol.com || Pass: gg2017
+- Admin: macleod@bevobnb.com || Pass: kittys 
+- Customer: wendy@puppy.com || Pass: Kansas
+- Host: gonzalez@aol.com || Pass: gg2017
 
 ### GITHUB WORKFLOW
 - From your branch > Commit > Push > Create Pull Request 
