@@ -61,17 +61,17 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Last Name")]
         public String LastName { get; set; }
 
-        //Address
+        //Street
         [Required(ErrorMessage = "Address cannot be blank.")]
-        [Display(Name = "Address:")]
-        public String Address { get; set; }
+        [Display(Name = "Street:")]
+        public String Street { get; set; }
 
         //Zipcode 
         [Required(ErrorMessage = "Zipcode cannot be blank.")]
         [StringLength(5, ErrorMessage = "Zipcode must be 5 digits.", MinimumLength = 5)]
         [RegularExpression("[0-9]", ErrorMessage = "Zipcode must be a 5-digit number.")]
-        [Display(Name = "Zip Code:")]
-        public Int32 ZipCode { get; set; }
+        [Display(Name = "Zip:")]
+        public Int32 Zip { get; set; }
 
         //Register Password
         [Required]

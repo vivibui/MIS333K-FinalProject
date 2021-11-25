@@ -66,8 +66,8 @@ namespace Team_27_FinalProject.Controllers
                 LastName = rvm.LastName,
                 MI = rvm.MI,
                 Birthday = rvm.Birthday,
-                Address = rvm.Address,
-                ZipCode = rvm.ZipCode,
+                Street = rvm.Street,
+                Zip = rvm.Zip,
         };
 
             //create AddUserModel

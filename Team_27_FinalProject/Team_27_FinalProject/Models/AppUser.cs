@@ -30,12 +30,12 @@ namespace Team_27_FinalProject.Models
         public DateTime Birthday { get; set; }
 
         //Address
-        [Display(Name = "Address:")]
-        public String Address { get; set; }
+        [Display(Name = "Street:")]
+        public String Street { get; set; }
 
         //Zipcode
         [Display(Name = "Zip Code:")]
-        public Int32 ZipCode { get; set; }
+        public Int32 Zip { get; set; }
 
 
         //--------------------NAVIGATIONAL PROPERTIES

@@ -5,6 +5,7 @@ using Team_27_FinalProject.Models;
 using Team_27_FinalProject.Utilities;
 using Team_27_FinalProject.DAL;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Team_27_FinalProject.Seeding
 {
@@ -12,7 +13,7 @@ namespace Team_27_FinalProject.Seeding
     { 
         public static void SeedAllCategories(AppDbContext db)
         {
-            if(db.Categories.Count()=5)
+            if(db.Categories.Count()== 5)
             {
                 NotSupportedException ex = new NotSupportedException("Category is already updated!");
                 throw ex;
@@ -24,12 +25,16 @@ namespace Team_27_FinalProject.Seeding
 
                 Category c1 = new Category() { CategoryName = "House" };
                 Categories.Add(c1);
-                Category c2 = new Category() { CategoryName = "Cabin };
+
+                Category c2 = new Category() { CategoryName = "Cabin" };
                 Categories.Add(c2);
+
                 Category c3 = new Category() { CategoryName = "Apartment" };
                 Categories.Add(c3);
+
                 Category c4 = new Category() { CategoryName = "Condo" };
                 Categories.Add(c4);
+
                 Category c5 = new Category() { CategoryName = "Hotel Room" };
                 Categories.Add(c5);
         
@@ -40,7 +45,6 @@ namespace Team_27_FinalProject.Seeding
                 //adding stuff to the database could cause problems, so we need to
                 //wrap this code in a try/catch block
 
-                
                
                 foreach (Category categoryToAdd in Categories)
                 {
