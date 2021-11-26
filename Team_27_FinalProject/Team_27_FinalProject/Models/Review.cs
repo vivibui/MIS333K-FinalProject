@@ -19,7 +19,7 @@ namespace Team_27_FinalProject.Models
         [Required(ErrorMessage = "Please enter your rating.")]
         [Display(Name = "Rating")]
         [Range(1.0, 5.0)]
-        [DisplayFormat(DataFormatString = "{0:F1}")]
+        [DisplayFormat(DataFormatString = "{0:F0}")]
         public Decimal Rating { get; set; }
 
         //Content

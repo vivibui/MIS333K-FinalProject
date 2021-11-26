@@ -10,7 +10,7 @@ using Team_27_FinalProject.DAL;
 namespace Team_27_FinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211125201926_Setup")]
+    [Migration("20211126061129_Setup")]
     partial class Setup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
