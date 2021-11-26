@@ -26,11 +26,11 @@ namespace Team_27_FinalProject.Models
     //When the user registers, they only need to specify the
     //properties listed in this model
     public class RegisterViewModel
-    {   
+    {
         //Email
         [Required]
-        [EmailAddress]
         [Display(Name = "Email")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
 
         //Phone Number 

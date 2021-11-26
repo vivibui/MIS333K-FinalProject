@@ -1,10 +1,8 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Views/Seed/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Program.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Controllers/SeedController.cs" />
-      <File FileName="Team_27_FinalProject/Seeding/SeedReviews.cs" />
-      <File FileName="Team_27_FinalProject/Seeding/SeedProperties.cs" />
-      <File FileName="Team_27_FinalProject/Views/Seed/Index.cshtml" Line="15" Column="1" />
+      <File FileName="Team_27_FinalProject/Controllers/AppUsersController.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Program.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,13 +10,16 @@
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Seeding" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Seed" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+              <Node name="Models" expanded="True">
+                <Node name="ViewModels" expanded="True" />
               </Node>
+              <Node name="Views" expanded="True">
+                <Node name="Account" expanded="True" />
+                <Node name="AppUsers" expanded="True" />
+                <Node name="RoleAdmin" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>

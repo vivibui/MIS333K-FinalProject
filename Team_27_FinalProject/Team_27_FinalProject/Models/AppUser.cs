@@ -26,7 +26,9 @@ namespace Team_27_FinalProject.Models
         public String MI { get; set; }
 
         //Birthday
-        [Display(Name = "Birthday:")]
+        [Display(Name = "Birthday")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MMMM d, yyyy}")]
         public DateTime Birthday { get; set; }
 
         //Address
@@ -34,7 +36,9 @@ namespace Team_27_FinalProject.Models
         public String Street { get; set; }
 
         //Zipcode
-        [Display(Name = "Zip Code:")]
+        [RegularExpression(@"\d{5}", ErrorMessage = "Zipcode must be a 5-digit number.")]
+        [Range(10000, 99999, ErrorMessage = "Please enter a valid zipcode range.")]
+        [Display(Name = "Zip")]
         public Int32 Zip { get; set; }
 
 

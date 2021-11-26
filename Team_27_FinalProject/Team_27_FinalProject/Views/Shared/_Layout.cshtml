@@ -30,7 +30,7 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <li>
-                                <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Users</a>
+                                <a asp-controller="RoleAdmin" asp-action="Index" class="nav-link">Manage Roles</a>
                             </li>
                         }
                     }
@@ -41,10 +41,22 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <li>
+                                <a asp-controller="AppUsers" asp-action="Index" class="nav-link">Manage Profiles</a>
+                            </li>
+                        }
+                    }
+                    <!-- Admin Only -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
                                 <a asp-controller="Account" asp-action="RegisterAdmin" class="nav-link">Create New Admin</a>
                             </li>
                         }
                     }
+
+
                 </ul>
             </div>
             @await Html.PartialAsync("_LoginPartial")

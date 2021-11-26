@@ -11,7 +11,7 @@
 {
     <input type="hidden" name="roleName" value="@Model.Role.Name" />
     <div class="panel panel-primary">
-        <div class="panel-heading">Add To @Model.Role.Name</div>
+        <div class="panel-heading"><h3>Add To @Model.Role.Name</h3></div>
         <table class="table table-striped">
             @if (Model.RoleNonMembers.Count() == 0)
             {
@@ -32,8 +32,8 @@
                 foreach (AppUser user in Model.RoleNonMembers)
                 {
                     <tr>
-                        <td>@user.FirstName</td>
                         <td>@user.UserName</td>
+                        <td>@user.Email</td>
                         <td>@user.FirstName</td>
                         <td>@user.LastName</td>
                         <td>@user.PhoneNumber</td>
@@ -47,7 +47,7 @@
     </div>
 
     <div class="panel panel-primary">
-        <div class="panel-heading">Remove from @Model.Role.Name</div>
+        <div class="panel-heading"><h3>Remove from @Model.Role.Name</h3></div>
         <table class="table table-striped">
             @if (Model.RoleMembers.Count() == 0)
             {
@@ -68,8 +68,8 @@
                 foreach (AppUser user in Model.RoleMembers)
                 {
                     <tr>
-                        <td>@user.FirstName</td>
                         <td>@user.UserName</td>
+                        <td>@user.Email</td>
                         <td>@user.FirstName</td>
                         <td>@user.LastName</td>
                         <td>@user.PhoneNumber</td>
