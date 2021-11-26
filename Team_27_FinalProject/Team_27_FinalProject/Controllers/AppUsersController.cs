@@ -8,12 +8,13 @@ using Microsoft.EntityFrameworkCore;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
-
+using Microsoft.AspNetCore.Identity;
+using Team_27_FinalProject.Utilities;
 
 namespace Team_27_FinalProject.Controllers
 {
 
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles = "Admin")]
     public class AppUsersController : Controller
     {
         private readonly AppDbContext _context;
@@ -47,62 +48,64 @@ namespace Team_27_FinalProject.Controllers
             return View(appUser);
         }
 
-       
+
 
         // GET: AppUsers/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
+            //admin did not specify a user to edit            
             if (id == null)
             {
-                return NotFound();
+                return View("Error", new String[] { "Please specify a supplier to edit!" });
             }
 
-            var appUser = await _context.Users.FindAsync(id);
+            //find the user in the database
+            AppUser appUser = await _context.Users.FindAsync(id);
+
+            //see if the user exists in the database
             if (appUser == null)
             {
-                return NotFound();
+                return View("Error", new String[] { "This supplier does not exist in the database!" });
             }
+
+            //send the user to the edit supplier page
             return View(appUser);
         }
+
 
         // POST: AppUsers/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("IsActive,FirstName,LastName,MI,Birthday,Street,Zip,Id,UserName,NormalizedUserName,Email,NormalizedEmail,EmailConfirmed,PasswordHash,SecurityStamp,ConcurrencyStamp,PhoneNumber,PhoneNumberConfirmed,TwoFactorEnabled,LockoutEnd,LockoutEnabled,AccessFailedCount")] AppUser appUser)
+        public async Task<IActionResult> Edit(string id, [Bind("FirstName,LastName, MI, Birthday, PhoneNumber, Street, Zip")] AppUser appUser)
         {
-            if (id != appUser.Id)
+
+            //if the admin messed up, send them back to the view to try again
+            if (ModelState.IsValid == false)
             {
-                return NotFound();
+                return View(appUser);
             }
 
-            if (ModelState.IsValid)
+            //if code gets this far, make the updates
+            try
             {
-                try
-                {
-                    _context.Update(appUser);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!AppUserExists(appUser.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(appUser);
+                await _context.SaveChangesAsync();
             }
-            return View(appUser);
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "Exception thrown. There was a problem editing this user.", ex.Message });
+            }
+
+            //send the user back to the view with all the suppliers
+            return RedirectToAction(nameof(Index));
         }
 
         private bool AppUserExists(string id)
         {
-            throw new NotImplementedException();
+            return _context.Users.Any(a => a.Id == id);
         }
+
     }
 }

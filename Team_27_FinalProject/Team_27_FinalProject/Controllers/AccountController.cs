@@ -29,9 +29,18 @@ namespace Team_27_FinalProject.Controllers
             _passwordValidator = (PasswordValidator<AppUser>)userManager.PasswordValidators.FirstOrDefault();
         }
 
-        // GET: /Account/Register
+        // GET: /Account/RegisterCustomer
         [AllowAnonymous]
         public IActionResult Register()
+        {
+            return View();
+        }
+
+
+        //------------------------- REGISTER NEW CUSTOMER ---------------------------
+        // GET: /Account/RegisterCustomer
+        [AllowAnonymous]
+        public IActionResult RegisterCustomer()
         {
             return View();
         }
@@ -40,7 +49,7 @@ namespace Team_27_FinalProject.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel rvm)
+        public async Task<ActionResult> RegisterCustomer(RegisterViewModel rvm)
         {
             //-----------------ADD: AGE VALIDATION-----------------
             //if the date of 18th birthday is more than now, then: 
@@ -100,6 +109,99 @@ namespace Team_27_FinalProject.Controllers
 
             if (result.Succeeded) //everything is okay
             { 
+                //NOTE: This code logs the user into the account that they just created
+                //You may or may not want to log a user in directly after they register - check
+                //the business rules!
+                Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
+
+                //Send the user to the home page
+                return RedirectToAction("Index", "Home");
+            }
+            else  //the add user operation didn't work, and we need to show an error message
+            {
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                //send user back to page with errors
+                return View(rvm);
+            }
+        }
+
+
+        //------------------------- REGISTER NEW HOST ---------------------------
+        // GET: /Account/RegisterHost
+        [AllowAnonymous]
+        public IActionResult RegisterHost()
+        {
+            return View();
+        }
+
+        // POST: /Account/RegisterHost
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> RegisterHost(RegisterViewModel rvm)
+        {
+            //-----------------ADD: AGE VALIDATION-----------------
+            //if the date of 18th birthday is more than now, then: 
+            if (rvm.Birthday.AddYears(18) > System.DateTime.Now) //not 18
+            {
+                ModelState.AddModelError("Age Error", "You must be 18 to register.");
+                return View(rvm);
+            }
+
+            //-----------------ADD: EMAIL DUPLICATION CHECK----------------- 
+            //if email is already in database, return error:
+            List<AppUser> allUsers = _context.Users.ToList();
+            foreach (var u in allUsers)
+            {
+                if (rvm.Email == u.Email)
+                {
+                    ModelState.AddModelError("Email Error", "Email exists. Please use another one.");
+                    return View(rvm);
+                }
+            }
+
+            //if registration data is valid, create a new user on the database
+            if (ModelState.IsValid == false)
+            {
+                //this is the sad path - something went wrong, 
+                //return the user to the register page to try again
+                return View(rvm);
+            }
+
+            //this code maps the RegisterViewModel to the AppUser domain model
+            AppUser newUser = new AppUser
+            {
+                UserName = rvm.Email,
+                Email = rvm.Email,
+                PhoneNumber = rvm.PhoneNumber,
+                FirstName = rvm.FirstName,
+                LastName = rvm.LastName,
+                MI = rvm.MI,
+                Birthday = rvm.Birthday,
+                Street = rvm.Street,
+                Zip = rvm.Zip,
+            };
+
+            //create AddUserModel
+            AddUserModel aum = new AddUserModel()
+            {
+                User = newUser,
+                Password = rvm.Password,
+
+                //TODO: You will need to change this value if you want to 
+                //add the user to a different role - just specify the role name.
+                RoleName = "Host"
+            };
+
+            //This code uses the AddUser utility to create a new user with the specified password
+            IdentityResult result = await Utilities.AddUser.AddUserWithRoleAsync(aum, _userManager, _context);
+
+            if (result.Succeeded) //everything is okay
+            {
                 //NOTE: This code logs the user into the account that they just created
                 //You may or may not want to log a user in directly after they register - check
                 //the business rules!
