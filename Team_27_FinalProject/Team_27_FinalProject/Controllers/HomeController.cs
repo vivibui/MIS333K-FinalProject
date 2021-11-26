@@ -133,26 +133,27 @@ namespace Team_27_FinalProject.Controllers
             }
 
             //search by PetsAllowed
-                if (svm.SelectedPets == true)
-                {
-                    query = query.Where(p => p.PetsAllowed == true);
-                }
+            //if (svm.SelectedPets == true)
+            //{
+            //    query = query.Where(p => p.PetsAllowed == true);
+            //}
 
-                if (svm.SelectedPets == false)
-                {
-                    query = query.Where(p => p.PetsAllowed == false);
-                }
+            //if (svm.SelectedPets == false)
+            //{
+            //    query = query.Where(p => p.PetsAllowed == false);
+            //}
+
 
             //search by FreeParking
-            if (svm.SelectedParking == true)
-            {
-                query = query.Where(p => p.ParkingFree == true);
-            }
+            //if (svm.SelectedParking == true)
+            //{
+            //    query = query.Where(p => p.ParkingFree == true);
+            //}
 
-            if (svm.SelectedParking == false)
-            {
-                query = query.Where(p => p.ParkingFree == false);
-            }
+            //if (svm.SelectedParking == false)
+            //{
+            //    query = query.Where(p => p.ParkingFree == false);
+            //}
 
 
 
