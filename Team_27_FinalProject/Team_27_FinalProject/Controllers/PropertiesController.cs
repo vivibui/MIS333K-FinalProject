@@ -58,7 +58,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property @property)
+        public async Task<IActionResult> Create([Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDisabled,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property @property)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +92,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property @property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDisabled,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property @property)
         {
             if (id != @property.PropertyID)
             {

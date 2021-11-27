@@ -13,6 +13,10 @@
         <form asp-action="DisplaySearchResults" method="get">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="SelectedCategoryID" class="control-label"></label>
+                @Html.DropDownListFor(model => model.SelectedCategoryID, (SelectList)ViewBag.AllCategories, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
                 <label asp-for="SelectedCity" class="control-label"></label>
                 <input asp-for="SelectedCity" class="form-control" />
                 <span asp-validation-for="SelectedCity" class="text-danger"></span>
@@ -21,10 +25,6 @@
                 <label asp-for="SelectedState" class="control-label"></label>
                 <input asp-for="SelectedState" class="form-control" />
                 <span asp-validation-for="SelectedState" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="SelectedCategoryID" class="control-label"></label>
-                @Html.DropDownListFor(model => model.SelectedCategoryID, (SelectList)ViewBag.AllCategories, new { @class = "form-control" })
             </div>
             <div class="form-group">
                 <label asp-for="SelectedCheckin" class="control-label"></label>
@@ -36,14 +36,14 @@
                 <input asp-for="SelectedCheckout" class="form-control" />
                 <span asp-validation-for="SelectedCheckout" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
+            <label asp-for="RatingType" class="control-label"></label><br />
+            <input type="radio" class="radio" asp-for="RatingType" value="@RatingType.LessThan" checked="checked" /> Less Than
+            <input type="radio" class="radio" asp-for="RatingType" value="@RatingType.GreaterThan" /> Greater Than
+            <div class="form-group">
                 <label asp-for="SelectedRating" class="control-label"></label>
                 <input asp-for="SelectedRating" class="form-control" />
                 <span asp-validation-for="SelectedRating" class="text-danger"></span>
             </div>
-            <label asp-for="RatingType" class="control-label"></label><br />
-            <input type="radio" class="radio" asp-for="RatingType" value="@RatingType.LessThan" checked="checked" /> Less Than<br />
-            <input type="radio" class="radio" asp-for="RatingType" value="@Rat.GreaterThan" /> Greater Than<br />*@
             <div class="form-group">
                 <label asp-for="SelectedGuests" class="control-label"></label>
                 <input asp-for="SelectedGuests" class="form-control" />
@@ -59,24 +59,26 @@
                 <input asp-for="SelectedBedrooms" class="form-control" />
                 <span asp-validation-for="SelectedBedrooms" class="text-danger"></span>
             </div>
+            OR 
+
             <div class="form-group">
                 <label asp-for="SelectedBathrooms" class="control-label"></label>
                 <input asp-for="SelectedBathrooms" class="form-control" />
                 <span asp-validation-for="SelectedBathrooms" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
+            <div class="form-group">
                 <label class="form-check-label">
                     @Html.DisplayNameFor(model => model.SelectedPets)
                     <input class="form-check-input" asp-for="SelectedPets" />
                 </label>
 
             </div>
-            <div class="">
+            <div class="form-group">
                 <label class="form-check-label">
                     @Html.DisplayNameFor(model => model.SelectedParking)
                     <input class="form-check-input" asp-for="SelectedParking" />
                 </label>
-            </div>*@
+            </div>
             <div class="form-group">
                 <input type="submit" value="Search" class="btn btn-primary" />
             </div>

@@ -107,22 +107,22 @@ namespace Team_27_FinalProject.Models
 
         //----------------------START: CALCULATE DISCOUNT-----------------------
 
-        private bool? _IsDiscounted;
+        private bool? _IsDisabled;
 
         //Is Discounted (T/F) (*)
         [Display(Name = "Discount Eligible? (T/F):")]
-        public Boolean? IsDiscounted
+        public Boolean? IsDisabled
         {
-            get { return _IsDiscounted; }
+            get { return _IsDisabled; }
             set
             {
                 if (NumberOfNights > Property.DiscountMinNights)
                 {
-                    _IsDiscounted = true;
+                    _IsDisabled = true;
                 }
                 else
                 {
-                    _IsDiscounted = false;
+                    _IsDisabled = false;
                 }
             }
 
@@ -138,7 +138,7 @@ namespace Team_27_FinalProject.Models
             get { return _discount; }
             set
             {
-                if (_IsDiscounted == true)
+                if (_IsDisabled == true)
                 {
                     _discount = Subtotal* Property.DiscountRate;
                 }
