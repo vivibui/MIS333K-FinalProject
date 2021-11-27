@@ -23,11 +23,10 @@
                 </dl>
             </div>
 
-            <div class="form-group">
-                <label asp-for="IsActive" class="control-label"></label>
-                <input asp-for="IsActive" class="form-control" />
-                <span asp-validation-for="IsActive" class="text-danger"></span>
-            </div>
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="IsActive" />
+                @Html.DisplayNameFor(model => model.IsActive)
+            </label>
 
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
@@ -49,6 +48,9 @@
                 <input asp-for="Birthday" class="form-control" />
                 <span asp-validation-for="Birthday" class="text-danger"></span>
             </div>
+            <dl class="text-danger">
+                @Html.ValidationMessage("Age Error")
+            </dl>
             <div class="form-group">
                 <label asp-for="Street" class="control-label"></label>
                 <input asp-for="Street" class="form-control" />

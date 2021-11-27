@@ -200,3 +200,4 @@
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/AppUsers/Index.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Account/RegisterCustomer.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Account/RegisterHost.cshtml.g.cs
+/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/AppUsers/ChangePasswordAdmin.cshtml.g.cs

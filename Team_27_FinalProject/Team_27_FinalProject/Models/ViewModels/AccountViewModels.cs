@@ -92,6 +92,7 @@ namespace Team_27_FinalProject.Models
     //change their password
     public class ChangePasswordViewModel
     {
+
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Current password")]

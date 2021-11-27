@@ -17,6 +17,9 @@ namespace Team_27_FinalProject.Controllers
     [Authorize(Roles = "Admin")]
     public class AppUsersController : Controller
     {
+        private UserManager<AppUser> _userManager;
+        private PasswordValidator<AppUser> _passwordValidator;
+
         private readonly AppDbContext _context;
 
         public AppUsersController(AppDbContext context)
@@ -56,7 +59,7 @@ namespace Team_27_FinalProject.Controllers
             //admin did not specify a user to edit            
             if (id == null)
             {
-                return View("Error", new String[] { "Please specify a supplier to edit!" });
+                return View("Error", new String[] { "Please specify a user to edit!" });
             }
 
             //find the user in the database
@@ -65,10 +68,10 @@ namespace Team_27_FinalProject.Controllers
             //see if the user exists in the database
             if (appUser == null)
             {
-                return View("Error", new String[] { "This supplier does not exist in the database!" });
+                return View("Error", new String[] { "This user does not exist in the database!" });
             }
 
-            //send the user to the edit supplier page
+            //send the user to the edit user page
             return View(appUser);
         }
 
@@ -78,33 +81,108 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("FirstName,LastName, MI, Birthday, PhoneNumber, Street, Zip")] AppUser appUser)
+        public async Task<IActionResult> Edit(string id, [Bind("FirstName,LastName, MI, Birthday, PhoneNumber, Street, Zip")] EditUserViewModel euvm)
         {
+            AppUser appUser = await _context.Users.FindAsync(id);
 
-            //if the admin messed up, send them back to the view to try again
-            if (ModelState.IsValid == false)
+            if (!ModelState.IsValid)
             {
                 return View(appUser);
             }
 
-            //if code gets this far, make the updates
-            try
+            // Update it with the values from the view model
+            appUser.FirstName = euvm.FirstName;
+            appUser.LastName = euvm.LastName;
+            appUser.MI = euvm.MI;
+            appUser.Birthday = euvm.Birthday;
+            appUser.PhoneNumber = euvm.PhoneNumber;
+            appUser.Street = euvm.Street; 
+            appUser.Zip = euvm.Zip;
+
+
+            //-----------------ADD: AGE VALIDATION-----------------
+            //if the date of 18th birthday is more than now, then: 
+            if (appUser.Birthday.AddYears(18) > System.DateTime.Now) //not 18
             {
-                _context.Update(appUser);
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception ex)
-            {
-                return View("Error", new String[] { "Exception thrown. There was a problem editing this user.", ex.Message });
+                ModelState.AddModelError("Age Error", "You must be 18 to register.");
+                return View(appUser);
             }
 
-            //send the user back to the view with all the suppliers
-            return RedirectToAction(nameof(Index));
+            // Apply the changes if any to the db
+            _context.Update(appUser);
+            await _context.SaveChangesAsync();
+
+            //Return
+            return RedirectToAction("Index", "AppUsers");
         }
 
-        private bool AppUserExists(string id)
+
+
+
+        //Logic for change password
+        // GET: /Account/ChangePassword
+        public async Task<IActionResult> ChangePasswordAdmin(string id)
         {
-            return _context.Users.Any(a => a.Id == id);
+            //admin did not specify a user to edit            
+            if (id == null)
+            {
+                return View("Error", new String[] { "Please specify a user to edit!" });
+            }
+
+            //find the user in the database
+            AppUser appUser = await _context.Users.FindAsync(id);
+
+            //see if the user exists in the database
+            if (appUser == null)
+            {
+                return View("Error", new String[] { "This user does not exist in the database!" });
+            }
+
+            var model = new ChangePasswordAdminViewModel
+            {
+                Id = appUser.Id
+            };
+
+            return View(model);
+        }
+
+
+
+        // POST: /Account/ChangePassword
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ChangePasswordAdmin(ChangePasswordAdminViewModel cpavm)
+        {
+            AppUser appUser = await _context.Users.FindAsync(cpavm.Id);
+
+            if (appUser == null)
+            {
+                ViewBag.ErrorMessage = $"User with Id = {cpavm.Id} cannot be found";
+                return View("NotFound");
+            }
+            else
+            {
+
+                //Attempt to change the password using the UserManager
+                var hashpassword = _userManager.PasswordHasher.HashPassword(appUser, cpavm.ConfirmPassword);
+
+                appUser.PasswordHash = hashpassword;
+
+                var result = await _userManager.UpdateAsync(appUser);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "AppUsers");
+                }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+
+                return View("ChangePasswordAdmin");
+
+            }
         }
 
     }

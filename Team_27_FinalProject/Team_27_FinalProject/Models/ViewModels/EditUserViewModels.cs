@@ -50,18 +50,22 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Zip")]
         public Int32 Zip { get; set; }
 
-        //Register Password
+    }
+
+    public class ChangePasswordAdminViewModel
+    {
+        public string Id { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New Password")]
-        public string Password { get; set; }
+        [Display(Name = "New password")]
+        public string NewPassword { get; set; }
 
-        //Confirm Password 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm New Password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirm new password")]
+        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
-    
 }
