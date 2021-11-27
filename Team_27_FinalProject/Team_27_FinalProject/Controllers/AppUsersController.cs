@@ -166,8 +166,6 @@ namespace Team_27_FinalProject.Controllers
                 //Attempt to change the password using the UserManager
                 var hashpassword = _userManager.PasswordHasher.HashPassword(appUser, cpavm.ConfirmPassword);
 
-                appUser.PasswordHash = hashpassword;
-
                 var result = await _userManager.UpdateAsync(appUser);
 
                 if (result.Succeeded)
