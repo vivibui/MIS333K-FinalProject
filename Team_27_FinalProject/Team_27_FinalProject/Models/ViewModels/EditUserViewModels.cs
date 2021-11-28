@@ -54,6 +54,7 @@ namespace Team_27_FinalProject.Models
 
     public class ChangePasswordAdminViewModel
     {
+
         public string Id { get; set; }
 
         [Required]

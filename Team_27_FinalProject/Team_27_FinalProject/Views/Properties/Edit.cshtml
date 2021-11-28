@@ -13,6 +13,11 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PropertyID" />
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsDisabled" /> @Html.DisplayNameFor(model => model.IsDisabled)
+                </label>
+            </div>
             <div class="form-group">
                 <label asp-for="PropertyNumber" class="control-label"></label>
                 <input asp-for="PropertyNumber" class="form-control" />
@@ -61,11 +66,6 @@
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="ParkingFree" /> @Html.DisplayNameFor(model => model.ParkingFree)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsDiscounted" /> @Html.DisplayNameFor(model => model.IsDiscounted)
                 </label>
             </div>
             <div class="form-group">

@@ -1,25 +1,24 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Controllers/AppUsersController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Models/Reservation.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Controllers/AppUsersController.cs" Line="168" Column="1" />
-      <File FileName="Team_27_FinalProject/Models/ViewModels/EditUserViewModels.cs" Line="52" Column="1" />
-      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="21" Column="39" />
-      <File FileName="Team_27_FinalProject/Views/AppUsers/ChangePasswordAdmin.cshtml" Line="9" Column="18" />
+      <File FileName="Team_27_FinalProject/Controllers/PropertiesController.cs" Line="28" Column="1" />
+      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Models/ViewModels/RoleViewModels.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Models/Property.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Models/Reservation.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="AppUsersController.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModels" expanded="True" />
+                <Node name="Reservation.cs" selected="True" />
               </Node>
               <Node name="Views" expanded="True">
-                <Node name="AppUsers" expanded="True" />
-                <Node name="Shared" expanded="True" />
+                <Node name="Properties" expanded="True" />
               </Node>
             </Node>
           </Node>

@@ -27,48 +27,76 @@ namespace Team_27_FinalProject.Controllers
             return View(await _context.Properties.ToListAsync());
         }
 
+
+
+        //--------------------------------- DETAIL -------------------------------------
         // GET: Properties/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            //id was not specified - show the user an error
             if (id == null)
             {
-                return NotFound();
+                return View("Error", new String[] { "Please specify a property to view!" });
             }
 
-            var @property = await _context.Properties
+            //find the property in the database
+            //be sure to include the relevant navigational data
+            Property property = await _context.Properties
+                .Include(c => c.AppUser)
                 .FirstOrDefaultAsync(m => m.PropertyID == id);
-            if (@property == null)
+
+            //product was not found in the database
+            if (property == null)
             {
-                return NotFound();
+                return View("Error", new String[] { "That product was not found in the database." });
             }
 
-            return View(@property);
+            return View(property);
         }
 
-        //Only Admin and Host can access
-        [Authorize(Roles = "Admin, Host")]
+
+
+
+        //--------------------------------- CREATE -------------------------------------
+        //Only Host can create propert
+        [Authorize(Roles = "Host")]
         // GET: Properties/Create
         public IActionResult Create()
         {
             return View();
         }
 
+
+
         // POST: Properties/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property @property)
+        public async Task<IActionResult> Create([Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property property)
         {
-            if (ModelState.IsValid)
+            //Find the next property number from the utilities class
+            property.PropertyNumber = Utilities.GenerateNextPropertyNumber.GetNextPropertyNumber(_context);
+
+            //Associate the registration with the logged-in customer
+            property.AppUser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
+            //make sure all properties are valid
+            if (ModelState.IsValid == false)
             {
-                _context.Add(@property);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return View(property);
             }
-            return View(@property);
+
+            //if code gets this far, add the property to the database
+            _context.Add(property);
+            await _context.SaveChangesAsync();
+
+            return View();
         }
 
+
+
+        //--------------------------------- EDIT -------------------------------------
         //Only Admin and Host can access
         [Authorize(Roles = "Admin, Host")]
         // GET: Properties/Edit/5

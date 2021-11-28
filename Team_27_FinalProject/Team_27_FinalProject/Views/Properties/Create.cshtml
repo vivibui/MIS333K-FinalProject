@@ -1,7 +1,7 @@
 @model Team_27_FinalProject.Models.Property
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create New Property";
 }
 
 <h1>Create</h1>
@@ -12,11 +12,6 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="PropertyNumber" class="control-label"></label>
-                <input asp-for="PropertyNumber" class="form-control" />
-                <span asp-validation-for="PropertyNumber" class="text-danger"></span>
-            </div>
             <div class="form-group">
                 <label asp-for="Street" class="control-label"></label>
                 <input asp-for="Street" class="form-control" />
@@ -60,11 +55,6 @@
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="ParkingFree" /> @Html.DisplayNameFor(model => model.ParkingFree)
-                </label>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsDiscounted" /> @Html.DisplayNameFor(model => model.IsDiscounted)
                 </label>
             </div>
             <div class="form-group">
