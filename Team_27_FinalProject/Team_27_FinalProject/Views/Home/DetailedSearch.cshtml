@@ -59,19 +59,38 @@
                 <input asp-for="SelectedBedrooms" class="form-control" />
                 <span asp-validation-for="SelectedBedrooms" class="text-danger"></span>
             </div>
-            OR 
-
+            Or Search by Range of Bedrooms
+            <div class="form-group">
+                <label asp-for="SelectedMinBedrooms" class="control-label"></label>
+                <input asp-for="SelectedMinBedrooms" class="form-control" />
+                <span asp-validation-for="SelectedMinBedrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMaxBedrooms" class="control-label"></label>
+                <input asp-for="SelectedMaxBedrooms" class="form-control" />
+                <span asp-validation-for="SelectedMaxBedrooms" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="SelectedBathrooms" class="control-label"></label>
                 <input asp-for="SelectedBathrooms" class="form-control" />
                 <span asp-validation-for="SelectedBathrooms" class="text-danger"></span>
+            </div>
+            Or Search by Range of Bathrooms
+            <div class="form-group">
+                <label asp-for="SelectedMinBathrooms" class="control-label"></label>
+                <input asp-for="SelectedMinBathrooms" class="form-control" />
+                <span asp-validation-for="SelectedMinBathrooms" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMaxBathrooms" class="control-label"></label>
+                <input asp-for="SelectedMaxBathrooms" class="form-control" />
+                <span asp-validation-for="SelectedMaxBathrooms" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="form-check-label">
                     @Html.DisplayNameFor(model => model.SelectedPets)
                     <input class="form-check-input" asp-for="SelectedPets" />
                 </label>
-
             </div>
             <div class="form-group">
                 <label class="form-check-label">

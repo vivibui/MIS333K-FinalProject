@@ -114,10 +114,40 @@ namespace Team_27_FinalProject.Controllers
                 query = query.Where(p => p.Bedrooms == svm.SelectedBedrooms);
             }
 
+            if (svm.SelectedMinBedrooms != null)
+            {
+                query = query.Where(p => p.Bedrooms >= svm.SelectedMinBedrooms);
+            }
+
+            if (svm.SelectedMaxBedrooms != null)
+            {
+                query = query.Where(p => p.Bedrooms <= svm.SelectedMaxBedrooms);
+            }
+
+            if (svm.SelectedMinBedrooms != null && svm.SelectedMaxBedrooms != null)
+            {
+                query = query.Where(p => p.Bedrooms >= svm.SelectedMinBedrooms && p.Bedrooms <= svm.SelectedMaxBedrooms);
+            }
+
             //Search by Bathrooms
             if (svm.SelectedBathrooms != null)
             {
                 query = query.Where(p => p.Bathrooms == svm.SelectedBathrooms);
+            }
+
+            if (svm.SelectedMinBathrooms != null)
+            {
+                query = query.Where(p => p.Bathrooms >= svm.SelectedMinBathrooms);
+            }
+
+            if (svm.SelectedMaxBathrooms != null)
+            {
+                query = query.Where(p => p.Bathrooms <= svm.SelectedMaxBathrooms);
+            }
+
+            if (svm.SelectedMinBathrooms != null && svm.SelectedMaxBathrooms != null)
+            {
+                query = query.Where(p => p.Bathrooms >= svm.SelectedMinBathrooms && p.Bathrooms <= svm.SelectedMaxBathrooms);
             }
 
             //search by category
@@ -145,6 +175,7 @@ namespace Team_27_FinalProject.Controllers
             }
 
             //Search by Rating
+            //TODO: use ratings from reviews model
             if (svm.SelectedRating != null)
             {
                 if (svm.RatingType == RatingType.LessThan)
