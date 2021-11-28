@@ -1,11 +1,7 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Models/Reservation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Utilities/SendEmail.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Controllers/PropertiesController.cs" Line="28" Column="1" />
-      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="1" Column="1" />
-      <File FileName="Team_27_FinalProject/Models/ViewModels/RoleViewModels.cs" Line="1" Column="1" />
-      <File FileName="Team_27_FinalProject/Models/Property.cs" Line="1" Column="1" />
-      <File FileName="Team_27_FinalProject/Models/Reservation.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Utilities/SendEmail.cs" Line="6" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,13 +9,11 @@
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
               <Node name="Controllers" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-                <Node name="Reservation.cs" selected="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Utilities" expanded="True">
+                <Node name="SendEmail.cs" selected="True" />
               </Node>
-              <Node name="Views" expanded="True">
-                <Node name="Properties" expanded="True" />
-              </Node>
+              <Node name="Views" expanded="True" />
             </Node>
           </Node>
         </State>
