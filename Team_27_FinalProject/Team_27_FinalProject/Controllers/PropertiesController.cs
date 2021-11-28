@@ -91,7 +91,7 @@ namespace Team_27_FinalProject.Controllers
             _context.Add(property);
             await _context.SaveChangesAsync();
 
-            return View();
+            return RedirectToAction("Index", "Property");
         }
 
 
