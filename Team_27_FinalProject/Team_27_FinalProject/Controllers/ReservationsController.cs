@@ -58,7 +58,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDiscounted,Discount")] Reservation reservation)
+        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDiscounted,Discount")] Reservation reservation)
+        public async Task<IActionResult> Edit(int id, [Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Reservation reservation)
         {
             if (id != reservation.ReservationID)
             {

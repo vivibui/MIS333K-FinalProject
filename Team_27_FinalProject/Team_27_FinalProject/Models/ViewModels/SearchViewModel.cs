@@ -49,13 +49,21 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Type of Property:")]
         public Int32 SelectedCategoryID { get; set; }
 
-        //Textbox: Number of bedrooms
+        //Textbox: Number of bedrooms (exact, min, max, both)
         [Display(Name = "Search by Number of Bedrooms:")]
         public Int32? SelectedBedrooms { get; set; }
+        [Display(Name = "Minimum bedrooms")]
+        public Int32? SelectedMinBedrooms { get; set; }
+        [Display(Name = "Maximum bedrooms")]
+        public Int32? SelectedMaxBedrooms { get; set; }
 
-        //Textbox: Number of bathrooms
+        //Textbox: Number of bathrooms (exact, min, max, or both)
         [Display(Name = "Search by Number of Bathrooms:")]
         public Int32? SelectedBathrooms { get; set; }
+        [Display(Name = "Minimum bathrooms")]
+        public Int32? SelectedMinBathrooms { get; set; }
+        [Display(Name = "Maximum bathrooms")]
+        public Int32? SelectedMaxBathrooms { get; set; }
 
         //Options: Pets Allowed (Y/N)
         [Display(Name = "Pets Allowed:")]
