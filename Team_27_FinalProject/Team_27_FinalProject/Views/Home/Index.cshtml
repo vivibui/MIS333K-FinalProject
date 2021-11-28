@@ -19,8 +19,15 @@
             <th>
                 <a asp-controller="Reviews" asp-action="Index" class="btn btn-info">Reviews</a>
             </th>
+
             <th>
-                <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                     @if (User.IsInRole("Admin"))
+                     {
+                        <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
+                     }
+                }
             </th>
         </tr>
     </table>
