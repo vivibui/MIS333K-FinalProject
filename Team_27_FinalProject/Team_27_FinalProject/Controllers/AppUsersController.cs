@@ -51,7 +51,7 @@ namespace Team_27_FinalProject.Controllers
             return View(appUser);
         }
 
-
+        //-------------------------------------------- EDIT --------------------------------------------
 
         // GET: AppUsers/Edit/5
         public async Task<IActionResult> Edit(string id)
@@ -117,7 +117,7 @@ namespace Team_27_FinalProject.Controllers
         }
 
 
-
+        //-------------------------------------------- CHANGE PASSWORD --------------------------------------------
 
         //Logic for change password
         // GET: /Account/ChangePassword
@@ -147,26 +147,27 @@ namespace Team_27_FinalProject.Controllers
         }
 
 
-
         // POST: /Account/ChangePassword
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ChangePasswordAdmin(ChangePasswordAdminViewModel cpavm)
         {
-            AppUser appUser = await _context.Users.FindAsync(cpavm.Id);
+            AppUser appUser = _context.Users.FirstOrDefault(u => u.Id == cpavm.Id);
 
             if (appUser == null)
             {
                 ViewBag.ErrorMessage = $"User with Id = {cpavm.Id} cannot be found";
-                return View("NotFound");
+                return View("Error", new String[]{"User is not found."});
             }
-            else
+
+            try
             {
+                appUser = _context.Users.FirstOrDefault(u => u.Id == cpavm.Id);
 
                 //Attempt to change the password using the UserManager
-                var hashpassword = _userManager.PasswordHasher.HashPassword(appUser, cpavm.ConfirmPassword);
+                var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
 
-                var result = await _userManager.UpdateAsync(appUser);
+                var result = await _userManager.ResetPasswordAsync(appUser, token, cpavm.ConfirmPassword);
 
                 if (result.Succeeded)
                 {
@@ -178,9 +179,14 @@ namespace Team_27_FinalProject.Controllers
                     ModelState.AddModelError("", error.Description);
                 }
 
-                return View("ChangePasswordAdmin");
-
             }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was a problem update this password.", ex.Message });
+            }
+
+            //send the user back to the view with all the suppliers
+            return RedirectToAction(nameof(Index));
         }
 
     }

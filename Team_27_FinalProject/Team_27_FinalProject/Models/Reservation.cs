@@ -107,11 +107,11 @@ namespace Team_27_FinalProject.Models
 
         //----------------------START: CALCULATE DISCOUNT-----------------------
 
-        private bool? _IsDiscounted;
+        private bool _IsDiscounted;
 
         //Is Discounted (T/F) (*)
         [Display(Name = "Discount Eligible? (T/F):")]
-        public Boolean? IsDiscounted
+        public Boolean IsDiscounted
         {
             get { return _IsDiscounted; }
             set

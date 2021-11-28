@@ -10,12 +10,6 @@ namespace Team_27_FinalProject.Models
     {
         public Int32 ReviewID { get; set; }
 
-        //TODO: 
-        //rating
-        //decimal between 1.0 and 5.0
-        //calculate average rating in ReviewsController? HomeController?
-        //need a searchviewmodel to specify greaterthan/lessthan
-        //HomeController handles Search Rating (HW3)
         [Required(ErrorMessage = "Please enter your rating.")]
         [Display(Name = "Rating")]
         [Range(1.0, 5.0)]

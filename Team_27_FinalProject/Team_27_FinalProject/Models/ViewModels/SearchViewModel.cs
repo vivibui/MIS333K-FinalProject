@@ -59,11 +59,11 @@ namespace Team_27_FinalProject.Models
 
         //Options: Pets Allowed (Y/N)
         [Display(Name = "Pets Allowed:")]
-        public Boolean? SelectedPets { get; set; }
+        public Boolean SelectedPets { get; set; }
 
         //Options: Free Parking (Y/N)
         [Display(Name = "Free Parking:")]
-        public Boolean? SelectedParking { get; set; }
+        public Boolean SelectedParking { get; set; }
 
     }
 }

@@ -68,7 +68,7 @@ namespace Team_27_FinalProject.Models
 
         //Is Disabled (Y/N) 
         [Display(Name = "Property Disabled? (Y/N):")]
-        public Boolean IsDiscounted { get; set; }
+        public Boolean IsDisabled { get; set; }
 
         //Weekday Price
         [Required(ErrorMessage = "Weekday price cannot leave blank.")]
