@@ -315,7 +315,7 @@ namespace Team_27_FinalProject.Migrations
                     b.Property<int>("GuestsAllowed")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDiscounted")
+                    b.Property<bool>("IsDisabled")
                         .HasColumnType("bit");
 
                     b.Property<bool>("ParkingFree")
@@ -373,7 +373,7 @@ namespace Team_27_FinalProject.Migrations
                     b.Property<decimal>("Discount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<bool?>("IsDiscounted")
+                    b.Property<bool?>("IsDisabled")
                         .HasColumnType("bit");
 
                     b.Property<int>("NumberOfGuests")
