@@ -30,7 +30,18 @@
                         @if (User.IsInRole("Customer"))
                         {
                             <li>
-                                <a asp-action="Index" asp-controller="Orders" class="btn btn-info">View Orders</a>
+                                <a asp-action="Index" asp-controller="Orders" class="nav-link">View Orders</a>
+                            </li>
+                        }
+                    }
+
+                    <!-- Admin Only: Approve/Reject Newly Created Properties -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Properties" asp-action="PendingCreateAdminViewIndex" class="nav-link">Pending Properties</a>
                             </li>
                         }
                     }
@@ -73,7 +84,7 @@
                         @if (User.IsInRole("Admin"))
                         {
                             <li>
-                                <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
+                                <a asp-controller="Categories" asp-action="Index" class="nav-link">Set Categories</a>
                             </li>
                         }
                     }

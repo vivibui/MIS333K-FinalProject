@@ -20,6 +20,7 @@ namespace Team_27_FinalProject.Controllers
         }
 
         // GET: Home
+        //--------------------------NOTE: ONLY LIST ACTIVE PROPERTY 
         public ActionResult Index()
         {
             var query = from p in _context.Properties
