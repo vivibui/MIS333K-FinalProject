@@ -2,7 +2,7 @@
 using System.Net.Mail;
 using System.Net;
 
-namespace SendMail
+namespace Team_27_FinalProject.SendMail
 {
     public static class EmailMessaging
     {
@@ -35,7 +35,7 @@ namespace SendMail
             //emailBody is passed into the method as a parameter
             // /n is a new line – this will add some white space after the main body of the message
             //TODO: Change or remove the disclaimer below
-            String finalMessage = emailBody + "\n\n This is a disclaimer that will be on all messages.";
+            String finalMessage = emailBody + "\n\n BevoBnB™ Inc. Copyright MIS333K Fall 2021.";
 
             //Create an email address object for the sender address
             MailAddress senderEmail = new MailAddress(strFromEmailAddress, strCompanyName);
@@ -56,7 +56,7 @@ namespace SendMail
             mm.To.Add(new MailAddress(toEmailAddress));
 
             //Add the message (passed)
-            mm.Body = finalMessage;
+            mm.Body = finalMessage; 
 
             //send the message!
             client.Send(mm);

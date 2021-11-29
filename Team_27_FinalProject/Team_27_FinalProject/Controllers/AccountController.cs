@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 using Team_27_FinalProject.Utilities;
+using Team_27_FinalProject.SendMail;
 
 namespace Team_27_FinalProject.Controllers
 {
@@ -113,6 +114,15 @@ namespace Team_27_FinalProject.Controllers
                 //You may or may not want to log a user in directly after they register - check
                 //the business rules!
                 Microsoft.AspNetCore.Identity.SignInResult result2 = await _signInManager.PasswordSignInAsync(rvm.Email, rvm.Password, false, lockoutOnFailure: false);
+
+                //Send Email
+                String emailSubject = "Welcome to BevoBnB!";
+                String emailBody = @"<div> Hi " + newUser.FirstName + ",</div>";
+                emailBody = emailBody + @"<div>Thank you for register your account with us.</div>";
+                emailBody = emailBody + @"<div> Your Username is:</div>" + newUser.Email;
+                emailBody = emailBody + @"<div> Hope you have a wondertime with BevoBnB!</div>";
+
+                EmailMessaging.SendEmail(rvm.Email, emailSubject, emailBody);
 
                 //Send the user to the home page
                 return RedirectToAction("Index", "Home");

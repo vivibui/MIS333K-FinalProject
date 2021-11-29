@@ -8,12 +8,19 @@ namespace Team_27_FinalProject.Models
 {    
     public class Property
     {
+        public enum PropertyStatus {Approved, Pending, Rejected}
+
         //Primary key
         public Int32 PropertyID { get; set; }
 
         //Property Number
         [Display(Name = "Property Number:")]
         public Int32 PropertyNumber { get; set; }
+
+        //Property Status
+        [Required(ErrorMessage = "Property Status cannot be blank.")]
+        [Display(Name = "Property Status:")]
+        public PropertyStatus PStatus { get; set; }
 
         //Street
         [Required(ErrorMessage ="Street cannot be blank.")]
