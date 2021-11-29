@@ -219,7 +219,7 @@ namespace Team_27_FinalProject.Controllers
 
 
             //.ToList() method to execute the query. Include statement to get the navigational data
-            List<Property> SelectedProperties = query.Include(p => p.Category).ToList();
+            List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
 
             //Populate the view bag with a count of all properties
             ViewBag.AllProperties = _context.Properties.Count();
