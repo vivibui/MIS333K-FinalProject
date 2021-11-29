@@ -175,19 +175,7 @@ namespace Team_27_FinalProject.Controllers
                 query = query.Where(p => p.ParkingFree == true);
             }
 
-            //Search by Rating
-            //TODO: use ratings from reviews model
-            if (svm.SelectedRating != null)
-            {
-                if (svm.RatingType == RatingType.LessThan)
-                {
-                    query = query.Where(p => p.Ratings < svm.SelectedRating);
-                }
-                else
-                {
-                    query = query.Where(p => p.Ratings > svm.SelectedRating);
-                }
-            }
+
 
 
             //search by CheckIn and CheckOut date
@@ -196,10 +184,9 @@ namespace Team_27_FinalProject.Controllers
             //    query1 = query1.Where(r => r.CheckoutDate >= svm.SelectedCheckin && svm.SelectedCheckin >= r.CheckinDate || r.CheckinDate <= svm.SelectedCheckout && r.CheckinDate >= svm.SelectedCheckin);
             //}
 
-            if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
-            {
-                query1 = query1.Where(r => r.CheckoutDate <= svm.SelectedCheckin && svm.SelectedCheckin <= r.CheckinDate || r.CheckinDate >= svm.SelectedCheckout && r.CheckinDate <= svm.SelectedCheckin);
-            }
+           
+
+
 
 
             //search by Price (weekday, weekend, both)
@@ -221,6 +208,39 @@ namespace Team_27_FinalProject.Controllers
 
             //.ToList() method to execute the query. Include statement to get the navigational data
             List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
+
+            //Search by Rating
+            //TODO: use ratings from reviews model
+            if (svm.SelectedRating != null)
+            {
+                if (svm.RatingType == RatingType.LessThan)
+                {SelectedProperties
+                     = SelectedProperties.Where(p => p.Ratings < svm.SelectedRating).ToList();
+                }
+                else
+                {
+                    query = query.Where(p => p.Ratings > svm.SelectedRating);
+                }
+            }
+
+            if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
+            {
+                query1 = query1.Where(r => (r.CheckoutDate <= svm.SelectedCheckin && svm.SelectedCheckin <= r.CheckinDate) || (r.CheckinDate >= svm.SelectedCheckout && r.CheckinDate <= svm.SelectedCheckin));
+
+
+                List<Reservation> reservations = query1.ToList();
+                var query3 = from p in _context.Properties select p;
+                foreach (Reservation res in reservations)
+                {
+                    query3 = query3.Where(p => p.Reservations.Any(r => r.ReservationID == res.ReservationID));
+                }
+
+                List<Property> Unavailable = query3.ToList();
+
+                SelectedProperties = SelectedProperties.Except(Unavailable).ToList();
+
+
+            }
 
             //Populate the view bag with a count of all properties
             ViewBag.AllProperties = _context.Properties.Count();
