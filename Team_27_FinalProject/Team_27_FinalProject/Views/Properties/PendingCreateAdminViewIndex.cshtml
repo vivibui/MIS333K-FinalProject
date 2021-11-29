@@ -1,0 +1,83 @@
+@model IEnumerable<Team_27_FinalProject.Models.Property>
+
+@{ ViewData["Title"] = "VIEW PENDING PROPERTIES"; }
+<br />
+<h1>Pending Listing</h1>
+<h4>New listings from hosts.</h4>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUser.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUser.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUser.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUser.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Zip)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.AppUser.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AppUser.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AppUser.LastName)
+    </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.AppUser.PhoneNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Category)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Street)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.City)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.State)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Zip)
+    </td>
+    <td>
+        @Html.ActionLink("Details", "PendingCreateAdminView", new { id = item.PropertyID })
+    </td>
+</tr>}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index">Back to List of Active Properties</a>
+</div>
+

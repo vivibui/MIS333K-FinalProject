@@ -35,7 +35,7 @@ namespace Team_27_FinalProject.SendMail
             //emailBody is passed into the method as a parameter
             // /n is a new line – this will add some white space after the main body of the message
             //TODO: Change or remove the disclaimer below
-            String finalMessage = emailBody + "\n\n BevoBnB™ Inc. Copyright MIS333K Fall 2021.";
+            String finalMessage = emailBody + "\n\n Customer Support (US-Canada): (+1) 800-000-6969 • Chat Support (24/7): @BevoBNB27 (SC) | BevoBNBSupport@gmail.com";
 
             //Create an email address object for the sender address
             MailAddress senderEmail = new MailAddress(strFromEmailAddress, strCompanyName);
