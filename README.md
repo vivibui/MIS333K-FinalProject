@@ -8,7 +8,7 @@
 ### Add Values to database for testing
 Whether you create a new account, new property/order/reservation, etc. for testing, make sure to record them at OneNote > Code > Test. That way we can remove them from the database for presentation day. 
 
-### Model Class Diagram has been updated! (Last Update: 11/27 @11PM)
+### Model Class Diagram has been updated! (Last Update: 11/29 @4AM)
 
 https://lucid.app/lucidchart/9077adef-9410-486e-8b8e-871a535003aa/edit?viewport_loc=-2141%2C-580%2C3853%2C2506%2C0_0&invitationId=inv_d5a5ee70-58a7-4588-9446-b5ba780354cf
 
