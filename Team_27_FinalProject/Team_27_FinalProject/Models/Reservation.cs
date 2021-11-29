@@ -8,11 +8,19 @@ namespace Team_27_FinalProject.Models
 {
     public class Reservation
     {
+        public enum ReservationStatus { Completed, Incoming, Cancelled }
+
         //Tax Rate 
         private const Decimal TAX_RATE = 0.1m;
 
         //Primary key
         public Int32 ReservationID { get; set; }
+
+        //Reservation Status
+        [Required(ErrorMessage = "Reservation Status cannot be blank.")]
+        [Display(Name = "Property Status:")]
+        public ReservationStatus RStatus { get; set; }
+
 
         //Checkin Date
         [Required(ErrorMessage = "Please select a check-in date .")]

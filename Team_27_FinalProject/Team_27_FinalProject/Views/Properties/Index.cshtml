@@ -60,6 +60,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.CleaningFee)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PStatus)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -113,6 +116,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CleaningFee)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.PStatus)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.PropertyID">Edit</a> |
