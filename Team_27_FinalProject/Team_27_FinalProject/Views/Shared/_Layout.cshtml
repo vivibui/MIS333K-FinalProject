@@ -24,6 +24,17 @@
                         <a asp-controller="Properties" asp-action="Index" class="nav-link">Properties</a>
                     </li>
 
+                    <!-- Host Only -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Host"))
+                        {
+                            <li>
+                                <a asp-action="HostManageListing" asp-controller="Properties" class="nav-link">Manage Listing</a>
+                            </li>
+                        }
+                    }
+
                     <!-- Customer Only -->
                     @if (User.Identity.IsAuthenticated)
                     {
