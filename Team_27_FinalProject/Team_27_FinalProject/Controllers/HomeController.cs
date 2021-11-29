@@ -26,7 +26,7 @@ namespace Team_27_FinalProject.Controllers
                         select p;
 
             //.ToList() method to execute the query. Include statement to get the navigational data
-            List<Property> SelectedProperties = query.Include(p => p.Category).ToList();
+            List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
 
             //Populate the view bag with a count of all properties
             ViewBag.AllProperties = _context.Properties.Count();
@@ -93,8 +93,8 @@ namespace Team_27_FinalProject.Controllers
         {
             var query = from p in _context.Properties
                         select p;
-            //var query1 = from r in _context.Reservations
-            //select r;
+            var query1 = from r in _context.Reservations
+                         select r;
 
             //search by City 
             if (String.IsNullOrEmpty(svm.SelectedCity) == false)
@@ -189,9 +189,33 @@ namespace Team_27_FinalProject.Controllers
             }
 
 
+            //search by CheckIn and CheckOut date
+            //if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
+            //{
+            //    query1 = query1.Where(r => r.CheckoutDate >= svm.SelectedCheckin && svm.SelectedCheckin >= r.CheckinDate || r.CheckinDate <= svm.SelectedCheckout && r.CheckinDate >= svm.SelectedCheckin);
+            //}
+
+            if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
+            {
+                query1 = query1.Where(r => r.CheckoutDate <= svm.SelectedCheckin && svm.SelectedCheckin <= r.CheckinDate || r.CheckinDate >= svm.SelectedCheckout && r.CheckinDate <= svm.SelectedCheckin);
+            }
 
 
+            //search by Price (weekday, weekend, both)
+            if (svm.SelectedWeekdayPrice != null)
+            {
+                query = query.Where(p => p.WeekDayPrice <= svm.SelectedWeekdayPrice);
+            }
 
+            if (svm.SelectedWeekendPrice != null)
+            {
+                query = query.Where(p => p.WeekendPrice <= svm.SelectedWeekendPrice);
+            }
+
+            if (svm.SelectedBothPrices != null)
+            {
+                query = query.Where(p => p.WeekDayPrice <= svm.SelectedBothPrices && p.WeekendPrice <= svm.SelectedBothPrices);
+            }
 
 
             //.ToList() method to execute the query. Include statement to get the navigational data
