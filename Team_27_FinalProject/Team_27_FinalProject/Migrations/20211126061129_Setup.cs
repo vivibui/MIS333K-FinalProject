@@ -213,7 +213,7 @@ namespace Team_27_FinalProject.Migrations
                     PetsAllowed = table.Column<bool>(type: "bit", nullable: false),
                     GuestsAllowed = table.Column<int>(type: "int", nullable: false),
                     ParkingFree = table.Column<bool>(type: "bit", nullable: false),
-                    IsDiscounted = table.Column<bool>(type: "bit", nullable: false),
+                    IsDisabled = table.Column<bool>(type: "bit", nullable: false),
                     WeekDayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     WeekendPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     DiscountMinNights = table.Column<int>(type: "int", nullable: false),
@@ -254,7 +254,7 @@ namespace Team_27_FinalProject.Migrations
                     StayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderID = table.Column<int>(type: "int", nullable: true),
                     PropertyID = table.Column<int>(type: "int", nullable: true),
-                    IsDiscounted = table.Column<bool>(type: "bit", nullable: true),
+                    IsDisabled = table.Column<bool>(type: "bit", nullable: true),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>

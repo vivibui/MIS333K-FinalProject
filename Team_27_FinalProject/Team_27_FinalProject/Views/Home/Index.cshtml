@@ -1,34 +1,106 @@
-<div class="text-center">
-    <!-- Space -->
-    <br /><br /><br /><br /><br />
-    <h1>THIS IS A TEMPORARY INDEX PAGE FOR TESTING</h1>
+﻿@model IEnumerable<Team_27_FinalProject.Models.Property>
 
-    <!-- Space -->
-    <br /><br /><br />
-    <table style="margin-left: auto; margin-right:auto;">
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>BevoBnB Properties</h1>
+
+<a asp-action="DetailedSearch" class="btn btn-success">Detailed Search</a>
+
+<p>Showing @ViewBag.SelectedProperties of @ViewBag.AllProperties properties</p>
+
+<table class="table">
+    <thead>
         <tr>
+            <!--TODO: Add authorization?-->
             <th>
-                <a asp-action="Index" asp-controller="Properties" class="btn btn-info">View Properties</a>
+                @Html.DisplayNameFor(model => model.Category)
             </th>
             <th>
-                <a asp-action="Index" asp-controller="Orders" class="btn btn-info">View Orders</a>
+                @Html.DisplayNameFor(model => model.City)
             </th>
             <th>
-                <a asp-controller="Reservations" asp-action="Index" class="btn btn-info">Reservations</a>
-            </th>
-            <th>
-                <a asp-controller="Reviews" asp-action="Index" class="btn btn-info">Reviews</a>
+                @Html.DisplayNameFor(model => model.State)
             </th>
 
             <th>
-                @if (User.Identity.IsAuthenticated)
-                {
-                     @if (User.IsInRole("Admin"))
-                     {
-                        <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
-                     }
-                }
+                @Html.DisplayNameFor(model => model.Bedrooms)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bathrooms)
+            </th>
+            <!--TODO: Display daily price only-->
+            <th>
+                @Html.DisplayNameFor(model => model.WeekDayPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeekendPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ratings)
+            </th>
+            <th></th>
         </tr>
-    </table>
-</div>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bedrooms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bathrooms)
+                </td>
+                <!--TODO: Display daily price only-->
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeekDayPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeekendPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ratings)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Details", "Details", new { id = item.PropertyID })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<table style="margin-left: auto; margin-right:auto;">
+    <tr>
+        <th>
+            <a asp-action="Index" asp-controller="Properties" class="btn btn-info">View Properties</a>
+        </th>
+        <th>
+            <a asp-action="Index" asp-controller="Orders" class="btn btn-info">View Orders</a>
+        </th>
+        <th>
+            <a asp-controller="Reservations" asp-action="Index" class="btn btn-info">Reservations</a>
+        </th>
+        <th>
+            <a asp-controller="Reviews" asp-action="Index" class="btn btn-info">Reviews</a>
+        </th>
+        <th>
+            <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
+        </th>
+    </tr>
+</table>
+
+
