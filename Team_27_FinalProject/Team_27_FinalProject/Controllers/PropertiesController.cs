@@ -17,11 +17,14 @@ namespace Team_27_FinalProject.Controllers
     public class PropertiesController : Controller
     {
         private SignInManager<AppUser> _signInManager;
+        private UserManager<AppUser> _userManager;
+
         private readonly AppDbContext _context;
 
-        public PropertiesController(AppDbContext context)
+        public PropertiesController(AppDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
 
@@ -314,5 +317,26 @@ namespace Team_27_FinalProject.Controllers
 
         //--------------------------------- HOST: EDIT LISTED PROPERTIES (INCLUDING DISABLE) -------------------------------------
 
+        //Only Host can access
+        [Authorize(Roles = "Host")]
+        [ValidateAntiForgeryToken]
+        // GET: Properties/HostManageListing
+        public async Task<ActionResult> HostManageListing()
+        {
+            //Find the logged in user using the UserManager
+            AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            var query = from p in _context.Properties
+                        select p;
+
+            query = query.Where(p => p.AppUser.Email == userLoggedIn.Email);
+
+            //.ToList() method to execute the query. Include statement to get the navigational data
+            List<Property> AllYourListing = query.Include(p => p.Category)
+                                                    .Include(p => p.Reviews)
+                                                    .ToList();
+
+            return View(AllYourListing);
+        }
     }
 }

@@ -1,21 +1,11 @@
 @model IEnumerable<Team_27_FinalProject.Models.Property>
 
 @{
-    ViewData["Title"] = "List of Active Properties";
+    ViewData["Title"] = "View Your Listed Properties";
 }
 
 <h1>Index</h1>
 
-<!-- Only Host can access this -->
-@if (User.Identity.IsAuthenticated)
-{
-    @if (User.IsInRole("Host"))
-    {
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    }
- }
 
 <table class="table">
     <thead>
@@ -111,7 +101,7 @@
                 @Html.DisplayFor(modelItem => item.CleaningFee)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.PropertyID">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.PropertyID">Edit</a>
             </td>
         </tr>
 }

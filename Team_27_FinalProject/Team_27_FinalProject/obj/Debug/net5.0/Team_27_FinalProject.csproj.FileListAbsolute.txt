@@ -396,3 +396,4 @@ C:/Users/effen/OneDrive/Desktop/MIS 333/MIS333K-FinalProject/Team_27_FinalProjec
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/ConfirmCreate.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/PendingCreateAdminView.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/PendingCreateAdminViewIndex.cshtml.g.cs
+/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/HostManageListing.cshtml.g.cs

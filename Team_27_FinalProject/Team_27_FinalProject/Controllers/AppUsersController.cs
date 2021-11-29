@@ -22,9 +22,10 @@ namespace Team_27_FinalProject.Controllers
 
         private readonly AppDbContext _context;
 
-        public AppUsersController(AppDbContext context)
+        public AppUsersController(AppDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: AppUsers
