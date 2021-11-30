@@ -23,34 +23,10 @@
                 @Html.DisplayNameFor(model => model.Zip)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bedrooms)
+                @Html.DisplayNameFor(model => model.PStatus)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bathrooms)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PetsAllowed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GuestsAllowed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ParkingFree)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WeekDayPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WeekendPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiscountMinNights)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiscountRate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CleaningFee)
+                @Html.DisplayNameFor(model => model.IsDisabled)
             </th>
             <th></th>
         </tr>
@@ -71,37 +47,19 @@
                 @Html.DisplayFor(modelItem => item.Zip)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Bedrooms)
+                @Html.DisplayFor(modelItem => item.PStatus)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Bathrooms)
+                @Html.DisplayFor(modelItem => item.IsDisabled)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PetsAllowed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GuestsAllowed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ParkingFree)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WeekDayPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WeekendPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiscountMinNights)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiscountRate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CleaningFee)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PropertyID">Edit</a>
+
+                <!-- HOST SHOULD ONLY BE ALLOWED TO EDIT APPROVED PROPERTIES -->
+                @if (item.PStatus == Property.PropertyStatus.Approved)
+                {
+                    <a asp-action="HostManageListingEdit" asp-route-id="@item.PropertyID">Edit</a>
+                }
+
             </td>
         </tr>
 }

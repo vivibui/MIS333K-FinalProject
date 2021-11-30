@@ -266,7 +266,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property @property)
+        public async Task<IActionResult> Edit(int id, [Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property property)
         {
             //this is a security check to make sure they are editing the correct record
             if (id != property.PropertyID)
@@ -278,6 +278,12 @@ namespace Team_27_FinalProject.Controllers
             if (ModelState.IsValid == false)
             {
                 return View(property);
+            }
+
+            //------------IF PROPERTY IS REJECTED: Admin cannot edit property that has been rejected-----------
+            if (property.PStatus == Property.PropertyStatus.Rejected)
+            {
+                return View("Error", new String[] { "Update unsuccessful. You cannot update property that is rejected." });
             }
 
             //create a new property
@@ -335,6 +341,91 @@ namespace Team_27_FinalProject.Controllers
                                                     .ToList();
 
             return View(AllYourListing);
+        }
+
+
+
+        //Only Admin can access
+        [Authorize(Roles = "Host")]
+        // GET: Properties/Edit/5
+        public IActionResult HostManageListingEdit(int? id)
+        {
+            //if the user didn't specify a property id, we can't show them 
+            //the data, so show an error instead
+            if (id == null)
+            {
+                return View("Error", new string[] { "Please specify a property to edit!" });
+            }
+
+            //find the property in the database
+            //be sure to change the data type to property instead of 'var'
+            Property property = _context.Properties.Include(p => p.Category)
+            .FirstOrDefault(p => p.PropertyID == id);
+
+            //if the property does not exist in the database, then show the user
+            //an error message
+            if (property == null)
+            {
+                return View("Error", new string[] { "This property was not found!" });
+            }
+
+            return View(property);
+
+        }
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> HostManageListingEdit(int id, [Bind("PropertyID,PropertyNumber,Street,City,State,Zip,Bedrooms,Bathrooms,PetsAllowed,GuestsAllowed,ParkingFree,IsDiscounted,WeekDayPrice,WeekendPrice,DiscountMinNights,DiscountRate,CleaningFee")] Property property)
+        {
+            //this is a security check to make sure they are editing the correct record
+            if (id != property.PropertyID)
+            {
+                return View("Error", new String[] { "There was a problem editing this record. Try again!" });
+            }
+
+            //information is not valid, try again
+            if (ModelState.IsValid == false)
+            {
+                return View(property);
+            }
+
+            //------------IF PROPERTY IS PENDING: Host cannot edit while waiting for admin review-----------
+            if (property.PStatus == Property.PropertyStatus.Pending)
+            {
+                return View("Error", new String[] { "Update unsuccessful. You cannot update property that is pending on admin review." });
+            }
+
+            //------------IF PROPERTY IS REJECTED: Host cannot edit property that has been rejected-----------
+            if (property.PStatus == Property.PropertyStatus.Rejected)
+            {
+                return View("Error", new String[] { "Update unsuccessful. You cannot update property that is rejected." });
+            }
+
+            //create a new property
+            Property dbRD;
+            //if code gets this far, update the record
+            try
+            {
+                //find the existing property in the database
+                //include both order and product
+                dbRD = _context.Properties
+                      .Include(p => p.Category)
+                      .Include(p => p.Reviews)
+                      .Include(p => p.AppUser)
+                      .FirstOrDefault(p => p.PropertyID == property.PropertyID);
+
+                //save changes
+                _context.Update(dbRD);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new String[] { "There was a problem editing this record", ex.Message });
+            }
+
+            //if code gets this far, go back to the property index page
+            return View();
         }
     }
 }

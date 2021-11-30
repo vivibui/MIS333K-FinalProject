@@ -593,3 +593,4 @@ C:/Users/mumgo/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_2
 C:/Users/mumgo/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.genruntimeconfig.cache
 C:/Users/mumgo/Documents/GitHub/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.csproj.CopyComplete
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/HostManageListing.cshtml.g.cs
+/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/HostManageListingEdit.cshtml.g.cs
