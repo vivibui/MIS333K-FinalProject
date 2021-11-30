@@ -9,7 +9,14 @@ namespace Team_27_FinalProject.Models
     public class Review
     {
         public Int32 ReviewID { get; set; }
+        public enum DisputeStatus { Accepted, Rejected }
 
+        //Property Status
+        [Required(ErrorMessage = "Property Status cannot be blank.")]
+        [Display(Name = "Property Status:")]
+        public DisputeStatus DStatus { get; set; }
+
+        //Rating
         [Required(ErrorMessage = "Please enter your rating.")]
         [Display(Name = "Rating")]
         [Range(1.0, 5.0)]

@@ -20,13 +20,16 @@ namespace Team_27_FinalProject.Controllers
         }
 
         // GET: Home
+        //-------------------------- NOTE: ONLY LIST ACTIVE PROPERTY -------------------------- 
         public ActionResult Index()
         {
             var query = from p in _context.Properties
                         select p;
 
+            query = query.Where(p => p.PStatus == 0 && p.IsDisabled == false);
+
             //.ToList() method to execute the query. Include statement to get the navigational data
-            List<Property> SelectedProperties = query.Include(p => p.Category).ToList();
+            List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
 
             //Populate the view bag with a count of all properties
             ViewBag.AllProperties = _context.Properties.Count();
@@ -93,8 +96,8 @@ namespace Team_27_FinalProject.Controllers
         {
             var query = from p in _context.Properties
                         select p;
-            //var query1 = from r in _context.Reservations
-            //select r;
+            var query1 = from r in _context.Reservations
+                         select r;
 
             //search by City 
             if (String.IsNullOrEmpty(svm.SelectedCity) == false)
@@ -174,13 +177,47 @@ namespace Team_27_FinalProject.Controllers
                 query = query.Where(p => p.ParkingFree == true);
             }
 
+
+
+
+            //search by CheckIn and CheckOut date
+            //if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
+            //{
+            //    query1 = query1.Where(r => r.CheckoutDate >= svm.SelectedCheckin && svm.SelectedCheckin >= r.CheckinDate || r.CheckinDate <= svm.SelectedCheckout && r.CheckinDate >= svm.SelectedCheckin);
+            //}
+
+           
+
+
+
+
+            //search by Price (weekday, weekend, both)
+            if (svm.SelectedWeekdayPrice != null)
+            {
+                query = query.Where(p => p.WeekDayPrice <= svm.SelectedWeekdayPrice);
+            }
+
+            if (svm.SelectedWeekendPrice != null)
+            {
+                query = query.Where(p => p.WeekendPrice <= svm.SelectedWeekendPrice);
+            }
+
+            if (svm.SelectedBothPrices != null)
+            {
+                query = query.Where(p => p.WeekDayPrice <= svm.SelectedBothPrices && p.WeekendPrice <= svm.SelectedBothPrices);
+            }
+
+
+            //.ToList() method to execute the query. Include statement to get the navigational data
+            List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
+
             //Search by Rating
             //TODO: use ratings from reviews model
             if (svm.SelectedRating != null)
             {
                 if (svm.RatingType == RatingType.LessThan)
-                {
-                    query = query.Where(p => p.Ratings < svm.SelectedRating);
+                {SelectedProperties
+                     = SelectedProperties.Where(p => p.Ratings < svm.SelectedRating).ToList();
                 }
                 else
                 {
@@ -188,14 +225,24 @@ namespace Team_27_FinalProject.Controllers
                 }
             }
 
+            if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
+            {
+                query1 = query1.Where(r => (r.CheckoutDate <= svm.SelectedCheckin && svm.SelectedCheckin <= r.CheckinDate) || (r.CheckinDate >= svm.SelectedCheckout && r.CheckinDate <= svm.SelectedCheckin));
 
 
+                List<Reservation> reservations = query1.ToList();
+                var query3 = from p in _context.Properties select p;
+                foreach (Reservation res in reservations)
+                {
+                    query3 = query3.Where(p => p.Reservations.Any(r => r.ReservationID == res.ReservationID));
+                }
+
+                List<Property> Unavailable = query3.ToList();
+
+                SelectedProperties = SelectedProperties.Except(Unavailable).ToList();
 
 
-
-
-            //.ToList() method to execute the query. Include statement to get the navigational data
-            List<Property> SelectedProperties = query.Include(p => p.Category).ToList();
+            }
 
             //Populate the view bag with a count of all properties
             ViewBag.AllProperties = _context.Properties.Count();

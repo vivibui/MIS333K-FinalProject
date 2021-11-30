@@ -39,6 +39,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Discount)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RStatus)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -71,6 +74,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RStatus)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ReservationID">Edit</a> |

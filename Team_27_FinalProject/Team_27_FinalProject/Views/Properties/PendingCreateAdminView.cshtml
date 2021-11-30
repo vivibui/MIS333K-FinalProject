@@ -1,0 +1,98 @@
+@model Team_27_FinalProject.Models.Property
+
+@{ ViewData["Title"] = "Edit"; }
+
+<br />
+<h1>Details of Pending Listing</h1>
+<h4>Review and decide on the listing</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PendingCreateAdminView">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="PropertyID" />
+
+            <div class="form-group">
+                <label asp-for="PropertyID" class="control-label"></label>
+                <input asp-for="PropertyID" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PropertyNumber" class="control-label"></label>
+                <input asp-for="PropertyNumber" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Street" class="control-label"></label>
+                <input asp-for="Street" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Zip" class="control-label"></label>
+                <input asp-for="Zip" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Bedrooms" class="control-label"></label>
+                <input asp-for="Bedrooms" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Bathrooms" class="control-label"></label>
+                <input asp-for="Bathrooms" disabled class="form-control" />
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input disabled class="form-check-input" asp-for="PetsAllowed" /> @Html.DisplayNameFor(model => model.PetsAllowed)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="GuestsAllowed" class="control-label"></label>
+                <input asp-for="GuestsAllowed" disabled class="form-control" />
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input disabled class="form-check-input" asp-for="ParkingFree" /> @Html.DisplayNameFor(model => model.ParkingFree)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeekDayPrice" class="control-label"></label>
+                <input asp-for="WeekDayPrice" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="WeekendPrice" class="control-label"></label>
+                <input asp-for="WeekendPrice" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DiscountMinNights" class="control-label"></label>
+                <input asp-for="DiscountMinNights" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DiscountRate" class="control-label"></label>
+                <input asp-for="DiscountRate" disabled class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CleaningFee" class="control-label"></label>
+                <input asp-for="CleaningFee" disabled class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+                @using (Html.BeginForm("PendingCreateAdminView", "Properties", FormMethod.Post))
+                {
+                    <input type="submit" name="button" value="Approve" class="btn btn-success" />
+                    <input type="submit" name="button" value="Reject" class="btn btn-danger"/>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

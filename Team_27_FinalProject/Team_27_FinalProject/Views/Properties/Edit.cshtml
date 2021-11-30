@@ -4,7 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Admin Edit</h1>
 
 <h4>Property</h4>
 <hr />
@@ -17,11 +17,6 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="IsDisabled" /> @Html.DisplayNameFor(model => model.IsDisabled)
                 </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="PropertyNumber" class="control-label"></label>
-                <input asp-for="PropertyNumber" class="form-control" />
-                <span asp-validation-for="PropertyNumber" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Street" class="control-label"></label>

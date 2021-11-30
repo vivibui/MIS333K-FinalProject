@@ -23,12 +23,29 @@ namespace Team_27_FinalProject.Controllers
             _context = context;
         }
 
+
+
+        //------------------------------------------ INDEX ------------------------------------------
         // GET: Reservations
-        public async Task<IActionResult> Index()
+        public IActionResult Index(int? orderID)
         {
-            return View(await _context.Reservations.ToListAsync());
+            if (orderID == null)
+            {
+                return View("Error", new String[] { "Please specify an order to view!" });
+            }
+
+            //limit the list to only the reservation that belong to this order
+            List<Reservation> rs = _context.Reservations
+                                          .Include(rs => rs.Property)
+                                          .Where(rs => rs.Order.OrderID == orderID)
+                                          .ToList();
+
+            return View(rs);
         }
 
+
+
+        //------------------------------------------
         // GET: Reservations/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -47,27 +64,89 @@ namespace Team_27_FinalProject.Controllers
             return View(reservation);
         }
 
+
+
+        //------------------------------------------ CREATE ------------------------------------------
         // GET: Reservations/Create
-        public IActionResult Create()
+        public IActionResult Create(int orderID)
         {
-            return View();
+            //create a new instance of the Reservation class
+            Reservation rs = new Reservation();
+
+            //find the reservation that should be associated with this order
+            Order dbOrder = _context.Orders.Find(orderID);
+
+            //set the new reservation's order equal to the order you just found
+            rs.Order = dbOrder;
+
+            //populate the ViewBag with a list of existing properties
+            ViewBag.AllProducts = GetAllProperties();
+
+            //pass the newly created reservation to the view
+            return View(rs);
         }
+
+
+        // ADD: GetAllProperties
+        private SelectList GetAllProperties()
+        {
+            //create a list for all the properties
+            List<Property> allProperties = _context.Properties.ToList();
+
+            //the user MUST select a property, so you don't need a dummy option for no product
+
+            //use the constructor on select list to create a new select list with the options
+            SelectList slAllProperties = new SelectList(allProperties, nameof(Property.PropertyID), nameof(Property.Street));
+
+            return slAllProperties;
+        }
+
 
         // POST: Reservations/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Reservation reservation)
+        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Reservation reservation, int SelectedProperty)
         {
-            if (ModelState.IsValid)
+            //if user has not entered all fields, send them back to try again
+            if (ModelState.IsValid == false)
             {
-                _context.Add(reservation);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.AllProducts = GetAllProperties();
+                return View(reservation);
             }
-            return View(reservation);
+
+            //find the property to be associated with this order
+            Property dbProperty = _context.Properties.Find(SelectedProperty);
+
+            //set the reservation's property to be equal to the one we just found
+            reservation.Property = dbProperty;
+
+            //find the order on the database that has the correct order id
+            //unfortunately, the HTTP request will not contain the entire order object, 
+            //just the order id, so we have to find the actual object in the database
+            Order dbOrder = _context.Orders.Find(reservation.Order.OrderID);
+
+            //set the order on the reservation equal to the order that we just found
+            reservation.Order = dbOrder;
+
+            //set the reservation's price equal to the property price
+            //this will allow us to to store the price that the user paid
+            reservation.WeekdayFee = dbProperty.WeekDayPrice;
+            reservation.WeekendFee = dbProperty.WeekendPrice;
+            reservation.CalStayPrice();
+
+            //add the reservation to the database
+            _context.Add(reservation);
+            await _context.SaveChangesAsync();
+
+            //send the user to the details page for this order
+            return RedirectToAction("Details", "Orders", new { id = reservation.Order.OrderID });
         }
+
+        //------------------------------------------ EDIT ------------------------------------------
+
+
 
         // GET: Reservations/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -118,35 +197,6 @@ namespace Team_27_FinalProject.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(reservation);
-        }
-
-        // GET: Reservations/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var reservation = await _context.Reservations
-                .FirstOrDefaultAsync(m => m.ReservationID == id);
-            if (reservation == null)
-            {
-                return NotFound();
-            }
-
-            return View(reservation);
-        }
-
-        // POST: Reservations/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var reservation = await _context.Reservations.FindAsync(id);
-            _context.Reservations.Remove(reservation);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
         }
 
         private bool ReservationExists(int id)

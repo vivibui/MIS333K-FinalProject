@@ -1,20 +1,25 @@
 @model IEnumerable<Team_27_FinalProject.Models.Property>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "List of Active Properties";
 }
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<!-- Only Host can access this -->
+@if (User.Identity.IsAuthenticated)
+{
+    @if (User.IsInRole("Host"))
+    {
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    }
+ }
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.PropertyNumber)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Street)
             </th>
@@ -43,9 +48,6 @@
                 @Html.DisplayNameFor(model => model.ParkingFree)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsDisabled)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.WeekDayPrice)
             </th>
             <th>
@@ -66,9 +68,6 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.PropertyNumber)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Street)
             </td>
@@ -97,9 +96,6 @@
                 @Html.DisplayFor(modelItem => item.ParkingFree)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IsDisabled)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.WeekDayPrice)
             </td>
             <td>
@@ -115,9 +111,7 @@
                 @Html.DisplayFor(modelItem => item.CleaningFee)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PropertyID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PropertyID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PropertyID">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.PropertyID">Details</a>
             </td>
         </tr>
 }

@@ -8,12 +8,19 @@ namespace Team_27_FinalProject.Models
 {    
     public class Property
     {
+        public enum PropertyStatus {Approved, Pending, Rejected}
+
         //Primary key
         public Int32 PropertyID { get; set; }
 
         //Property Number
         [Display(Name = "Property Number:")]
         public Int32 PropertyNumber { get; set; }
+
+        //Property Status
+        [Required(ErrorMessage = "Property Status cannot be blank.")]
+        [Display(Name = "Property Status:")]
+        public PropertyStatus PStatus { get; set; }
 
         //Street
         [Required(ErrorMessage ="Street cannot be blank.")]
@@ -85,6 +92,7 @@ namespace Team_27_FinalProject.Models
         public Decimal WeekendPrice { get; set; }
 
         //Minimum Nights for Discount
+        [Required(ErrorMessage = "Minimum nights must be enter. If there is no discount, please enter 0.")]
         [Range(minimum: 0, maximum: 10000000, ErrorMessage = "Minimum nights cannot be negative.")]
         [Display(Name = "Minimum Nights for Discount:")]
         public Int32 DiscountMinNights { get; set; }

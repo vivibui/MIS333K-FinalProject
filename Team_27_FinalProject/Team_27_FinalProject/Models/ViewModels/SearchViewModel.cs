@@ -41,9 +41,14 @@ namespace Team_27_FinalProject.Models
         [Display(Name = "Search by Number of Guests:")]
         public Int32? SelectedGuests { get; set; }
 
-        //Textbox: Price
-        [Display(Name = "Search by Price:")]
-        public Decimal? SelectedPrice { get; set; }
+        //Textbox: Price (weekday, weekend, both)
+        [Display(Name = "Search by Weekday Price:")]
+        public Decimal? SelectedWeekdayPrice { get; set; }
+        [Display(Name = "Search by Weekdend Price:")]
+        public Decimal? SelectedWeekendPrice { get; set; }
+        [Display(Name = "Search by both weekday and weekend prices:")]
+        public Decimal? SelectedBothPrices { get; set; }
+
 
         //Drop-down: Categories 
         [Display(Name = "Type of Property:")]

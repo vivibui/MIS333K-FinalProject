@@ -24,7 +24,40 @@
                         <a asp-controller="Properties" asp-action="Index" class="nav-link">Properties</a>
                     </li>
 
-                    <!-- Admin Only -->
+                    <!-- Host Only: Manage their own listings -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Host"))
+                        {
+                            <li>
+                                <a asp-action="HostManageListing" asp-controller="Properties" class="nav-link">Manage Listing</a>
+                            </li>
+                        }
+                    }
+
+                    <!-- Customer Only: View their orders -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Customer"))
+                        {
+                            <li>
+                                <a asp-action="Index" asp-controller="Orders" class="nav-link">View Orders</a>
+                            </li>
+                        }
+                    }
+
+                    <!-- Admin Only: Approve/Reject Newly Created Properties -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Properties" asp-action="PendingCreateAdminViewIndex" class="nav-link">Pending Properties</a>
+                            </li>
+                        }
+                    }
+
+                    <!-- Admin Only: Manage Roles -->
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Admin"))
@@ -35,7 +68,7 @@
                         }
                     }
 
-                    <!-- Admin Only -->
+                    <!-- Admin Only: Manage Profiles -->
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Admin"))
@@ -45,7 +78,7 @@
                             </li>
                         }
                     }
-                    <!-- Admin Only -->
+                    <!-- Admin Only: Create New Admin -->
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Admin"))
@@ -56,6 +89,16 @@
                         }
                     }
 
+                    <!-- Admin Only: Set Categories -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Categories" asp-action="Index" class="nav-link">Set Categories</a>
+                            </li>
+                        }
+                    }
 
                 </ul>
             </div>
