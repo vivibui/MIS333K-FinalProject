@@ -144,7 +144,7 @@ namespace Team_27_FinalProject.Controllers
         }
 
 
-        //--------------------------------- DETAIL -------------------------------------
+        //-------------------------------------------- DETAIL ------------------------------------------------
         // GET: Properties/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -172,7 +172,7 @@ namespace Team_27_FinalProject.Controllers
 
 
 
-        //--------------------------------- HOST: CREATE NEW LISTING -------------------------------------
+        //----------------------------------------- HOST: CREATE NEW LISTING -------------------------------------
         //Only Host can create propert
         [Authorize(Roles = "Host")]
         // GET: Properties/Create
@@ -396,7 +396,7 @@ namespace Team_27_FinalProject.Controllers
                 return View("Error", new String[] { "Update unsuccessful. You cannot update property that is pending on admin review." });
             }
 
-            //------------IF PROPERTY IS REJECTED: Host cannot edit property that has been rejected-----------
+            //------------IF PROPERTY IS REJECTED: Host cannot edit property that has been rejected---------
             if (property.PStatus == Property.PropertyStatus.Rejected)
             {
                 return View("Error", new String[] { "Update unsuccessful. You cannot update property that is rejected." });

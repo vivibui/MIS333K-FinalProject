@@ -45,7 +45,7 @@ namespace Team_27_FinalProject.Controllers
 
 
 
-        //------------------------------------------
+        //------------------------------------------ DETAILS ------------------------------------------
         // GET: Reservations/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -66,39 +66,33 @@ namespace Team_27_FinalProject.Controllers
 
 
 
-        //------------------------------------------ CREATE ------------------------------------------
+        //------------------------------------------ CREATE RESERVATION ------------------------------------------
         // GET: Reservations/Create
-        public IActionResult Create(int orderID)
+        public IActionResult Booking(int? propertyID, int orderID)
         {
-            //create a new instance of the Reservation class
-            Reservation rs = new Reservation();
 
-            //find the reservation that should be associated with this order
+            //Validate booking
+            if (propertyID == null)
+            {
+                return View("Error", new string[] { "Please specify a property to reserve!" });
+            }
+
+            //find the associated order
             Order dbOrder = _context.Orders.Find(orderID);
 
-            //set the new reservation's order equal to the order you just found
-            rs.Order = dbOrder;
+            //find the property in the database
+            Property property = _context.Properties.Include(p => p.Category)
+            .FirstOrDefault(p => p.PropertyID == propertyID);
 
-            //populate the ViewBag with a list of existing properties
-            ViewBag.AllProducts = GetAllProperties();
+            //Pass the IDs to the viewmodel 
+            var model = new Booking
+            {
+                OrderID = dbOrder.OrderID,
+                PropertyID = property.PropertyID
+            };
 
             //pass the newly created reservation to the view
-            return View(rs);
-        }
-
-
-        // ADD: GetAllProperties
-        private SelectList GetAllProperties()
-        {
-            //create a list for all the properties
-            List<Property> allProperties = _context.Properties.ToList();
-
-            //the user MUST select a property, so you don't need a dummy option for no product
-
-            //use the constructor on select list to create a new select list with the options
-            SelectList slAllProperties = new SelectList(allProperties, nameof(Property.PropertyID), nameof(Property.Street));
-
-            return slAllProperties;
+            return View(model);
         }
 
 
@@ -107,41 +101,103 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Reservation reservation, int SelectedProperty)
+        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Booking booking)
         {
             //if user has not entered all fields, send them back to try again
             if (ModelState.IsValid == false)
             {
-                ViewBag.AllProducts = GetAllProperties();
-                return View(reservation);
+
+                return View("Booking");
             }
 
             //find the property to be associated with this order
-            Property dbProperty = _context.Properties.Find(SelectedProperty);
+            Property dbProperty = _context.Properties.Find(booking.PropertyID);
 
-            //set the reservation's property to be equal to the one we just found
-            reservation.Property = dbProperty;
+
+            //------------------VALIDATE CHECKIN CHECKOUT TIME-----------------
+
+            var unavailableRes = _context.Reservations
+                                         .Where(r => r.Property.PropertyID == booking.PropertyID &&
+                                                (booking.CheckinDate <= r.CheckoutDate && booking.CheckinDate >= r.CheckinDate ||
+                                                    r.CheckinDate <= booking.CheckoutDate && r.CheckinDate >= booking.CheckinDate))
+                                         .ToList();
+
+            //Initialize empty list
+            List<DateTime> CheckRange = new List<DateTime>(); //empty list for booking
+            List<DateTime> GetDates = new List<DateTime>(); // empty list for all dates in reservation
+
+            //Add all dates between checkout and checkin to list 
+            for (DateTime i = booking.CheckinDate; i <= booking.CheckoutDate; i = i.AddDays(1))
+            {
+                CheckRange.Add(i);
+            }
+
+            //Loop to add dates to Get Dates 
+            foreach (var res in unavailableRes)
+            {
+                for (DateTime i = res.CheckinDate; i <= res.CheckoutDate; i = i.AddDays(1))
+                {
+                    GetDates.Add(i);
+                }
+            }
+
+            //Loop to compare the dates in Booking and unavailableRes 
+            foreach (var date in GetDates)
+            {
+                foreach (var bookdate in CheckRange)
+                {
+                    if (bookdate == date)
+                    {
+                        ModelState.AddModelError("Booking unsuccessful.", "The entered date range has already been reserved.");
+                        return View(booking);
+                    }
+                }
+            }
+
+
+
+            //--------------------VALIDATE THE NUMBER OF GUESTS----------------
+            if (booking.NumberOfGuests > dbProperty.GuestsAllowed)
+            {
+                ModelState.AddModelError("Overcrowded.", "The entered guests number is over the host allowed maximum of guests.");
+                return View(booking);
+            }
+
+
+            //--------------------IF CODE GET THIS FAR: 
+
+            //create a new instance of the Reservation class
+            Reservation rs = new Reservation();
+
+            //Pass values from Booking view model to this instance
+            rs.CheckinDate = booking.CheckinDate;
+            rs.CheckoutDate = booking.CheckoutDate;
+            rs.NumberOfGuests = booking.NumberOfGuests;
+
+            //set the reservation's property
+            rs.Property = dbProperty;
 
             //find the order on the database that has the correct order id
             //unfortunately, the HTTP request will not contain the entire order object, 
             //just the order id, so we have to find the actual object in the database
-            Order dbOrder = _context.Orders.Find(reservation.Order.OrderID);
+            Order dbOrder = _context.Orders.Find(rs.Order.OrderID);
 
             //set the order on the reservation equal to the order that we just found
-            reservation.Order = dbOrder;
+            rs.Order = dbOrder;
 
             //set the reservation's price equal to the property price
             //this will allow us to to store the price that the user paid
-            reservation.WeekdayFee = dbProperty.WeekDayPrice;
-            reservation.WeekendFee = dbProperty.WeekendPrice;
-            reservation.CalStayPrice();
+            rs.WeekdayFee = dbProperty.WeekDayPrice;
+            rs.WeekendFee = dbProperty.WeekendPrice;
+            rs.CleaningPrice = dbProperty.CleaningFee;
+            rs.CalStayPrice();
 
             //add the reservation to the database
-            _context.Add(reservation);
+            _context.Add(rs);
             await _context.SaveChangesAsync();
 
             //send the user to the details page for this order
-            return RedirectToAction("Details", "Orders", new { id = reservation.Order.OrderID });
+            return RedirectToAction("Details", "Orders", new { id = rs.Order.OrderID });
         }
 
         //------------------------------------------ EDIT ------------------------------------------

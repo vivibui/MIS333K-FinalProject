@@ -1,7 +1,9 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Controllers/ReservationsController.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Controllers/ReservationsController.cs" Line="41" Column="31" />
+      <File FileName="Team_27_FinalProject/Controllers/ReservationsController.cs" Line="199" Column="63" />
+      <File FileName="Team_27_FinalProject/Views/Reservations/Create.cshtml" />
+      <File FileName="Team_27_FinalProject/Controllers/HomeController.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,11 +14,6 @@
                 <Node name="ReservationsController.cs" selected="True" />
               </Node>
               <Node name="Models" expanded="True" />
-              <Node name="Views" expanded="True">
-                <Node name="Properties" expanded="True" />
-                <Node name="Reservations" expanded="True" />
-                <Node name="Shared" expanded="True" />
-              </Node>
             </Node>
           </Node>
         </State>
