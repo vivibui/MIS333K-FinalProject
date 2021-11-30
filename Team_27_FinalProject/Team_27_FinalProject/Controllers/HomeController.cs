@@ -20,11 +20,13 @@ namespace Team_27_FinalProject.Controllers
         }
 
         // GET: Home
-        //--------------------------NOTE: ONLY LIST ACTIVE PROPERTY 
+        //-------------------------- NOTE: ONLY LIST ACTIVE PROPERTY -------------------------- 
         public ActionResult Index()
         {
             var query = from p in _context.Properties
                         select p;
+
+            query = query.Where(p => p.PStatus == 0 && p.IsDisabled == false);
 
             //.ToList() method to execute the query. Include statement to get the navigational data
             List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();

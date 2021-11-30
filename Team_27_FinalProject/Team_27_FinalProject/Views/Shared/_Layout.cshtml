@@ -24,7 +24,7 @@
                         <a asp-controller="Properties" asp-action="Index" class="nav-link">Properties</a>
                     </li>
 
-                    <!-- Host Only -->
+                    <!-- Host Only: Manage their own listings -->
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Host"))
@@ -35,7 +35,7 @@
                         }
                     }
 
-                    <!-- Customer Only -->
+                    <!-- Customer Only: View their orders -->
                     @if (User.Identity.IsAuthenticated)
                     {
                         @if (User.IsInRole("Customer"))

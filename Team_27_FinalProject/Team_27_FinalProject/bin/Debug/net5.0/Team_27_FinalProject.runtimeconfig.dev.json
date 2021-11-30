@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\mumgo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\mumgo\\.nuget\\packages"
+      "/Users/vivianbui/.dotnet/store/|arch|/|tfm|",
+      "/Users/vivianbui/.nuget/packages"
     ]
   }
 }

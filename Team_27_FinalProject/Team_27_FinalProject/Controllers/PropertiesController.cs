@@ -2,24 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
-using Microsoft.AspNetCore.Authorization;
-using Team_27_FinalProject.SendMail;
-using Microsoft.AspNetCore.Identity;
 
 namespace Team_27_FinalProject.Controllers
 {
 
     public class PropertiesController : Controller
     {
-        private SignInManager<AppUser> _signInManager;
         private UserManager<AppUser> _userManager;
 
-        private readonly AppDbContext _context;
+        private AppDbContext _context;
 
         public PropertiesController(AppDbContext context, UserManager<AppUser> userManager)
         {
@@ -319,12 +317,11 @@ namespace Team_27_FinalProject.Controllers
 
         //Only Host can access
         [Authorize(Roles = "Host")]
-        [ValidateAntiForgeryToken]
         // GET: Properties/HostManageListing
         public async Task<ActionResult> HostManageListing()
         {
             //Find the logged in user using the UserManager
-            AppUser userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+            var userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
 
             var query = from p in _context.Properties
                         select p;
@@ -334,6 +331,7 @@ namespace Team_27_FinalProject.Controllers
             //.ToList() method to execute the query. Include statement to get the navigational data
             List<Property> AllYourListing = query.Include(p => p.Category)
                                                     .Include(p => p.Reviews)
+                                                    .Include(p => p.AppUser)
                                                     .ToList();
 
             return View(AllYourListing);
