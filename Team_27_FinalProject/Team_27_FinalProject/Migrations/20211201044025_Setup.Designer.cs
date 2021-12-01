@@ -10,8 +10,8 @@ using Team_27_FinalProject.DAL;
 namespace Team_27_FinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211130212916_AddOrderStatus")]
-    partial class AddOrderStatus
+    [Migration("20211201044025_Setup")]
+    partial class Setup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -179,7 +179,7 @@ namespace Team_27_FinalProject.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsActive")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
@@ -433,7 +433,7 @@ namespace Team_27_FinalProject.Migrations
                     b.Property<string>("DisputeReason")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsDisputed")
+                    b.Property<bool>("IsDisputed")
                         .HasColumnType("bit");
 
                     b.Property<int?>("PropertyID")

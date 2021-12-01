@@ -177,7 +177,7 @@ namespace Team_27_FinalProject.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsActive")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("LastName")
@@ -431,7 +431,7 @@ namespace Team_27_FinalProject.Migrations
                     b.Property<string>("DisputeReason")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsDisputed")
+                    b.Property<bool>("IsDisputed")
                         .HasColumnType("bit");
 
                     b.Property<int?>("PropertyID")

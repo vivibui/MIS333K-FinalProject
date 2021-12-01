@@ -11,7 +11,7 @@ namespace Team_27_FinalProject.Models
     {
         //IsActive (Y/N)
         [Display(Name = "Is Active? (Y/N)")]
-        public Boolean? IsActive { get; set; }
+        public Boolean IsActive { get; set; }
 
         //First Name
         [Display(Name = "First Name:")]

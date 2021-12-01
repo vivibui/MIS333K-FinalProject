@@ -29,7 +29,7 @@ namespace Team_27_FinalProject.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MI = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -181,6 +181,7 @@ namespace Team_27_FinalProject.Migrations
                 {
                     OrderID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    OStatus = table.Column<int>(type: "int", nullable: false),
                     OrderNumber = table.Column<int>(type: "int", nullable: false),
                     OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsCancelled = table.Column<bool>(type: "bit", nullable: false),
@@ -204,6 +205,7 @@ namespace Team_27_FinalProject.Migrations
                     PropertyID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PropertyNumber = table.Column<int>(type: "int", nullable: false),
+                    PStatus = table.Column<int>(type: "int", nullable: false),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     State = table.Column<string>(type: "nvarchar(2)", maxLength: 2, nullable: false),
@@ -245,6 +247,7 @@ namespace Team_27_FinalProject.Migrations
                 {
                     ReservationID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    RStatus = table.Column<int>(type: "int", nullable: false),
                     CheckinDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CheckoutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NumberOfGuests = table.Column<int>(type: "int", nullable: false),
@@ -254,7 +257,7 @@ namespace Team_27_FinalProject.Migrations
                     StayPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     OrderID = table.Column<int>(type: "int", nullable: true),
                     PropertyID = table.Column<int>(type: "int", nullable: true),
-                    IsDisabled = table.Column<bool>(type: "bit", nullable: true),
+                    IsDiscounted = table.Column<bool>(type: "bit", nullable: false),
                     Discount = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
                 },
                 constraints: table =>
@@ -280,9 +283,10 @@ namespace Team_27_FinalProject.Migrations
                 {
                     ReviewID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    DStatus = table.Column<int>(type: "int", nullable: false),
                     Rating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsDisputed = table.Column<bool>(type: "bit", nullable: true),
+                    IsDisputed = table.Column<bool>(type: "bit", nullable: false),
                     DisputeReason = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     PropertyID = table.Column<int>(type: "int", nullable: true)
