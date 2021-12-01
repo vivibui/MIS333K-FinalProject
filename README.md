@@ -1,5 +1,8 @@
 # MIS333K Final Project 
 
+## -------------------------FINAL SPRINT: THURSDAY, 12/2 @5PM!!------------------------- 
+## -------------------------       FINISH STRONG!  -------------------------
+
 ### Email and Password for testing 
 - Admin: macleod@bevobnb.com || Pass: kittys 
 - Customer: wendy@puppy.com || Pass: Kansas
