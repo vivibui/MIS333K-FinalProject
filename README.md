@@ -1,6 +1,6 @@
 # MIS333K Final Project 
 
-## -------------------------FINAL SPRINT: THURSDAY, 12/2 @5PM!!------------------------- 
+## FINAL SPRINT: THURSDAY, 12/2 @5PM!!
 ## -------------------------       FINISH STRONG!  -------------------------
 
 ### Email and Password for testing 
