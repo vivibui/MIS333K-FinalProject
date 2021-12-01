@@ -22,6 +22,7 @@ namespace Team_27_FinalProject.Models
         //Date picker: Check-in Date
         [Display(Name = "Select Check-in:")]
         [DataType(DataType.Date)]
+        
         public DateTime? SelectedCheckin { get; set; }
 
         //Date picker: Check-out Date (*) 

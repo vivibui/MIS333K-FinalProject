@@ -8,12 +8,6 @@ namespace Team_27_FinalProject.Models
 {
     public class Booking
     {
-        //PassReservationID
-        public Int32 BookingID { get; set; }
-
-        //Pass OrderID
-        public Int32 OrderID { get; set; }
-
         //Pass PropertyID
         public Int32 PropertyID { get; set; }
 

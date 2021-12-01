@@ -20,7 +20,7 @@ namespace Team_27_FinalProject.Controllers
         }
 
         // GET: Home
-        //-------------------------- NOTE: ONLY LIST ACTIVE PROPERTY -------------------------- 
+        //-------------------------- INDEX: ONLY LIST ACTIVE PROPERTY -------------------------- 
         public ActionResult Index()
         {
             var query = from p in _context.Properties
@@ -40,7 +40,10 @@ namespace Team_27_FinalProject.Controllers
             return View(SelectedProperties);
         }
 
-        //allow the user to see details of a property
+
+
+        //-------------------------- DETAILS: SHOW DETAILS OF A PROPERTY  -------------------------- 
+
         public IActionResult Details(int? id)//id is the id of the property you want to see
         {
             if (id == null) //PropertyID not specified
@@ -61,8 +64,13 @@ namespace Team_27_FinalProject.Controllers
         }
 
 
+
+
+        //--------------------------------- DETAILED SEARCH  ----------------------------------- 
+
         public IActionResult DetailedSearch()
         {
+
             //populate viewbag with list of category
             ViewBag.AllCategories = GetAllCategories();
 
@@ -73,6 +81,11 @@ namespace Team_27_FinalProject.Controllers
 
             return View(svm);
         }
+
+
+
+
+        //--------------------------------- GET ALL CATEGORIES  ----------------------------------- 
 
         private SelectList GetAllCategories()
         {
@@ -92,6 +105,11 @@ namespace Team_27_FinalProject.Controllers
             return categorySelectList;
         }
 
+
+
+
+        //--------------------------------- DISPLAY SEARCH RESULT  ----------------------------------- 
+
         public IActionResult DisplaySearchResults(SearchViewModel svm)
         {
             var query = from p in _context.Properties
@@ -99,19 +117,20 @@ namespace Team_27_FinalProject.Controllers
             var query1 = from r in _context.Reservations
                          select r;
 
-            //search by City 
+            ViewBag.AllCategories = GetAllCategories();
+            //-----SEARCH BY CITY
             if (String.IsNullOrEmpty(svm.SelectedCity) == false)
             {
                 query = query.Where(p => p.City.Contains(svm.SelectedCity));
             }
 
-            //search by State
+            //-----SEARCH BY STATE
             if (String.IsNullOrEmpty(svm.SelectedState) == false)
             {
                 query = query.Where(p => p.State.Contains(svm.SelectedState));
             }
 
-            //Search by Bedrooms
+            //-----SEARCH BY BEDROOMS
             if (svm.SelectedBedrooms != null)
             {
                 query = query.Where(p => p.Bedrooms == svm.SelectedBedrooms);
@@ -132,7 +151,7 @@ namespace Team_27_FinalProject.Controllers
                 query = query.Where(p => p.Bedrooms >= svm.SelectedMinBedrooms && p.Bedrooms <= svm.SelectedMaxBedrooms);
             }
 
-            //Search by Bathrooms
+            //-----SEARCH BY BATHROOMS
             if (svm.SelectedBathrooms != null)
             {
                 query = query.Where(p => p.Bathrooms == svm.SelectedBathrooms);
@@ -153,45 +172,32 @@ namespace Team_27_FinalProject.Controllers
                 query = query.Where(p => p.Bathrooms >= svm.SelectedMinBathrooms && p.Bathrooms <= svm.SelectedMaxBathrooms);
             }
 
-            //search by category
+            //-----SEARCH BY CATEGORY
             if (svm.SelectedCategoryID != 0)
             {
                 query = query.Where(p => p.Category.CategoryID == svm.SelectedCategoryID);
             }
 
-            //search by guest limit
+            //-----SEARCH BY GUEST LIMIT
             if (svm.SelectedGuests != null)
             {
                 query = query.Where(p => p.GuestsAllowed >= svm.SelectedGuests);
             }
 
-            //search by PetsAllowed
+            //-----SEARCH BY PETS ALLOWED
             if (svm.SelectedPets == true)
             {
                 query = query.Where(p => p.PetsAllowed == true);
             }
 
-            //Search by FreeParking
+            //-----SEARCH BY PARKING
             if (svm.SelectedParking == true)
             {
                 query = query.Where(p => p.ParkingFree == true);
             }
 
 
-
-
-            //search by CheckIn and CheckOut date
-            //if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
-            //{
-            //    query1 = query1.Where(r => r.CheckoutDate >= svm.SelectedCheckin && svm.SelectedCheckin >= r.CheckinDate || r.CheckinDate <= svm.SelectedCheckout && r.CheckinDate >= svm.SelectedCheckin);
-            //}
-
-           
-
-
-
-
-            //search by Price (weekday, weekend, both)
+            //-----SEARCH BY PRICE
             if (svm.SelectedWeekdayPrice != null)
             {
                 query = query.Where(p => p.WeekDayPrice <= svm.SelectedWeekdayPrice);
@@ -208,25 +214,48 @@ namespace Team_27_FinalProject.Controllers
             }
 
 
-            //.ToList() method to execute the query. Include statement to get the navigational data
-            List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
+            
 
-            //Search by Rating
-            //TODO: use ratings from reviews model
+
+
+            //-----SEARCH BY RATING
             if (svm.SelectedRating != null)
             {
                 if (svm.RatingType == RatingType.LessThan)
-                {SelectedProperties
-                     = SelectedProperties.Where(p => p.Ratings < svm.SelectedRating).ToList();
+                {
+                    query = query.Where(p => (p.Reviews.Average(r => r.Rating) < svm.SelectedRating) ||
+                                            (p.Reviews.Count() ==0)
+                                        );
                 }
                 else
                 {
-                    query = query.Where(p => p.Ratings > svm.SelectedRating);
+                    query = query.Where(p => p.Reviews.Average(r => r.Rating) > svm.SelectedRating);
                 }
             }
 
+
+
+
+            //-------------------------- SEARCH BY DATES --------------------------
+            //Search by Dates
             if (svm.SelectedCheckin != null && svm.SelectedCheckout != null)
             {
+
+                //----- CHECK IF DATE SELECTED IS LESS THAN DATE TODAY 
+                if (svm.SelectedCheckin <= System.DateTime.Now || svm.SelectedCheckout <= System.DateTime.Now)
+                {
+                    ModelState.AddModelError("Past Date", "Date selected must be greater than today.");
+                    return View("DetailedSearch",svm);
+                }
+
+                //----- CHECK IF CHECKOUT IS LESS THAN CHECKIN DATE 
+                if (svm.SelectedCheckout < svm.SelectedCheckin)
+                {
+                    ModelState.AddModelError("Less Than", "Checkout date must be greater than checkin date");
+                    return View("DetailedSearch",svm);
+
+                }
+
                 query1 = query1.Where(r => (r.CheckoutDate <= svm.SelectedCheckin && svm.SelectedCheckin <= r.CheckinDate) || (r.CheckinDate >= svm.SelectedCheckout && r.CheckinDate <= svm.SelectedCheckin));
 
 
@@ -239,10 +268,11 @@ namespace Team_27_FinalProject.Controllers
 
                 List<Property> Unavailable = query3.ToList();
 
-                SelectedProperties = SelectedProperties.Except(Unavailable).ToList();
-
-
             }
+
+
+            //.ToList() method to execute the query. Include statement to get the navigational data
+            List<Property> SelectedProperties = query.Include(p => p.Category).Include(p => p.Reviews).ToList();
 
             //Populate the view bag with a count of all properties
             ViewBag.AllProperties = _context.Properties.Count();

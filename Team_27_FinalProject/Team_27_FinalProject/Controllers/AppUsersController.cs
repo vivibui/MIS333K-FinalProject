@@ -18,7 +18,6 @@ namespace Team_27_FinalProject.Controllers
     public class AppUsersController : Controller
     {
         private UserManager<AppUser> _userManager;
-        private PasswordValidator<AppUser> _passwordValidator;
 
         private readonly AppDbContext _context;
 

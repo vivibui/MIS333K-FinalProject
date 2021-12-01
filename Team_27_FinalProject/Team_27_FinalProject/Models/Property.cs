@@ -141,7 +141,7 @@ namespace Team_27_FinalProject.Models
         {
             get
             {
-                if (Reviews.Count == 0)
+                if (Reviews.Count() == 0)
                 {
                     return 0.0m;
                 }
