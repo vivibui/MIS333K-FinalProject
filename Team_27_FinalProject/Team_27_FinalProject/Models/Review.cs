@@ -9,7 +9,8 @@ namespace Team_27_FinalProject.Models
     public class Review
     {
         public Int32 ReviewID { get; set; }
-        public enum DisputeStatus { Accepted, Rejected }
+
+        public enum DisputeStatus { Pending, Accepted, Rejected }
 
         //Property Status
         [Required(ErrorMessage = "Property Status cannot be blank.")]
@@ -29,7 +30,7 @@ namespace Team_27_FinalProject.Models
 
         //Disputed
         [Display(Name = "Disputed?")]
-        public Boolean? IsDisputed { get; set; }
+        public Boolean IsDisputed { get; set; }
 
         //Dispute Reason
         [Display(Name = "Dispute Reason")]

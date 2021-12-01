@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Team_27_FinalProject.Utilities;
 
 namespace Team_27_FinalProject.Controllers
 {
@@ -22,6 +24,9 @@ namespace Team_27_FinalProject.Controllers
         {
             _context = context;
         }
+
+
+        //------------------------------------- INDEX --------------------------------------
 
         // GET: Orders
         public IActionResult Index()
@@ -42,9 +47,11 @@ namespace Team_27_FinalProject.Controllers
                                 .ToList();
             }
 
-            //
             return View(orders);
         }
+
+
+        //------------------------------------- DETAILS --------------------------------------
 
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -78,47 +85,42 @@ namespace Team_27_FinalProject.Controllers
             return View(order);
         }
 
+        //------------------------------------- CART --------------------------------------
+
+        public IActionResult UserCart()
+        {
+            Order cart = Cart.GetCart(_context, User.Identity.Name);
+
+            return View(cart);
+        }
+
+        //------------------------------------- CREATE --------------------------------------
+
         // GET: Orders/Create
         //add checkin and checkout dates 
         [Authorize(Roles ="Customer")]
         public IActionResult Create()
         {
+            Order order = Cart.GetCart(_context, User.Identity.Name);
+
             return RedirectToAction ("DetailedSearch", "Home");
         }
 
-        // POST: Orders/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //[Authorize(Roles ="Customer")]
-        ////TODO: what to bind?
-        //public async Task<IActionResult> Create([Bind("OrderID")] Order order)
-        //{
-        //    //Find the next order number from the utilities class
-        //    order.OrderNumber = Utilities.GenerateNextOrderNumber.GetNextOrderNumber(_context);
 
-        //    //Set the date of this order
-        //    order.OrderDate = DateTime.Now;
 
-        //    //Associate the order with the logged-in customer
-        //    order.AppUser = _context.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Order order)
+        {
+            //send the user on to the action that will allow them to 
+            //add reservation.  Be sure to pass along the OrderID
+            //that you created when you added the order to the database above
+            return RedirectToAction("DetailedSearch", "Home");
+        }
 
-        //    //make sure all properties are valid
-        //    if (ModelState.IsValid == false)
-        //    {
-        //        return View(order);
-        //    }
 
-        //    //if code gets this far, add the order to the database
-        //    _context.Add(order);
-        //    await _context.SaveChangesAsync();
 
-        //    //send the user on to the action that will allow them to 
-        //    //create a reservation.  Be sure to pass along the orderID
-        //    //that you created when you added the order to the database above
-        //    return RedirectToAction("Create", "Reservations", new { orderID = order.OrderID });
-        //}
+        //------------------------------------- EDIT --------------------------------------
 
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -176,9 +178,6 @@ namespace Team_27_FinalProject.Controllers
             {
                 //find the record in the database
                 Order dbOrder = _context.Orders.Find(order.OrderID);
-
-                //update the notes
-                //dbOrder.OrderNotes = order.OrderNotes;
 
                 _context.Update(dbOrder);
                 await _context.SaveChangesAsync();

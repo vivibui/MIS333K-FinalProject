@@ -9,8 +9,15 @@ namespace Team_27_FinalProject.Models
 
     public class Order
     {
+        public enum OrderStatus { Completed, Pending, Cancelled}
+
         //Tax Rate 
         private const Decimal TAX_RATE = 0.1m;
+
+        //Order Status
+        [Required(ErrorMessage = "Order Status cannot be blank.")]
+        [Display(Name = "Order Status:")]
+        public OrderStatus OStatus { get; set; }
 
         //Primary key
         public Int32 OrderID { get; set; }

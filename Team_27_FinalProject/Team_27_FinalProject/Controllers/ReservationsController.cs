@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
+using Team_27_FinalProject.Utilities;
 
 namespace Team_27_FinalProject.Controllers
 {
@@ -68,26 +69,24 @@ namespace Team_27_FinalProject.Controllers
 
         //------------------------------------------ CREATE RESERVATION ------------------------------------------
         // GET: Reservations/Create
-        public IActionResult Booking(int? propertyID, int orderID)
+        public IActionResult Booking(int? id)
         {
 
             //Validate booking
-            if (propertyID == null)
+            if (id == null)
             {
                 return View("Error", new string[] { "Please specify a property to reserve!" });
             }
 
-            //find the associated order
-            Order dbOrder = _context.Orders.Find(orderID);
 
             //find the property in the database
             Property property = _context.Properties.Include(p => p.Category)
-            .FirstOrDefault(p => p.PropertyID == propertyID);
+                                                    .FirstOrDefault(p => p.PropertyID == id);
 
             //Pass the IDs to the viewmodel 
             var model = new Booking
             {
-                OrderID = dbOrder.OrderID,
+                //OrderID = dbOrder.OrderID,
                 PropertyID = property.PropertyID
             };
 
@@ -101,7 +100,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Booking booking)
+        public async Task<IActionResult> Booking(int PropertyID,  Booking booking)
         {
             //if user has not entered all fields, send them back to try again
             if (ModelState.IsValid == false)
@@ -148,7 +147,7 @@ namespace Team_27_FinalProject.Controllers
                 {
                     if (bookdate == date)
                     {
-                        ModelState.AddModelError("Booking unsuccessful.", "The entered date range has already been reserved.");
+                        ModelState.AddModelError("Booking unsuccessful", "The entered date range has already been reserved.");
                         return View(booking);
                     }
                 }
@@ -159,7 +158,7 @@ namespace Team_27_FinalProject.Controllers
             //--------------------VALIDATE THE NUMBER OF GUESTS----------------
             if (booking.NumberOfGuests > dbProperty.GuestsAllowed)
             {
-                ModelState.AddModelError("Overcrowded.", "The entered guests number is over the host allowed maximum of guests.");
+                ModelState.AddModelError("Overcrowded", "The entered guests number is over the host allowed maximum of guests.");
                 return View(booking);
             }
 
@@ -180,7 +179,7 @@ namespace Team_27_FinalProject.Controllers
             //find the order on the database that has the correct order id
             //unfortunately, the HTTP request will not contain the entire order object, 
             //just the order id, so we have to find the actual object in the database
-            Order dbOrder = _context.Orders.Find(rs.Order.OrderID);
+            Order dbOrder = Cart.GetCart(_context, User.Identity.Name);
 
             //set the order on the reservation equal to the order that we just found
             rs.Order = dbOrder;
@@ -197,12 +196,13 @@ namespace Team_27_FinalProject.Controllers
             await _context.SaveChangesAsync();
 
             //send the user to the details page for this order
-            return RedirectToAction("Details", "Orders", new { id = rs.Order.OrderID });
+            return RedirectToAction("UserCart", "Orders");
+
         }
 
+
+
         //------------------------------------------ EDIT ------------------------------------------
-
-
 
         // GET: Reservations/Edit/5
         public async Task<IActionResult> Edit(int? id)

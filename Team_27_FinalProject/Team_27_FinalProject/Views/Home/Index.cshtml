@@ -27,7 +27,6 @@
 <!--- ----------------------------------------------------------- -->
 
 
-
 <p>Showing @ViewBag.SelectedProperties of @ViewBag.AllProperties properties</p>
 
 <table class="table">
@@ -94,11 +93,18 @@
     </td>
 
     <td>
-
         @Html.ActionLink("Details", "Details", new { id = item.PropertyID })
 
+        @if (User.Identity.IsAuthenticated)
+        {
+            @if (User.IsInRole("Customer"))
+            {
+            <a asp-action="Booking" asp-controller="Reservations" asp-route-id="@item.PropertyID" class="nav-link">Reserve</a>
+            }
+         }
     </td>
-</tr>}
+</tr>
+}
     </tbody>
 </table>
 

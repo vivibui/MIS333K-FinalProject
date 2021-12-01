@@ -30,6 +30,10 @@
                 <label asp-for="SelectedCheckin" class="control-label"></label>
                 <input asp-for="SelectedCheckin" class="form-control" />
                 <span asp-validation-for="SelectedCheckin" class="text-danger"></span>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Past Date")
+                    @Html.ValidationMessage("Less Than")
+                </dl>
             </div>
             <div class="form-group">
                 <label asp-for="SelectedCheckout" class="control-label"></label>
