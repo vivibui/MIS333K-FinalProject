@@ -46,6 +46,15 @@
                         }
                     }
 
+                    <!-- Customer Only: View their reviews -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Customer"))
+                        {
+                            <a asp-controller="Reviews" asp-action="CustomerIndex" class="nav-link">My Reviews</a>
+                        }
+                    }
+
                     <!-- Admin Only: Approve/Reject Newly Created Properties -->
                     @if (User.Identity.IsAuthenticated)
                     {

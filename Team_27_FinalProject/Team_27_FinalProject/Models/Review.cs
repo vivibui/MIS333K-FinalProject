@@ -20,12 +20,12 @@ namespace Team_27_FinalProject.Models
         //Rating
         [Required(ErrorMessage = "Please enter your rating.")]
         [Display(Name = "Rating")]
-        [Range(1.0, 5.0)]
+        [Range(1, 5)]
         [DisplayFormat(DataFormatString = "{0:F0}")]
         public Decimal Rating { get; set; }
 
         //Content
-        [Display(Name = "Review Content")]
+        [Display(Name = "Review Description")]
         public String Content { get; set; }
 
         //Disputed
