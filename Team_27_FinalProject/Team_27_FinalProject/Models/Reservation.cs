@@ -212,5 +212,13 @@ namespace Team_27_FinalProject.Models
             get { return (Subtotal - Commission); }
         }
 
+        //Total Earning
+        [Display(Name = "Revenue + Cleaning")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal TotalEarning
+        {
+            get { return (HostRevenue + CleaningPrice); }
+        }
+
     }
 }

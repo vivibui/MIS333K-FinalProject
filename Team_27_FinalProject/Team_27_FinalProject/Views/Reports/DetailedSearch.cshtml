@@ -1,0 +1,83 @@
+﻿@model Team_27_FinalProject.Models.ReportViewModel
+
+@{
+    ViewData["Title"] = "DetailedSearch";
+}
+
+<h1>Report Search</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DisplaySearchResults" method="get">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SelectedPropertyID" class="control-label"></label>
+                @Html.DropDownListFor(model => model.SelectedPropertyID, (SelectList)ViewBag.AllProperties, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedRevenue" class="control-label"></label>
+                <input asp-for="SelectedRevenue" class="form-control" />
+                <span asp-validation-for="SelectedRevenue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMinRevenue" class="control-label"></label>
+                <input asp-for="SelectedMinRevenue" class="form-control" />
+                <span asp-validation-for="SelectedMinRevenue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMaxRevenue" class="control-label"></label>
+                <input asp-for="SelectedMaxRevenue" class="form-control" />
+                <span asp-validation-for="SelectedMaxRevenue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedCleaning" class="control-label"></label>
+                <input asp-for="SelectedCleaning" class="form-control" />
+                <span asp-validation-for="SelectedCleaning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMinCleaning" class="control-label"></label>
+                <input asp-for="SelectedMinCleaning" class="form-control" />
+                <span asp-validation-for="SelectedMinCleaning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMaxCleaning" class="control-label"></label>
+                <input asp-for="SelectedMaxCleaning" class="form-control" />
+                <span asp-validation-for="SelectedMaxCleaning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedEarning" class="control-label"></label>
+                <input asp-for="SelectedEarning" class="form-control" />
+                <span asp-validation-for="SelectedEarning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMinEarning" class="control-label"></label>
+                <input asp-for="SelectedMinEarning" class="form-control" />
+                <span asp-validation-for="SelectedMinEarning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedMaxEarning" class="control-label"></label>
+                <input asp-for="SelectedMaxEarning" class="form-control" />
+                <span asp-validation-for="SelectedMaxEarning" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedStartDate" class="control-label"></label>
+                <input asp-for="SelectedStartDate" class="form-control" />
+                <span asp-validation-for="SelectedStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SelectedEndDate" class="control-label"></label>
+                <input asp-for="SelectedEndDate" class="form-control" />
+                <span asp-validation-for="SelectedEndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

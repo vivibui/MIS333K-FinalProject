@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\effen\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\effen\\.nuget\\packages"
+      "C:\\Users\\mumgo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mumgo\\.nuget\\packages"
     ]
   }
 }
