@@ -232,6 +232,9 @@ namespace Team_27_FinalProject.Controllers
             }
         }
 
+
+
+        //------------------------- LOGIN ---------------------------
         // GET: /Account/Login
         [AllowAnonymous]
         public IActionResult Login(string returnUrl)
@@ -265,8 +268,12 @@ namespace Team_27_FinalProject.Controllers
             //they requested OR the homepage if there isn't a specific url
             if (result.Succeeded)
             {
+
+                //-----------------CHECK IF USER IS ACTIVE----------------- 
+                
                 //return ?? "/" means if returnUrl is null, substitute "/" (home)
                 return Redirect(returnUrl ?? "/");
+
             }
             else //log in was not successful
             {

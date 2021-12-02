@@ -98,11 +98,11 @@ namespace Team_27_FinalProject.Models
             {
                 if (item.DayOfWeek == DayOfWeek.Friday || item.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    TotalWeekdays = TotalWeekdays + 1;
+                    TotalWeekends = TotalWeekends + 1;
                 }
                 else
                 {
-                    TotalWeekends = TotalWeekends + 1; 
+                    TotalWeekdays = TotalWeekdays + 1;
                 }
             }
 
@@ -171,7 +171,7 @@ namespace Team_27_FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Subtotal
         {
-            get { return StayPrice - CleaningPrice - _discount; }
+            get { return StayPrice + CleaningPrice + _discount; }
         }
 
         //Tax Fee

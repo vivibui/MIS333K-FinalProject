@@ -1,11 +1,9 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Controllers/ReviewsController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Controllers/ReservationsController.cs">
     <Files>
-      <File FileName="Team_27_FinalProject/Utilities/GenerateNextOrderNumber.cs" Line="9" Column="6" IsPinned="True" />
-      <File FileName="Team_27_FinalProject/Controllers/OrdersController.cs" Line="105" Column="1" />
-      <File FileName="Team_27_FinalProject/Controllers/HomeController.cs" Line="227" Column="68" />
-      <File FileName="Team_27_FinalProject/Controllers/ReviewsController.cs" Line="1" Column="1" />
-      <File FileName="Team_27_FinalProject/Controllers/PropertiesController.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Controllers/OrdersController.cs" Line="1" Column="1" />
+      <File FileName="Team_27_FinalProject/Controllers/ReservationsController.cs" Line="166" Column="59" />
+      <File FileName="Team_27_FinalProject/Controllers/AccountController.cs" Line="276" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,17 +11,10 @@
           <Node name="Team_27_FinalProject" expanded="True">
             <Node name="Team_27_FinalProject" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ReviewsController.cs" selected="True" />
+                <Node name="ReservationsController.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True">
-                <Node name="ViewModels" expanded="True" />
-              </Node>
-              <Node name="Seeding" expanded="True" />
-              <Node name="Utilities" expanded="True" />
+              <Node name="Models" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Home" expanded="True" />
-                <Node name="Orders" expanded="True" />
-                <Node name="Properties" expanded="True" />
                 <Node name="Reservations" expanded="True" />
               </Node>
             </Node>
