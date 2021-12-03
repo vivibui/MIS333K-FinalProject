@@ -25,10 +25,17 @@
     <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
 </th>
 <!--TODO: Add authorization for Host/Admin-->
+@if (User.IsInRole("Host"))
+{
+    <th>
+        <a asp-action="Index" asp-controller="Reports" class="btn btn-info">View Host Reports</a>
+    </th>
+}
+
 @if (User.IsInRole("Admin"))
 {
     <th>
-        <a asp-action="Index" asp-controller="Reports" class="btn btn-info">View Reports</a>
+        <a asp-action="Index" asp-controller="Reports" class="btn btn-info">View Admin Reports</a>
     </th>
 }
 <!--- ----------------------------------------------------------- -->
