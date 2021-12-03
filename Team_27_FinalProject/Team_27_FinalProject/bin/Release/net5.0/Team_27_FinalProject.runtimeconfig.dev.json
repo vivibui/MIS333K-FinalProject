@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "/Users/vivianbui/.dotnet/store/|arch|/|tfm|",
+      "/Users/vivianbui/.nuget/packages"
+    ]
+  }
+}

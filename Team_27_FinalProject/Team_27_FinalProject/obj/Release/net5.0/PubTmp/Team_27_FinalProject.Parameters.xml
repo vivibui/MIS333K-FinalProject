@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Team-27-FinalProject" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Release/net5\.0/PubTmp/Out/$" />
+  </parameter>
+</parameters>
