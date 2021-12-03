@@ -24,6 +24,9 @@
     <Content Remove="wwwroot\lib\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C:\Users\effen\OneDrive\Desktop\ReviewsController.cs" Link="ReviewsController.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="5.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12">
