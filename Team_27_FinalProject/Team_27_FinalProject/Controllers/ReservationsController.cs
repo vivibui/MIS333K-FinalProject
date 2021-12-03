@@ -113,7 +113,7 @@ namespace Team_27_FinalProject.Controllers
             Property dbProperty = _context.Properties.Find(booking.PropertyID);
 
 
-            //------------------VALIDATE CHECKIN CHECKOUT TIME-----------------
+            //------------------VALIDATE CHECKIN CHECKOUT TIME (DUPLICATION)-----------------
 
             var unavailableRes = _context.Reservations
                                          .Where(r => r.Property.PropertyID == booking.PropertyID &&
@@ -126,7 +126,7 @@ namespace Team_27_FinalProject.Controllers
             List<DateTime> GetDates = new List<DateTime>(); // empty list for all dates in reservation
 
             //Add all dates between checkout and checkin to list 
-            for (DateTime i = booking.CheckinDate; i <= booking.CheckoutDate; i = i.AddDays(1))
+            for (DateTime i = booking.CheckinDate; i < booking.CheckoutDate; i = i.AddDays(1))
             {
                 CheckRange.Add(i);
             }
@@ -134,13 +134,13 @@ namespace Team_27_FinalProject.Controllers
             //Loop to add dates to Get Dates 
             foreach (var res in unavailableRes)
             {
-                for (DateTime i = res.CheckinDate; i <= res.CheckoutDate; i = i.AddDays(1))
+                for (DateTime i = res.CheckinDate; i < res.CheckoutDate; i = i.AddDays(1))
                 {
                     GetDates.Add(i);
                 }
             }
 
-            //Loop to compare the dates in Booking and unavailableRes 
+            //Loop to compare the dates in Booking and unavailable Res 
             foreach (var date in GetDates)
             {
                 foreach (var bookdate in CheckRange)
@@ -153,6 +153,27 @@ namespace Team_27_FinalProject.Controllers
                 }
             }
 
+            //----- CHECK IF DATE SELECTED IS LESS THAN DATE TODAY 
+            if (booking.CheckinDate <= System.DateTime.Now || booking.CheckoutDate <= System.DateTime.Now)
+            {
+                ModelState.AddModelError("Past Date", "Date selected must be greater than today.");
+                return View(booking);
+            }
+
+            //----- CHECK IF CHECKOUT IS LESS THAN CHECKIN DATE 
+            if (booking.CheckoutDate < booking.CheckinDate)
+            {
+                ModelState.AddModelError("Less Than", "Checkout date must be greater than checkin date");
+                return View(booking);
+
+            }
+
+            //--------------------VALIDATE IF CHECK IN IS TODAY ----------------
+            if (booking.CheckinDate == DateTime.Now)
+            {
+                ModelState.AddModelError("Not Today", "You cannot create a reservation with a checkin is today.");
+                return View(booking);
+            }
 
 
             //--------------------VALIDATE THE NUMBER OF GUESTS----------------

@@ -28,6 +28,15 @@
                 <dl class="text-danger">
                     @Html.ValidationMessage("Booking unsuccessful")
                 </dl>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Not Today")
+                </dl>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Past Date")
+                </dl>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Less Than")
+                </dl>
             </div>
             <div class="form-group">
                 <label asp-for="NumberOfGuests" class="control-label"></label>
