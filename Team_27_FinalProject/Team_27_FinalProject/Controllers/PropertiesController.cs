@@ -345,7 +345,7 @@ namespace Team_27_FinalProject.Controllers
 
 
 
-        //Only Admin can access
+        //Only Host can access
         [Authorize(Roles = "Host")]
         // GET: Properties/Edit/5
         public IActionResult HostManageListingEdit(int? id)

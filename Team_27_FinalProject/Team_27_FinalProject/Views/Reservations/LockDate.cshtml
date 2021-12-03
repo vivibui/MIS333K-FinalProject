@@ -1,0 +1,51 @@
+@model LockDate
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Locking Reservation Dates</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Booking">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Pass along the ID for property and order -->
+            <input type="hidden" asp-for="PropertyID" />
+
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+                <span asp-validation-for="EndDate" class="text-danger"></span>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Booking unsuccessful")
+                </dl>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Not Today")
+                </dl>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Past Date")
+                </dl>
+                <dl class="text-danger">
+                    @Html.ValidationMessage("Less Than")
+                </dl>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lock Dates" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
