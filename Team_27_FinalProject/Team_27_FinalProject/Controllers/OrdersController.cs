@@ -124,10 +124,16 @@ namespace Team_27_FinalProject.Controllers
             return RedirectToAction ("DetailedSearch", "Home");
         }
 
-        //Test
-        public async Task<IActionResult> ConfirmOrder (int id, Order order)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create (int id)
         {
-            //---------VALIDATE 
+            //Find the order in the database 
+            Order order = _context.Orders
+                .Include(ord => ord.Reservations)
+                .ThenInclude(ord => ord.Property)
+                .Include(ord => ord.AppUser)
+                .FirstOrDefault(o => o.OrderID == id);
 
             //Create a viewbag
             ViewBag.OrderNumber = order.OrderNumber;

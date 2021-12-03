@@ -277,8 +277,7 @@ namespace Team_27_FinalProject.Controllers
             await _context.SaveChangesAsync();
 
             //send the user to the details page for this order
-            return RedirectToAction("UserCart", "Orders", PropertyID);
-
+            return RedirectToAction("Details", "Orders", new { id = rs.Order.OrderID });
         }
         
 
