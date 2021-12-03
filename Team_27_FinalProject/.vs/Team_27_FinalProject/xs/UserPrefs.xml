@@ -1,9 +1,7 @@
 ﻿<Properties StartupConfiguration="{94A78E9D-863C-4320-AC05-74A277B128FC}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Views/Orders/UserCart.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Team_27_FinalProject/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Team_27_FinalProject/Controllers/OrdersController.cs" Line="132" Column="10" />
-      <File FileName="Team_27_FinalProject/Controllers/PropertiesController.cs" Line="121" Column="1" />
-      <File FileName="Team_27_FinalProject/Views/Orders/UserCart.cshtml" Line="75" Column="58" />
+      <File FileName="Team_27_FinalProject/Views/Shared/_Layout.cshtml" Line="77" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,8 +13,9 @@
               <Node name="Models" expanded="True" />
               <Node name="Utilities" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Orders" expanded="True">
-                  <Node name="UserCart.cshtml" selected="True" />
+                <Node name="Orders" expanded="True" />
+                <Node name="Shared" expanded="True">
+                  <Node name="_Layout.cshtml" selected="True" />
                 </Node>
               </Node>
             </Node>

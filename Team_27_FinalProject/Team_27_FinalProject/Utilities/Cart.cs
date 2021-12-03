@@ -8,7 +8,7 @@ namespace Team_27_FinalProject.Utilities
 {
     public static class Cart
     {
-        public static Order GetCart(AppDbContext _context, String email, Property property)
+        public static Order GetCart(AppDbContext _context, String email)
         {
             Order order = _context.Orders
                 .Include(o => o.Reservations)

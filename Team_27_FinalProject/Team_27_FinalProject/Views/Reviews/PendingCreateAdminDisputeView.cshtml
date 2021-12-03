@@ -1,0 +1,47 @@
+@model Team_27_FinalProject.Models.Review
+
+@{ ViewData["Title"] = "Dispute"; }
+
+<br />
+<h1>Details of Pending Reviews</h1>
+<h4>Review and Dispute Reviews</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="PendingCreateAdminDisputeView">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="ReviewID" />
+
+            <div class="form-group">
+                <label asp-for="Rating" class="control-label"></label>
+                <input asp-for="Rating" disabled class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"></label>
+                <input asp-for="Content" disabled class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="DisputeReason" class="control-label"></label>
+                <input asp-for="DisputeReason" disabled class="form-control" />
+                
+            </div>
+            <br />
+            <div class="form-group">
+                @using (Html.BeginForm("PendingCreateAdminDisputeView", "Reviews", FormMethod.Post))
+                {
+                    <input type="submit" name="button" value="Approve" class="btn btn-success" />
+                    <input type="submit" name="button" value="Reject" class="btn btn-danger" />
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="PendingCreateAdminDisputeIndex">Back to List</a>
+</div>
+

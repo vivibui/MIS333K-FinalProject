@@ -1,0 +1,56 @@
+@model IEnumerable<Team_27_FinalProject.Models.Review>
+
+@{ ViewData["Title"] = "VIEW PENDING DISPUTED REVIEWS"; }
+<br />
+<h1>Pending Reviews</h1>
+<h4>Disputed Reviews from Hosts.</h4>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Property.Street)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsDisputed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisputeReason)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Property.Street)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDisputed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisputeReason)
+                </td>
+                <td>
+                    @Html.ActionLink("Dispute", "PendingCreateAdminDisputeView", new { id = item.ReviewID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

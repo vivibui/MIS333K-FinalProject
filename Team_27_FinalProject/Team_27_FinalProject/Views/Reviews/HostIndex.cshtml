@@ -6,9 +6,7 @@
 
 <h1>My Reviews</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -51,8 +49,7 @@
                 @Html.DisplayFor(modelItem => item.DisputeReason)
             </td>
             <td>
-                <a asp-action="CEdit" asp-route-id="@item.ReviewID">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReviewID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ReviewID">Dispute</a> 
             </td>
         </tr>
 }
