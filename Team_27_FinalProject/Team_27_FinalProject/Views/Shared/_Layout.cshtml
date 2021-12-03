@@ -54,6 +54,15 @@
                             <a asp-controller="Reviews" asp-action="CustomerIndex" class="nav-link">My Reviews</a>
                         }
                     }
+                    <!-- Host Only: View their reviews -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Host"))
+                        {
+                            <a asp-controller="Reviews" asp-action="HostIndex" class="nav-link">My Reviews</a>
+                        }
+                    }
+
 
                     <!-- Admin Only: Approve/Reject Newly Created Properties -->
                     @if (User.Identity.IsAuthenticated)
@@ -62,6 +71,17 @@
                         {
                             <li>
                                 <a asp-controller="Properties" asp-action="PendingCreateAdminViewIndex" class="nav-link">Pending Properties</a>
+                            </li>
+                        }
+                    }
+
+                    <!-- Admin Only: Approve/Reject Disputed Reviews -->
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li>
+                                <a asp-controller="Reviews" asp-action="PendingCreateAdminDisputeIndex" class="nav-link">Disputed Reviews</a>
                             </li>
                         }
                     }

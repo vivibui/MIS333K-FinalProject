@@ -1,0 +1,69 @@
+@model Team_27_FinalProject.Models.Review
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Review</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ReviewID" />
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Customer"))
+                {
+                    <div class="form-group">
+                        <label asp-for="Rating" class="control-label"></label>
+                        <input asp-for="Rating" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" class="form-control" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                }
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Host"))
+                {
+
+                    
+                    <div class="form-group">
+                        <label asp-for="DisputeReason" class="control-label"></label>
+                        <input asp-for="DisputeReason" class="form-control" />
+                        <span asp-validation-for="DisputeReason" class="text-danger"></span>
+                    </div>
+                }
+            }
+
+           
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @if (User.IsInRole("Host"))
+        {
+
+            <a asp-action="HostIndex">Back to List</a>
+        }
+    }
+
+
+
+</div>
+

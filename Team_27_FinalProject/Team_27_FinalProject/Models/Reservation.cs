@@ -8,7 +8,7 @@ namespace Team_27_FinalProject.Models
 {
     public class Reservation
     {
-        public enum ReservationStatus { Completed, Incoming, Cancelled }
+        public enum ReservationStatus { Completed, Incoming, InProgress, Cancelled }
 
         //Tax Rate 
         private const Decimal TAX_RATE = 0.1m;
