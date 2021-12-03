@@ -13,26 +13,39 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ReviewID" />
-            <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Content" class="control-label"></label>
-                <input asp-for="Content" class="form-control" />
-                <span asp-validation-for="Content" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsDisputed" /> @Html.DisplayNameFor(model => model.IsDisputed)
-                </label>
-            </div>
-            <div class="form-group">
-                <label asp-for="DisputeReason" class="control-label"></label>
-                <input asp-for="DisputeReason" class="form-control" />
-                <span asp-validation-for="DisputeReason" class="text-danger"></span>
-            </div>
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Customer"))
+                {
+                    <div class="form-group">
+                        <label asp-for="Rating" class="control-label"></label>
+                        <input asp-for="Rating" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Content" class="control-label"></label>
+                        <input asp-for="Content" class="form-control" />
+                        <span asp-validation-for="Content" class="text-danger"></span>
+                    </div>
+                }
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Host"))
+                {
+
+                    
+                    <div class="form-group">
+                        <label asp-for="DisputeReason" class="control-label"></label>
+                        <input asp-for="DisputeReason" class="form-control" />
+                        <span asp-validation-for="DisputeReason" class="text-danger"></span>
+                    </div>
+                }
+            }
+
+           
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -41,6 +54,16 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @if (User.IsInRole("Host"))
+        {
+
+            <a asp-action="HostIndex">Back to List</a>
+        }
+    }
+
+
+
 </div>
 
