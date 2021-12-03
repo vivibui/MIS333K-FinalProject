@@ -423,7 +423,8 @@ namespace Team_27_FinalProject.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(280)
+                        .HasColumnType("nvarchar(280)");
 
                     b.Property<int>("DStatus")
                         .HasColumnType("int");
