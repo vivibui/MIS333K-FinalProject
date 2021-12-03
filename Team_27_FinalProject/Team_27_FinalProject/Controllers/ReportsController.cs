@@ -7,11 +7,17 @@ using Team_27_FinalProject.DAL;
 using Team_27_FinalProject.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Team_27_FinalProject.Controllers
 {
+    [Authorize(Roles = "Host, Admin")]
     public class ReportsController : Controller
     {
+        
+        //private UserManager<AppUser> _userManager;
+
         private AppDbContext _context;
         public ReportsController(AppDbContext dbContext)
         {
@@ -29,10 +35,25 @@ namespace Team_27_FinalProject.Controllers
             var query1 = from p in _context.Properties
                          select p;
 
-            //query = query.Where(r => r.ReservationStatus.Completed == true);
-
             //.ToList() method to execute the query. Include statement to get the navigational data
-            List<Reservation> SelectedReservations = query.Include(r => r.Property).ToList();
+            //List<Reservation> SelectedReservations = query.Include(r => r.Property).ToList();
+
+            //Set up a list of orders to display
+            List<Reservation> SelectedReservations = new List<Reservation>();
+            if (User.IsInRole("Admin"))
+            {
+                SelectedReservations = _context.Reservations
+                                .Include(r => r.Property)
+                                .ToList();
+            }
+            else //user is a host, so only display their records
+            {
+                SelectedReservations = _context.Reservations
+                                .Include(r => r.Property)
+                                .ThenInclude(r => r.AppUser)
+                                .Where(r => r.Property.AppUser.UserName == User.Identity.Name)
+                                .ToList();
+            }
 
             //Populate the view bag with a count of all reservations
             ViewBag.AllReservations = _context.Reservations.Count();
@@ -45,26 +66,26 @@ namespace Team_27_FinalProject.Controllers
 
 
 
-        //-------------------------- DETAILS: SHOW DETAILS OF A RESERVATION/REPORT  -------------------------- 
+        //-------------------------- DETAILS: SHOW DETAILS OF A RESERVATION  -------------------------- 
 
-        //public IActionResult Details(int? id)//id is the id of the property you want to see
-        //{
-        //    if (id == null) //PropertyID not specified
-        //    {
-        //        //user did not specify a PropertyID – take them to the error view
-        //        return View("Error", new String[] { "PropertyID not specified - which property do you want to view?" });
-        //    }
-        //    //look up the property in the database based on the id; be sure to include the category
-        //    Property property = _context.Properties.Include(r => r.Reservations)
-        //    .FirstOrDefault(p => p.PropertyID == id);
-        //    if (property == null) //No property with this id exists in the database
-        //    {
-        //        //there is not a property with this id in the database – show the user an error view
-        //        return View("Error", new String[] { "Property not found in database" });
-        //    }
-        //    //if code gets this far, all is well – display the details
-        //    return View(property);
-        //}
+        public IActionResult Details(int? id)//id is the id of the property you want to see
+        {
+            if (id == null) //ReservationID not specified
+            {
+                //user did not specify a PropertyID – take them to the error view
+                return View("Error", new String[] { "ReservationID not specified - which reservation do you want to view?" });
+            }
+            //look up the property in the database based on the id; be sure to include the category
+            Reservation reservation = _context.Reservations.Include(p => p.Property)
+            .FirstOrDefault(r => r.ReservationID == id);
+            if (reservation == null) //No reservation with this id exists in the database
+            {
+                //there is not a reservation with this id in the database – show the user an error view
+                return View("Error", new String[] { "Reservation not found in database" });
+            }
+            //if code gets this far, all is well – display the details
+            return View(reservation);
+        }
 
 
 
@@ -89,10 +110,40 @@ namespace Team_27_FinalProject.Controllers
 
         private SelectList GetAllProperties()
         {
-            //Get the list of categories from the database
+
+            ////Find the logged in user using the UserManager
+            //var userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            ////Get the list of properties from the database
+            ////assign the list of properties to the host
             List<Property> propertyList = _context.Properties.ToList();
 
-            //add a dummy entry so the user can select all genres
+
+            //var query1 = from p in _context.Properties
+            //            select p;
+
+            //query1 = query1.Where(p => p.AppUser.Email == userLoggedIn.Email);
+
+            ////.ToList() method to execute the query. Include statement to get the navigational data
+            //List<Property> propertyList = query1.Include(r => r.AppUser)
+            //                                        .ToList();
+
+
+            //Set up a list of orders to display
+            //List<Property> propertyList = new List<Property>();
+            //if (User.IsInRole("Admin"))
+            //{
+            //    propertyList = _context.Properties
+            //                    .ToList();
+            //}
+            //else //user is a host, so only display their records
+            //{
+            //    propertyList = _context.Properties
+            //                    .Where(o => o.AppUser.UserName == User.Identity.Name)
+            //                    .ToList();
+            //}
+
+            //add a dummy entry so the user can select all properties
             Property SelectNone = new Property() { PropertyID = 0, PropertyNumber = 0 };
             propertyList.Add(SelectNone);
 
@@ -186,6 +237,25 @@ namespace Team_27_FinalProject.Controllers
             {
                 query = query.Where(r => r.TotalEarning >= rvm.SelectedMinEarning && r.TotalEarning <= rvm.SelectedMaxEarning);
             }
+
+
+            //SEARCH BY START AND END DATE
+            if (rvm.SelectedStartDate != null)
+            {
+                query = query.Where(r => (r.CheckinDate >= rvm.SelectedStartDate) || (r.CheckoutDate >= rvm.SelectedStartDate));
+            }
+
+            if (rvm.SelectedEndDate != null)
+            {
+                query = query.Where(r => (r.CheckinDate <= rvm.SelectedEndDate) || (r.CheckoutDate <= rvm.SelectedEndDate));
+            }
+
+            if (rvm.SelectedStartDate != null && rvm.SelectedEndDate != null)
+            {
+                query = query.Where(r => (r.CheckinDate >= rvm.SelectedStartDate) || (r.CheckoutDate >= rvm.SelectedStartDate) || (r.CheckinDate <= rvm.SelectedEndDate) || (r.CheckoutDate <= rvm.SelectedEndDate));
+            }
+
+            
 
 
 
