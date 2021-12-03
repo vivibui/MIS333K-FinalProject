@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Threading.Tasks;
 
 namespace Team_27_FinalProject.Models
 {
@@ -220,5 +221,21 @@ namespace Team_27_FinalProject.Models
             get { return (Subtotal - Commission); }
         }
 
+        //Total Earning
+        [Display(Name = "Revenue + Cleaning")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal TotalEarning
+        {
+            get { return (HostRevenue + CleaningPrice); }
+        }
+
+        //Sum Earning
+        //[Display(Name = "Sum Earning")]
+        //[DisplayFormat(DataFormatString = "{0:C}")]
+        //public Decimal SumEarning
+        //{
+        //    get { return Reservation.Sum( r => r.TotalEarning); }
+        //}
+        
     }
 }

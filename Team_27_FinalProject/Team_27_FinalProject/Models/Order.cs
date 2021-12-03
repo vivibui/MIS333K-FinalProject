@@ -79,5 +79,15 @@ namespace Team_27_FinalProject.Models
         {
             get { return OrderSubtotal + SalesTax; }
         }
+
+
+        //--------------------FOR THE REPORT
+        //Sum Earning
+        //[Display(Name = "Sum Earning")]
+        //[DisplayFormat(DataFormatString = "{0:C}")]
+        //public Decimal SumEarning
+        //{
+        //    get { return Reservations.Sum(r => r.TotalEarning); }
+        //}
     }
 }
