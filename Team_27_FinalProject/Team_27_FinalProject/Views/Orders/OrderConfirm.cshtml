@@ -1,0 +1,20 @@
+@model IEnumerable<Team_27_FinalProject.Models.Order>
+
+@{ ViewBag.Title = "OrderNumber"; }
+
+
+
+<div class="text-center">
+    <!-- Space -->
+    <br /><br /><br /><br /><br />
+    <!-- Space -->
+    <br /><br /><br />
+    <table style="margin-left: auto; margin-right:auto;">
+        <tr>
+            <h3>Thank you for your order!</h3>
+            <p>Your confirmation number is @ViewBag.OrderNumber.</p>
+            <p>We have sent this confirmation number to your registered email.</p>
+        <tr/>
+    </table>
+</div>
+

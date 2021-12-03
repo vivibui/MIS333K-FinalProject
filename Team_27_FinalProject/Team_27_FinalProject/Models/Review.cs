@@ -26,6 +26,7 @@ namespace Team_27_FinalProject.Models
 
         //Content
         [Display(Name = "Review Description")]
+        [StringLength(280, ErrorMessage = "The value cannot exceed 280 characters. ")]
         public String Content { get; set; }
 
         //Disputed

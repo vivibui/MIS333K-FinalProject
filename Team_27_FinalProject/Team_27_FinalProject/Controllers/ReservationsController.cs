@@ -100,7 +100,7 @@ namespace Team_27_FinalProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Booking(int PropertyID,  Booking booking)
+        public async Task<IActionResult> Booking(int PropertyID, Booking booking)
         {
             //if user has not entered all fields, send them back to try again
             if (ModelState.IsValid == false)
@@ -115,43 +115,44 @@ namespace Team_27_FinalProject.Controllers
 
             //------------------VALIDATE CHECKIN CHECKOUT TIME (DUPLICATION)-----------------
 
-            var unavailableRes = _context.Reservations
-                                         .Where(r => r.Property.PropertyID == booking.PropertyID &&
-                                                (booking.CheckinDate <= r.CheckoutDate && booking.CheckinDate >= r.CheckinDate ||
-                                                    r.CheckinDate <= booking.CheckoutDate && r.CheckinDate >= booking.CheckinDate))
-                                         .ToList();
+            //var unavailableRes = _context.Reservations
+            //                             .Where(r => r.Property.PropertyID == booking.PropertyID &&
+            //                                    (booking.CheckinDate <= r.CheckoutDate && booking.CheckinDate >= r.CheckinDate ||
+            //                                        r.CheckinDate <= booking.CheckoutDate && r.CheckinDate >= booking.CheckinDate))
+            //                             .ToList();
 
-            //Initialize empty list
-            List<DateTime> CheckRange = new List<DateTime>(); //empty list for booking
-            List<DateTime> GetDates = new List<DateTime>(); // empty list for all dates in reservation
+            ////Initialize empty list
+            //List<DateTime> CheckRange = new List<DateTime>(); //empty list for booking
+            //List<DateTime> GetDates = new List<DateTime>(); // empty list for all dates in reservation
 
-            //Add all dates between checkout and checkin to list 
-            for (DateTime i = booking.CheckinDate; i < booking.CheckoutDate; i = i.AddDays(1))
-            {
-                CheckRange.Add(i);
-            }
+            ////Add all dates between checkout and checkin to list 
+            //for (DateTime i = booking.CheckinDate; i < booking.CheckoutDate; i = i.AddDays(1))
+            //{
+            //    CheckRange.Add(i);
+            //}
 
-            //Loop to add dates to Get Dates 
-            foreach (var res in unavailableRes)
-            {
-                for (DateTime i = res.CheckinDate; i < res.CheckoutDate; i = i.AddDays(1))
-                {
-                    GetDates.Add(i);
-                }
-            }
+            ////Loop to add dates to Get Dates 
+            //foreach (var res in unavailableRes)
+            //{
+            //    for (DateTime i = res.CheckinDate; i < res.CheckoutDate; i = i.AddDays(1))
+            //    {
+            //        GetDates.Add(i);
+            //    }
+            //}
 
-            //Loop to compare the dates in Booking and unavailable Res 
-            foreach (var date in GetDates)
-            {
-                foreach (var bookdate in CheckRange)
-                {
-                    if (bookdate == date)
-                    {
-                        ModelState.AddModelError("Booking unsuccessful", "The entered date range has already been reserved.");
-                        return View(booking);
-                    }
-                }
-            }
+            ////Loop to compare the dates in Booking and unavailable Res 
+            //foreach (var date in GetDates)
+            //{
+            //    foreach (var bookdate in CheckRange)
+            //    {
+            //        if (bookdate == date)
+            //        {
+            //            ModelState.AddModelError("Booking unsuccessful", "The entered date range has already been reserved.");
+            //            return View(booking);
+            //        }
+            //    }
+            //}
+
 
             //----- CHECK IF DATE SELECTED IS LESS THAN DATE TODAY 
             if (booking.CheckinDate <= System.DateTime.Now || booking.CheckoutDate <= System.DateTime.Now)
@@ -161,7 +162,7 @@ namespace Team_27_FinalProject.Controllers
             }
 
             //----- CHECK IF CHECKOUT IS LESS THAN CHECKIN DATE 
-            if (booking.CheckoutDate < booking.CheckinDate)
+            if (booking.CheckoutDate <= booking.CheckinDate)
             {
                 ModelState.AddModelError("Less Than", "Checkout date must be greater than checkin date");
                 return View(booking);
@@ -200,7 +201,7 @@ namespace Team_27_FinalProject.Controllers
             //find the order on the database that has the correct order id
             //unfortunately, the HTTP request will not contain the entire order object, 
             //just the order id, so we have to find the actual object in the database
-            Order dbOrder = Cart.GetCart(_context, User.Identity.Name);
+            Order dbOrder = Cart.GetCart(_context, User.Identity.Name, dbProperty);
 
             //set the order on the reservation equal to the order that we just found
             rs.Order = dbOrder;
@@ -210,71 +211,76 @@ namespace Team_27_FinalProject.Controllers
             rs.WeekdayFee = dbProperty.WeekDayPrice;
             rs.WeekendFee = dbProperty.WeekendPrice;
             rs.CleaningPrice = dbProperty.CleaningFee;
-            rs.CalStayPrice();
+
+
+
+            //------------------------------- VALIDATE CHECKIN CHECKOUT TIME (DUPLICATION) -------------------------------
+            rs.Property = _context.Properties.FirstOrDefault(p => p.PropertyID == rs.Property.PropertyID);
+
+            //see if available
+            //search for dates
+            var dateQuery = from r in _context.Reservations select r;
+
+            //find reservations outside of the desired range - these are okay reservations
+            dateQuery = dateQuery.Include(r => r.Property).Where(r => r.CheckinDate >= rs.CheckoutDate || r.CheckoutDate <= rs.CheckinDate);
+
+            //execute the query
+            List<Reservation> reservations = dateQuery.ToList();
+
+            //the list we found is the okay reservations - we need the problems
+            List<Reservation> unavailable = _context.Reservations.Include(r => r.Property).ToList().Except(reservations).ToList();  //all reservations that cause problems
+
+
+            //see if any of the problem reservations are from the property we are trying to reserve
+
+            unavailable = unavailable.Where(r => r.Property.PropertyID == rs.Property.PropertyID).ToList();
+
+
+            //if any of these reservations are a problem, then show an error
+
+            if (unavailable.Count > 0)
+            {
+                return View("Error", new string[] { "This property is not available for your dates." });
+            }
+
+
+
+            //-------------------CALCULATION------------------
+
+            //Get list of dates 
+            List<DateTime> allDates = new List<DateTime>();
+            for (DateTime i = rs.CheckinDate; i < rs.CheckoutDate; i = i.AddDays(1))
+            {
+                allDates.Add(i);
+            }
+            //Calculate
+            Int32 TotalWeekdays = 0;
+            Int32 TotalWeekends = 0;
+            foreach (var item in allDates)
+            {
+                if (item.DayOfWeek == DayOfWeek.Friday || item.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    TotalWeekends = TotalWeekends + 1;
+                }
+                else
+                {
+                    TotalWeekdays = TotalWeekdays + 1;
+                }
+            }
+            rs.StayPrice = (TotalWeekdays * rs.WeekdayFee) + (TotalWeekends * rs.WeekendFee);
+
+            //Set the status
+            rs.RStatus = Reservation.ReservationStatus.Incoming;
 
             //add the reservation to the database
             _context.Add(rs);
             await _context.SaveChangesAsync();
 
             //send the user to the details page for this order
-            return RedirectToAction("UserCart", "Orders");
+            return RedirectToAction("UserCart", "Orders", PropertyID);
 
         }
-
-
-
-        //------------------------------------------ EDIT ------------------------------------------
-
-        // GET: Reservations/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var reservation = await _context.Reservations.FindAsync(id);
-            if (reservation == null)
-            {
-                return NotFound();
-            }
-            return View(reservation);
-        }
-
-        // POST: Reservations/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReservationID,CheckinDate,CheckoutDate,NumberOfGuests,CleaningPrice,WeekdayFee,WeekendFee,StayPrice,IsDisabled,Discount")] Reservation reservation)
-        {
-            if (id != reservation.ReservationID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(reservation);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ReservationExists(reservation.ReservationID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(reservation);
-        }
+        
 
         private bool ReservationExists(int id)
         {
