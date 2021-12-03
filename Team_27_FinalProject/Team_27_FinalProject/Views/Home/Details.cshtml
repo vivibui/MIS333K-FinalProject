@@ -124,5 +124,12 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to List</a> |
+    @*@if (User.Identity.IsAuthenticated)
+    {
+        @if (User.IsInRole("Customer"))
+        {
+            <a asp-action="Booking" asp-controller="Reservations" asp-route-id="@model.PropertyID" class="nav-link">Reserve</a>
+        }
+    }*@
 </div>

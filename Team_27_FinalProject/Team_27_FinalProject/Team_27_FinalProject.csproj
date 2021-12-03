@@ -15,7 +15,6 @@
     <None Remove="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="wwwroot\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
@@ -24,7 +23,7 @@
     <Content Remove="wwwroot\lib\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\effen\OneDrive\Desktop\ReviewsController.cs" Link="ReviewsController.cs" />
+    <None Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="5.0.4" />

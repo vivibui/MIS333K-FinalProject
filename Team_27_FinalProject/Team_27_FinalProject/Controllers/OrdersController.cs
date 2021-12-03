@@ -10,6 +10,7 @@ using Team_27_FinalProject.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Team_27_FinalProject.Utilities;
+using Team_27_FinalProject.SendMail;
 
 namespace Team_27_FinalProject.Controllers
 {
@@ -18,6 +19,9 @@ namespace Team_27_FinalProject.Controllers
 
     public class OrdersController : Controller
     {
+
+        private UserManager<AppUser> _userManager;
+
         private readonly AppDbContext _context;
 
         public OrdersController(AppDbContext context)
@@ -54,44 +58,45 @@ namespace Team_27_FinalProject.Controllers
         //------------------------------------- DETAILS --------------------------------------
 
         // GET: Orders/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
-            //the user did not specify an order to view
+            //The user did not specify a order to view 
             if (id == null)
             {
-                return View("Error", new String[] { "Please specify an order to view!" });
+                return View("Error", new String[] { "Please specify a order to view!" });
             }
 
-            //find the order in the database
-            Order order = await _context.Orders
-                                              .Include(o => o.Reservations)
-                                              .ThenInclude(o => o.Property)
-                                              .Include(o => o.AppUser)
-                                              .FirstOrDefaultAsync(o => o.OrderID == id);
+            //Find the order in the database 
+            Order order = _context.Orders
+                .Include(ord => ord.Reservations)
+                .ThenInclude(ord => ord.Property)
+                .Include(ord => ord.AppUser)
+                .FirstOrDefault(o => o.OrderID == id);
 
-            //order was not found in the database
+            //Order was not found in the database 
             if (order == null)
             {
                 return View("Error", new String[] { "This order was not found!" });
             }
 
-            //make sure this order belongs to this user
-            if (User.IsInRole("Customer") && order.AppUser.UserName != User.Identity.Name)
+            //Make sure a customer isn't trying to look at someone else's order
+            if (User.IsInRole("Admin") == false && order.AppUser.UserName != User.Identity.Name)
             {
-                return View("Error", new String[] { "This is not your order!  Don't be such a snoop!" });
+                return View("Error", new string[] { "You are not authorized to edit this order!" });
             }
 
-            //Send the user to the details page
+            //Send user to the details page 
             return View(order);
         }
 
+     
         //------------------------------------- CART --------------------------------------
 
         public IActionResult UserCart()
         {
             Order cart = Cart.GetCart(_context, User.Identity.Name);
-
             return View(cart);
+
         }
 
         //------------------------------------- CREATE --------------------------------------
@@ -99,23 +104,57 @@ namespace Team_27_FinalProject.Controllers
         // GET: Orders/Create
         //add checkin and checkout dates 
         [Authorize(Roles ="Customer")]
-        public IActionResult Create()
+        public IActionResult Create(int? id)
         {
+            //Get the associated property
+            Property property = _context.Properties
+                                       .Include(p => p.Reservations)
+                                       .ThenInclude(p => p.Order)
+                                       .Include(p => p.AppUser)
+                                       .FirstOrDefault(p => p.PropertyID == id);
+
             Order order = Cart.GetCart(_context, User.Identity.Name);
 
             return RedirectToAction ("DetailedSearch", "Home");
         }
 
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Order order)
+        public async Task<IActionResult> Create ()
         {
-            //send the user on to the action that will allow them to 
-            //add reservation.  Be sure to pass along the OrderID
-            //that you created when you added the order to the database above
-            return RedirectToAction("DetailedSearch", "Home");
+
+            //Find the order in the database 
+            Order order = Cart.GetCart(_context, User.Identity.Name);
+
+            //Create a viewbag
+            ViewBag.OrderNumber = order.OrderNumber;
+
+            //make sure all properties are valid
+            if (ModelState.IsValid == false)
+            {
+                return View(order);
+            }
+
+            //---------SET ORDER STATUS
+            order.OStatus = Order.OrderStatus.Completed; 
+
+            //if code gets this far, add the order to the database
+            _context.Add(order);
+            await _context.SaveChangesAsync();
+
+            //Find the next order number from the utilities class
+            order.OrderNumber = Utilities.GenerateNextOrderNumber.GetNextOrderNumber(_context);
+
+            //Send Email
+            String emailSubject = "Your New Reservation has been received.";
+            String emailBody = @"<div> Hi " + order.AppUser.FirstName + ",</div><br/>";
+            emailBody = emailBody + @"<div>Your confirmation number is </div>" + order.OrderNumber;
+            emailBody = emailBody + @"<br/><div> Enjoy your upcoming trip! </div>";
+
+            EmailMessaging.SendEmail(order.AppUser.Email, emailSubject, emailBody);
+
+            return View("OrderConfirm");
+
         }
 
 
@@ -172,10 +211,23 @@ namespace Team_27_FinalProject.Controllers
             {
                 return View(order);
             }
+            //create a new order
+            Order dbO;
 
             //if code gets this far, update the record
             try
             {
+                //find the existing order in the database
+                dbO = _context.Orders
+                      .Include(o => o.Reservations)
+                      .ThenInclude(o => o.Property)
+                      .Include(o => o.AppUser)
+                      .FirstOrDefault(o => o.OrderID == order.OrderID);
+
+                //save changes
+                _context.Update(dbO);
+                await _context.SaveChangesAsync();
+
                 //find the record in the database
                 Order dbOrder = _context.Orders.Find(order.OrderID);
 
@@ -190,5 +242,7 @@ namespace Team_27_FinalProject.Controllers
             //send the user to the Order Index page.
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

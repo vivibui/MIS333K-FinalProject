@@ -285,7 +285,7 @@ namespace Team_27_FinalProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DStatus = table.Column<int>(type: "int", nullable: false),
                     Rating = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Content = table.Column<string>(type: "nvarchar(280)", maxLength: 280, nullable: true),
                     IsDisputed = table.Column<bool>(type: "bit", nullable: false),
                     DisputeReason = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),

@@ -10,7 +10,7 @@ using Team_27_FinalProject.DAL;
 namespace Team_27_FinalProject.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211201044025_Setup")]
+    [Migration("20211203154927_Setup")]
     partial class Setup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -425,7 +425,8 @@ namespace Team_27_FinalProject.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Content")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(280)
+                        .HasColumnType("nvarchar(280)");
 
                     b.Property<int>("DStatus")
                         .HasColumnType("int");

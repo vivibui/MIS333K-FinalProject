@@ -65,7 +65,7 @@ namespace Team_27_FinalProject.Models
         }
 
         //Tax Fee
-        [Display(Name = "Sales Tax (8.25%)")]
+        [Display(Name = "Sales Tax (10%)")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal SalesTax
         {
@@ -79,5 +79,15 @@ namespace Team_27_FinalProject.Models
         {
             get { return OrderSubtotal + SalesTax; }
         }
+
+
+        //--------------------FOR THE REPORT
+        //Sum Earning
+        //[Display(Name = "Sum Earning")]
+        //[DisplayFormat(DataFormatString = "{0:C}")]
+        //public Decimal SumEarning
+        //{
+        //    get { return Reservations.Sum(r => r.TotalEarning); }
+        //}
     }
 }

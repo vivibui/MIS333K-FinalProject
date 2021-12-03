@@ -12,26 +12,44 @@
 
 
 <!-- NEED TO BE REMOVED. ONLY USE TEMPORARY FOR TESTING PURPOSE. -->
+
+ @if (User.Identity.IsAuthenticated)
+ {
 <th>
     <a asp-action="Index" asp-controller="Orders" class="btn btn-info">View Orders</a>
 </th>
+ }
+ @if (User.Identity.IsAuthenticated)
+ {
 <th>
     <a asp-controller="Reservations" asp-action="Index" class="btn btn-info">Reservations</a>
 </th>
-
-@if (User.Identity.IsAuthenticated)
-{
-    @if (User.IsInRole("Customer"))
-    {
-        <a asp-controller="Reviews" asp-action="CustomerIndex" class="btn btn-info">My Reviews</a>
-    }
-}
+ }
+ @if (User.Identity.IsAuthenticated)
+ {
+                        @if (User.IsInRole("Host"))
+                        {
 <th>
     <a asp-controller="Reviews" asp-action="Index" class="btn btn-info">Reviews</a>
 </th>
+                            }
+                        }
+ @if (User.Identity.IsAuthenticated)
+ {
+                        @if (User.IsInRole("Host"))
+                        {
 <th>
     <a asp-controller="Categories" asp-action="Index" class="btn btn-info">Set Categories</a>
 </th>
+                        }
+ }
+<!--TODO: Add authorization for Host/Admin-->
+@if (User.IsInRole("Admin"))
+{
+    <th>
+        <a asp-action="Index" asp-controller="Reports" class="btn btn-info">View Reports</a>
+    </th>
+}
 <!--- ----------------------------------------------------------- -->
 
 
