@@ -10,6 +10,8 @@
     <a asp-action="DetailedSearch" asp-controller="Reports" class="btn btn-info">Search Report</a>
 </th>
 
+<p>Showing @ViewBag.SelectedReservations of @ViewBag.AllReservations reservations</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -20,14 +22,14 @@
                 @Html.DisplayNameFor(model => model.RStatus)
             </th>
             @*<th>
-            @Html.DisplayNameFor(model => model.CheckinDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CheckoutDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumberOfGuests)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.CheckinDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CheckoutDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NumberOfGuests)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.WeekdayFee)
             </th>
@@ -44,20 +46,23 @@
                 @Html.DisplayNameFor(model => model.Discount)
             </th>
             @*<th>
-            @Html.DisplayNameFor(model => model.NumberOfNights)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.NumberOfNights)
+                </th>*@
             @*<th>
-            @Html.DisplayNameFor(model => model.Subtotal)
-        </th>*@
+                    @Html.DisplayNameFor(model => model.Subtotal)
+                </th>*@
             @*<th>
-                @Html.DisplayNameFor(model => model.SalesTax)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.SalesTax)
+                </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.ReservationTotal)
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.Commission)
-            </th>*@
+            @if (User.IsInRole("Admin"))
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.Commission)
+                </th>
+            }
             <th>
                 @Html.DisplayNameFor(model => model.HostRevenue)
             </th>
@@ -67,72 +72,81 @@
             <th>
                 @Html.DisplayNameFor(model => model.TotalEarning)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalEarning)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Property.PropertyNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RStatus)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.CheckinDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CheckoutDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumberOfGuests)
-        </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.WeekdayFee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WeekendFee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StayPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsDiscounted)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>
-            @*<td>
-            @Html.DisplayFor(modelItem => item.NumberOfNights)
-        </td>*@
-            @*<td>
-            @Html.DisplayFor(modelItem => item.Subtotal)
-        </td>*@
-            @*<td>
-                @Html.DisplayFor(modelItem => item.SalesTax)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.ReservationTotal)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Commission)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.HostRevenue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CleaningPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TotalEarning)
-            </td>
-            <td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Property.PropertyNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RStatus)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.CheckinDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CheckoutDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfGuests)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeekdayFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WeekendFee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StayPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsDiscounted)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Discount)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.NumberOfNights)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Subtotal)
+                    </td>*@
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.SalesTax)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservationTotal)
+                </td>
+                @if (User.IsInRole("Admin"))
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Commission)
+                    </td>
+                }
+                <td>
+                    @Html.DisplayFor(modelItem => item.HostRevenue)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CleaningPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalEarning)
+                </td>
+                <td>
 
-                @Html.ActionLink("Details", "Details", new { id = item.ReservationID })
+                    @Html.ActionLink("Details", "Details", new { id = item.ReservationID })
 
-            </td>
-        </tr>
-}
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+

@@ -48,7 +48,7 @@ namespace Team_27_FinalProject.Controllers
             }
             else //user is a host, so only display their records
             {
-                SelectedReservations = _context.Reservations
+                SelectedReservations = _context.Reservations 
                                 .Include(r => r.Property)
                                 .ThenInclude(r => r.AppUser)
                                 .Where(r => r.Property.AppUser.UserName == User.Identity.Name)
@@ -111,37 +111,9 @@ namespace Team_27_FinalProject.Controllers
         private SelectList GetAllProperties()
         {
 
-            ////Find the logged in user using the UserManager
-            //var userLoggedIn = await _userManager.FindByNameAsync(User.Identity.Name);
-
-            ////Get the list of properties from the database
-            ////assign the list of properties to the host
+            
             List<Property> propertyList = _context.Properties.ToList();
 
-
-            //var query1 = from p in _context.Properties
-            //            select p;
-
-            //query1 = query1.Where(p => p.AppUser.Email == userLoggedIn.Email);
-
-            ////.ToList() method to execute the query. Include statement to get the navigational data
-            //List<Property> propertyList = query1.Include(r => r.AppUser)
-            //                                        .ToList();
-
-
-            //Set up a list of orders to display
-            //List<Property> propertyList = new List<Property>();
-            //if (User.IsInRole("Admin"))
-            //{
-            //    propertyList = _context.Properties
-            //                    .ToList();
-            //}
-            //else //user is a host, so only display their records
-            //{
-            //    propertyList = _context.Properties
-            //                    .Where(o => o.AppUser.UserName == User.Identity.Name)
-            //                    .ToList();
-            //}
 
             //add a dummy entry so the user can select all properties
             Property SelectNone = new Property() { PropertyID = 0, PropertyNumber = 0 };
