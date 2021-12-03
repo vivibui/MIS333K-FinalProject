@@ -89,20 +89,14 @@ namespace Team_27_FinalProject.Controllers
             return View(order);
         }
 
+     
         //------------------------------------- CART --------------------------------------
 
-        public IActionResult UserCart(int? id)
+        public IActionResult UserCart()
         {
-            //Get the associated property
-            Property property = _context.Properties
-                                       .Include(p => p.Reservations)
-                                       .ThenInclude(p => p.Order)
-                                       .Include(p => p.AppUser)
-                                       .FirstOrDefault(p => p.PropertyID == id);
-
-            Order cart = Cart.GetCart(_context, User.Identity.Name, property);
-
+            Order cart = Cart.GetCart(_context, User.Identity.Name);
             return View(cart);
+
         }
 
         //------------------------------------- CREATE --------------------------------------
@@ -119,15 +113,18 @@ namespace Team_27_FinalProject.Controllers
                                        .Include(p => p.AppUser)
                                        .FirstOrDefault(p => p.PropertyID == id);
 
-            Order order = Cart.GetCart(_context, User.Identity.Name, property);
+            Order order = Cart.GetCart(_context, User.Identity.Name);
 
             return RedirectToAction ("DetailedSearch", "Home");
         }
 
-        //Test
-        public async Task<IActionResult> ConfirmOrder (int id, Order order)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create ()
         {
-            //---------VALIDATE 
+
+            //Find the order in the database 
+            Order order = Cart.GetCart(_context, User.Identity.Name);
 
             //Create a viewbag
             ViewBag.OrderNumber = order.OrderNumber;
@@ -245,5 +242,7 @@ namespace Team_27_FinalProject.Controllers
             //send the user to the Order Index page.
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

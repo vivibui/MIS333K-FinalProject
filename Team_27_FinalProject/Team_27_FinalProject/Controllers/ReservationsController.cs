@@ -67,7 +67,100 @@ namespace Team_27_FinalProject.Controllers
 
 
 
-        //------------------------------------------ CREATE RESERVATION ------------------------------------------
+        //------------------------------------------ HOST: LOCK DATES  ------------------------------------------
+        // GET: Reservations/LockDate
+        [Authorize(Roles="Host")]
+        public IActionResult LockDate(int? id)
+        {
+
+            //Validate booking
+            if (id == null)
+            {
+                return View("Error", new string[] { "Please specify a property to reserve!" });
+            }
+
+
+            //find the property in the database
+            Property property = _context.Properties.Include(p => p.Category)
+                                                    .FirstOrDefault(p => p.PropertyID == id);
+
+            //Pass the IDs to the viewmodel 
+            var model = new Booking
+            {
+                //OrderID = dbOrder.OrderID,
+                PropertyID = property.PropertyID
+            };
+
+            //pass the newly created reservation to the view
+            return View(model);
+        }
+
+
+        // POST: Reservations/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LockDate(int PropertyID, LockDate lockDate)
+        {
+            //if user has not entered all fields, send them back to try again
+            if (ModelState.IsValid == false)
+            {
+
+                return View("Booking");
+            }
+
+            //find the property to be associated with this order
+            Property dbProperty = _context.Properties.Find(lockDate.PropertyID);
+
+
+            //----- CHECK IF DATE SELECTED IS LESS THAN DATE TODAY 
+            if (lockDate.StartDate <= System.DateTime.Now || lockDate.EndDate <= System.DateTime.Now)
+            {
+                ModelState.AddModelError("Past Date", "Date selected must be greater than today.");
+                return View(lockDate);
+            }
+
+            //----- CHECK IF CHECKOUT IS LESS THAN CHECKIN DATE 
+            if (lockDate.EndDate <= lockDate.StartDate)
+            {
+                ModelState.AddModelError("Less Than", "Checkout date must be greater than checkin date");
+                return View(lockDate);
+
+            }
+
+            //--------------------VALIDATE IF CHECK IN IS TODAY ----------------
+            if (lockDate.StartDate == DateTime.Now)
+            {
+                ModelState.AddModelError("Not Today", "You cannot create a reservation with a checkin is today.");
+                return View(lockDate);
+            }
+
+
+            //--------------------IF CODE GET THIS FAR: 
+
+            //create a new instance of the Reservation class
+            Reservation rs = new Reservation();
+
+            //Pass values from Booking view model to this instance
+            rs.CheckinDate = lockDate.StartDate;
+            rs.CheckoutDate = lockDate.EndDate;
+
+            //set the reservation's property
+            rs.Property = dbProperty;
+
+            //Set the status
+            rs.RStatus = Reservation.ReservationStatus.Incoming;
+
+            //add the reservation to the database
+            _context.Add(rs);
+            await _context.SaveChangesAsync();
+
+            //send the user to the details page for this order
+            return RedirectToAction("Index", "Orders", new { id = rs.Order.OrderID });
+        }
+
+
         // GET: Reservations/Create
         public IActionResult Booking(int? id)
         {
@@ -111,47 +204,6 @@ namespace Team_27_FinalProject.Controllers
 
             //find the property to be associated with this order
             Property dbProperty = _context.Properties.Find(booking.PropertyID);
-
-
-            //------------------VALIDATE CHECKIN CHECKOUT TIME (DUPLICATION)-----------------
-
-            //var unavailableRes = _context.Reservations
-            //                             .Where(r => r.Property.PropertyID == booking.PropertyID &&
-            //                                    (booking.CheckinDate <= r.CheckoutDate && booking.CheckinDate >= r.CheckinDate ||
-            //                                        r.CheckinDate <= booking.CheckoutDate && r.CheckinDate >= booking.CheckinDate))
-            //                             .ToList();
-
-            ////Initialize empty list
-            //List<DateTime> CheckRange = new List<DateTime>(); //empty list for booking
-            //List<DateTime> GetDates = new List<DateTime>(); // empty list for all dates in reservation
-
-            ////Add all dates between checkout and checkin to list 
-            //for (DateTime i = booking.CheckinDate; i < booking.CheckoutDate; i = i.AddDays(1))
-            //{
-            //    CheckRange.Add(i);
-            //}
-
-            ////Loop to add dates to Get Dates 
-            //foreach (var res in unavailableRes)
-            //{
-            //    for (DateTime i = res.CheckinDate; i < res.CheckoutDate; i = i.AddDays(1))
-            //    {
-            //        GetDates.Add(i);
-            //    }
-            //}
-
-            ////Loop to compare the dates in Booking and unavailable Res 
-            //foreach (var date in GetDates)
-            //{
-            //    foreach (var bookdate in CheckRange)
-            //    {
-            //        if (bookdate == date)
-            //        {
-            //            ModelState.AddModelError("Booking unsuccessful", "The entered date range has already been reserved.");
-            //            return View(booking);
-            //        }
-            //    }
-            //}
 
 
             //----- CHECK IF DATE SELECTED IS LESS THAN DATE TODAY 
@@ -201,7 +253,7 @@ namespace Team_27_FinalProject.Controllers
             //find the order on the database that has the correct order id
             //unfortunately, the HTTP request will not contain the entire order object, 
             //just the order id, so we have to find the actual object in the database
-            Order dbOrder = Cart.GetCart(_context, User.Identity.Name, dbProperty);
+            Order dbOrder = Cart.GetCart(_context, User.Identity.Name);
 
             //set the order on the reservation equal to the order that we just found
             rs.Order = dbOrder;
@@ -277,10 +329,8 @@ namespace Team_27_FinalProject.Controllers
             await _context.SaveChangesAsync();
 
             //send the user to the details page for this order
-            return RedirectToAction("UserCart", "Orders", PropertyID);
-
+            return RedirectToAction("Details", "Orders", new { id = rs.Order.OrderID });
         }
-        
 
         private bool ReservationExists(int id)
         {

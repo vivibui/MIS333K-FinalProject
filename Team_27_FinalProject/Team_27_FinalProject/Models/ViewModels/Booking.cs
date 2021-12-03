@@ -32,4 +32,25 @@ namespace Team_27_FinalProject.Models
         public Int32 NumberOfGuests { get; set; }
 
     }
+
+    public class LockDate
+    {
+        //Pass PropertyID
+        public Int32 PropertyID { get; set; }
+
+        //Checkin Date
+        [Required(ErrorMessage = "Please select a date to start locking .")]
+        [Display(Name = "Start Date:")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MMMM d, yyyy}")]
+        public DateTime StartDate { get; set; }
+
+        //Checkout Date
+        [Required(ErrorMessage = "Please select a date that end locking.")]
+        [Display(Name = "End Date:")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MMMM d, yyyy}")]
+        public DateTime EndDate { get; set; }
+
+    }
 }
