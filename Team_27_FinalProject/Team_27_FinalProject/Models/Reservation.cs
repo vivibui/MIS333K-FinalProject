@@ -92,7 +92,7 @@ namespace Team_27_FinalProject.Models
         }
 
         //Calculate total weekdays and weekends 
-        public Decimal CalStayPrice()
+        public Decimal CalStayPrice(List<DateTime> allDates)
         {
             foreach (var item in allDates)
             {
@@ -107,7 +107,7 @@ namespace Team_27_FinalProject.Models
             }
 
             //Calculate Stay Price 
-            return (StayPrice = TotalWeekdays * WeekdayFee + TotalWeekends * WeekendFee);
+            return (StayPrice = (TotalWeekdays * WeekdayFee) + (TotalWeekends * WeekendFee));
         }
 
         //--------------------END: CALCULATE STAY PRICE--------------------
@@ -148,7 +148,7 @@ namespace Team_27_FinalProject.Models
             {
                 if (_IsDiscounted == true)
                 {
-                    _discount = Subtotal* Property.DiscountRate;
+                    _discount = InitialSubtotal* Property.DiscountRate;
                 }
                 else
                 {
@@ -166,16 +166,24 @@ namespace Team_27_FinalProject.Models
             get { return ((CheckoutDate.Date - CheckinDate.Date).Days); }
         }
 
+        //Reservation Initial Subtotal
+        [Display(Name = "Intial Reservation Subtotal")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
+        public Decimal InitialSubtotal
+        {
+            get { return StayPrice + CleaningPrice; }
+        }
+
         //Reservation Subtotal
         [Display(Name = "Reservation Subtotal")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal Subtotal
         {
-            get { return StayPrice + CleaningPrice + _discount; }
+            get { return StayPrice + CleaningPrice - _discount; }
         }
 
         //Tax Fee
-        [Display(Name = "Sales Tax (8.25%)")]
+        [Display(Name = "Sales Tax (10%)")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public Decimal SalesTax
         {

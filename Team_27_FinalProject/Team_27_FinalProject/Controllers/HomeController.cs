@@ -221,15 +221,13 @@ namespace Team_27_FinalProject.Controllers
             //-----SEARCH BY RATING
             if (svm.SelectedRating != null)
             {
-                if (svm.RatingType == RatingType.LessThan)
-                {
-                    query = query.Where(p => (p.Reviews.Average(r => r.Rating) < svm.SelectedRating) ||
-                                            (p.Reviews.Count() ==0)
-                                        );
-                }
+                if (svm.RatingType == RatingType.GreaterThan)
+                { query = query.Where(p => p.Reviews.Average(r => r.Rating) > svm.SelectedRating); }
                 else
                 {
-                    query = query.Where(p => p.Reviews.Average(r => r.Rating) > svm.SelectedRating);
+                   query = query.Where(p => (p.Reviews.Average(r => r.Rating) < svm.SelectedRating) ||
+                   (p.Reviews.Count() == 0)
+                                         );
                 }
             }
 

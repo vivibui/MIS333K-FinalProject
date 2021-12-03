@@ -170,7 +170,6 @@
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Orders/Create.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Orders/Delete.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Orders/Details.cshtml.g.cs
-/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Orders/Edit.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Orders/Index.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/Create.cshtml.g.cs
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Properties/Details.cshtml.g.cs
@@ -607,3 +606,4 @@ C:/Users/effen/OneDrive/Desktop/MIS 333/MIS333K-FinalProject/Team_27_FinalProjec
 C:/Users/effen/OneDrive/Desktop/MIS 333/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Reviews/CustomerIndex.cshtml.g.cs
 C:/Users/effen/OneDrive/Desktop/MIS 333/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Team_27_FinalProject.csproj.AssemblyReference.cache
 /Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Reviews/CustomerIndex.cshtml.g.cs
+/Users/vivianbui/Desktop/MIS333K-FinalProject/Team_27_FinalProject/Team_27_FinalProject/obj/Debug/net5.0/Razor/Views/Orders/OrderConfirm.cshtml.g.cs

@@ -56,7 +56,10 @@ namespace Team_27_FinalProject.SendMail
             mm.To.Add(new MailAddress(toEmailAddress));
 
             //Add the message (passed)
-            mm.Body = finalMessage; 
+            mm.Body = finalMessage;
+
+            //Using HTML Format
+            mm.IsBodyHtml = true;
 
             //send the message!
             client.Send(mm);
