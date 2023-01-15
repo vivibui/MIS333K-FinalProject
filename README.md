@@ -54,8 +54,3 @@ https://drive.google.com/drive/folders/1cUfbXsHoLnVvDZd6gsmH9rFWtV1RfacZ?usp=sha
 #### 4. Communication: 
 - GroupMe
 - Email for important tasks/ documents delivery 
-- Phone Number: 
-  - Andres: 210-237-9422
-  - Briana: 210-823-7119
-  - Chau:  469-734-9951
-  - Vivian: 346-332-6969   
